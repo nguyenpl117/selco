@@ -1,0 +1,687 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/phucbm/flickity-responsive@2.0.6/flickity-responsive.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+    <link rel="stylesheet" href="libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="libs/swiper/css/swiper.css">
+    <link rel="stylesheet" href="libs/swiper/css/swiper-custom.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="libs/fontawesome/js/all.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ["Open Sans", "serif"],
+                    },
+                    colors: {
+                        primary: {
+                            '50': '#cce5ff',
+                            '100': '#9acafe',
+                            '200': '#67b0fe',
+                            '300': '#3496fe',
+                            '400': '#0163cb',
+                            '500': '#0156b2',
+                            '600': '#014a98',
+                            '700': '#01458e',
+                            '800': '#013e7f',
+                            '900': '#013165',
+                            '950': '#00254c'
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans" x-data>
+<!--Header menu-->
+<header x-data="{openMobile: false}"
+        class="bg-transparent transition-all duration-700 fixed w-full top-0 z-40 menu_header">
+    <div class="mx-auto max-w-screen-2xl px-4">
+        <div class="flex justify-between space-x-6 items-center py-2 lg:py-0">
+            <div class="items-center flex">
+                <h1 title="Laravel">
+                    <a href="/" data-pjax-state="">
+                        <img class="h-12 sm:h-16 logo-header safelyLoadImage" width="119" height="48" alt="Laravel"
+                             onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
+                             src="/images/logo-search-grid-1x.png">
+                    </a>
+                </h1>
+            </div>
+
+            <div class="hidden items-center grow lg:flex justify-end">
+                <!-- Menu Main -->
+                <ul class="lg:flex flex-wrap menu" lv="1">
+                    <li class="relative group group/lv1">
+                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                           href="/" data-pjax-state="">Trang Chủ</a>
+                    </li>
+                    <li class="relative group group/lv1">
+                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                           href="/" data-pjax-state="">Giới thiệu</a>
+                    </li>
+                    <li class="relative group group/lv1">
+                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                           href="https://qlhs.test/khoa-hoc" data-pjax-state="">Khóa học</a>
+                        <div class="inline-block w-1"></div>
+                        <svg class="w-2.5 h-2.5 absolute top-[20px] right-1" aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="m1 1 4 4 4-4"></path>
+                        </svg>
+                        <ul class="sub-menu absolute hidden max-w-[260px] min-w-[200px] w-max py-2 rounded bg-white border z-10 group group-hover/lv1:block"
+                            lv="2">
+                            <li class=" relative group border-b last:border-b-0 group/lv2">
+                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                   href="https://qlhs.test/24523454">Xây lắp điện</a>
+                            </li>
+                            <li class=" relative group border-b last:border-b-0 group/lv2">
+                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                   href="https://qlhs.test/24523454">Năng lượng</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="relative group group/lv1">
+                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                           href="/" data-pjax-state="">Du học</a>
+                    </li>
+                    <li class="relative group group/lv1">
+                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                           href="https://qlhs.test/blog/uncategorized" data-pjax-state="">Tin tức</a>
+                    </li>
+                    <li class="relative group group/lv1">
+                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                           href="https://qlhs.test/lien-he" data-pjax-state="">Liên hệ</a>
+                    </li>
+                </ul>
+                <!-- End Menu Main -->
+            </div>
+
+            <!-- Menu mobile -->
+            <div class="-mr-2 -my-2 lg:hidden">
+
+
+                <button x-on:click="openMobile = !openMobile" type="button"
+                        class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
+                        aria-expanded="false">
+                    <span class="sr-only">Open menu</span>
+                    <!-- Heroicon name: outline/menu -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- End Menu mobile -->
+        </div>
+    </div>
+    <div x-show="openMobile" x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 transform scale-50"
+         x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-300"
+         x-transition:leave-start="opacity-100 transform scale-100"
+         x-transition:leave-end="opacity-0 transform scale-50" class="absolute top-0 inset-x-0 z-50"
+         style="display: none;">
+        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50 h-screen">
+            <div class="flex items-center justify-between px-4 pt-1">
+                <div>
+
+
+                </div>
+                <div class="-mr-2">
+                    <button x-on:click="openMobile = !openMobile" type="button"
+                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overflow-y-auto px-4 h-screen pb-4">
+                <div class="my-4">
+                    <nav>
+                        <div>
+                            <a x-on:click="openMobile = !openMobile" href="/"
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
+                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                            Trang Chủ
+                                        </span>
+                            </a>
+
+                        </div>
+                        <div>
+                            <a x-on:click="openMobile = !openMobile" href="/"
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
+                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                            Giới thiệu
+                                        </span>
+                            </a>
+
+                        </div>
+                        <div>
+                            <div class="-m-3 px-3 py-2 rounded-md hover:bg-gray-50" x-data="{openNav: false}">
+                                <div class="flex items-center justify-between">
+                                    <a href="https://qlhs.test/khoa-hoc" data-pjax-state="">
+                                                    <span class="text-sm font-medium text-gray-900">
+                                                        Khóa học
+                                                    </span>
+                                    </a>
+
+                                    <div x-on:click="openNav = ! openNav"
+                                         class="cursor-pointer w-16 md:w-20 h-8 text-lg flex-shrink-0 flex items-center justify-center -mr-4">
+                                        <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
+                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                             stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                  d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+
+                                    </div>
+                                </div>
+                                <nav x-show="openNav" class="ml-0 my-1">
+                                    <div x-data="{openSubNav: false}">
+                                        <a href="https://qlhs.test/24523454"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50"
+                                           data-pjax-state="">
+                                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                                - 24523454
+                                                            </span>
+                                        </a>
+                                    </div>
+
+                                </nav>
+                            </div>
+
+                        </div>
+                        <div>
+                            <a x-on:click="openMobile = !openMobile" href="/"
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
+                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                            Du học
+                                        </span>
+                            </a>
+
+                        </div>
+                        <div>
+                            <a x-on:click="openMobile = !openMobile" href="https://qlhs.test/blog/uncategorized"
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
+                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                            Tin tức
+                                        </span>
+                            </a>
+
+                        </div>
+                        <div>
+                            <a x-on:click="openMobile = !openMobile" href="https://qlhs.test/lien-he"
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
+                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                            Liên hệ
+                                        </span>
+                            </a>
+
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--Header slider-->
+<div class="bg-gray-50">
+    <div class="slider_header">
+        <div class="swiper w-full h-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="relative">
+                        <img src="https://songda11.com.vn/wp-content/uploads/Thuy-dien-Thac-Ba-TEXT-2-scaled.jpg"
+                             alt="image">
+                        <div class="text-white px-4 max-w-[750px] text-[30px] absolute top-[50%] items-center justify-center">
+                            Với truyền thống 60 năm trong ngành xây lắp, mang khát vọng trở thành tập đoàn hàng đầu Việt
+                            Nam về cơ sở hạ tầng, SÔNG ĐÀ 11 luôn hướng đến cuộc sống tốt đẹp hơn.
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://songda11.com.vn/wp-content/uploads/DAT-12-scaled.jpg" alt="image">
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+
+<!--Tin mới cập nhật-->
+<div class="mt-24">
+    <div class="max-w-screen-2xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="px-4 flex flex-col justify-center">
+                <div class="flex flex-col gap-4">
+                    <div class="flex justify-between" data-aos="fade-up">
+                        <h2 class="text-3xl font-medium">Tin mới cập nhật</h2>
+                        <a href="#" class="flex gap-2 py-5 text-primary-300">
+                            <span>Xem tất cả</span>
+                            <div class="relative w-6 h-6 flex justify-center items-center">
+                                <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>
+                                <div class="absolute bg-primary-600 w-6 h-6 rounded-full text-white justify-center items-center flex">
+                                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <template x-for="i in 4">
+                        <div data-aos="fade-up"
+                             class="rounded overflow-hidden flex justify-between items-center bg-gray-100">
+                            <div class="bg-primary-500 py-4 px-3 text-white flex flex-col items-center">
+                                <span class="text-3xl font-medium">14</span>
+                                <span class="text-xs">Tháng năm</span>
+                            </div>
+                            <div class="flex-1 px-2">
+                                Toàn cảnh Thủy điện Sơn La ngày về đích
+                            </div>
+                            <div class="px-4">
+                                <div role="button"
+                                     class="border border-primary-500 rounded text-primary-500 px-4 py-2 hover:border-black hover:text-black">
+                                    Xem thêm
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="px-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="main-carousel">
+                    <div class="carousel-cell">
+                        <a href="#" class="group block relative overflow-hidden rounded-tr-2xl rounded-bl-2xl">
+                            <img class="group-hover:scale-110 transition-all duration-500"
+                                 src="https://songda11.com.vn/wp-content/uploads/Thuy-dien-Thac-Ba-TEXT-2-scaled.jpg"
+                                 alt="image">
+                            <div class="absolute bottom-0 text-white p-4">
+                                <h3>Toàn cảnh Thủy điện Sơn La ngày về đích</h3>
+                                <div>
+                                    <i class="fa-solid fa-calendar"></i>
+                                    <span>14/05/2024</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-cell">
+                        <a href="#" class="group block relative overflow-hidden rounded-tr-2xl rounded-bl-2xl">
+                            <img class="group-hover:scale-110 transition-all duration-500"
+                                 src="https://songda11.com.vn/wp-content/uploads/DAT-12-scaled.jpg" alt="image">
+                            <div class="absolute bottom-0 text-white p-4">
+                                <h3>Toàn cảnh Thủy điện Sơn La ngày về đích</h3>
+                                <div>
+                                    <i class="fa-solid fa-calendar"></i>
+                                    <span>14/05/2024</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Lĩnh vực hoạt động-->
+<div class="mt-12">
+    <div class="max-w-screen-2xl mx-auto px-4">
+        <div class="flex flex-col gap-4">
+            <h2 class="text-3xl mb-6 font-medium" data-aos-duration="1000" data-aos="fade-up">Lĩnh vực hoạt động</h2>
+
+            <div class="grid grid-cols-4 gap-4">
+                <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
+                        <img class="object-cover absolute top-0 right-0 h-full"
+                             src="https://songda11.com.vn/wp-content/uploads/z5736318219265_aab48f61e79ce0a07bbb006335eb5e99.jpg"
+                             alt="Xây lắp điện">
+                        <div class="opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
+                        </div>
+                        <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                <span class="text-2xl text-white uppercase font-medium"> Xây lắp điện</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
+                    <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
+                        <img class="object-cover absolute top-0 right-0 h-full"
+                             src="https://songda11.com.vn/wp-content/uploads/z5736318219265_aab48f61e79ce0a07bbb006335eb5e99.jpg"
+                             alt="Xây lắp điện">
+                        <div class="opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
+                        </div>
+                        <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                <span class="text-2xl text-white uppercase font-medium"> Xây lắp điện</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
+                    <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
+                        <img class="object-cover absolute top-0 right-0 h-full"
+                             src="https://songda11.com.vn/wp-content/uploads/z5736318219265_aab48f61e79ce0a07bbb006335eb5e99.jpg"
+                             alt="Xây lắp điện">
+                        <div class="opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
+                        </div>
+                        <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                <span class="text-2xl text-white uppercase font-medium"> Xây lắp điện</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
+                        <img class="object-cover absolute top-0 right-0 h-full"
+                             src="https://songda11.com.vn/wp-content/uploads/z5736318219265_aab48f61e79ce0a07bbb006335eb5e99.jpg"
+                             alt="Xây lắp điện">
+                        <div class="opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
+                        </div>
+                        <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                <span class="text-2xl text-white uppercase font-medium"> Xây lắp điện</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Giới thiệu-->
+<div class="mt-24">
+    <div class="max-w-screen-2xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="px-4 flex flex-col justify-center" data-aos="zoom-in" data-aos-duration="1000">
+                <div class='wy overflow-hidden rounded-lg'>
+                    <div class='youtube'>
+                        <iframe width="755" height="427" src="https://www.youtube.com/embed/MOdtX4_bLB8"
+                                title="Công ty Cổ Phần Sông Đà 11 - Tiếp nối những thành công" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4">
+                <h3 class="text-4xl font-medium mb-4" data-aos="fade-up">Công ty Cổ phần Sông Đà 11 – 60 năm xây dựng và
+                    phát triển</h3>
+                <div class="text-gray-700" data-aos="fade-up">
+                    Tiền thân là Đội điện nước trực thuộc Công trường Thủy điện Thác Bà được ra đời sau ngày thành lập
+                    Công trường thủy điện Thác Bà (ngày 01/6/1961), năm 1972 được nâng cấp và đổi tên thành Công trường
+                    Cơ điện Thủy điện Thác Bà.
+                    Từ năm 1976 Cán bộ đoàn viên, công nhân viên Công trường Cơ điện hăng hái tham gia xây dựng công
+                    trình Nhà máy Thủy điện Hòa Bình, Công trường được đổi tên thành Xí nghiệp Lắp máy Điện nước.
+                    Năm 1984 được nâng cấp thành Công ty Xây lắp Điện nước.
+                    Từ năm 1986, khi đất nước chuyển mình sang cơ chế thị trường theo định hướng XHCN là giai đoạn khó
+                    khăn, tổn thất về lực lượng của Công ty. Với những nỗ lực không mệt mỏi, Công ty đã vượt qua để củng
+                    cố, xây dựng lực lượng bước vào một thời kỳ mới, công ty được đổi tên thành Công ty Xây lắp Năng
+                    lượng và nay là Công ty cổ phần Sông Đà11.
+                </div>
+                <div class="py-2" data-aos="fade-up">
+                    <a href="#"
+                       class="py-2 px-4 inline-block text-primary-500 hover:bg-primary-500 hover:text-white font-medium transition-all border border-primary-500 rounded">
+                        Xem thêm
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Dự án nổi bật-->
+<div class="mt-24">
+    <div class="max-w-screen-2xl mx-auto px-4">
+        <h2 class="text-4xl font-medium py-4" data-aos="fade-up">Dự án nổi bật</h2>
+        <div class="project-carousel" data-aos="fade-up">
+            <div class="carousel-cell">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="order-2 md:order-1 flex flex-col justify-center max-w-2xl">
+                        <div>
+                            <h3 class="text-xl md:text-3xl font-medium pb-4">
+                                <a href="#" class="text-primary-500 hover:text-black">
+                                    Dự án: ĐZ 500kV NMNĐ Nam Định I – Thanh Hóa: Gói thầu (17; 18; 22; 23) cung cấp và
+                                    vận chuyển cột thép
+                                </a>
+                            </h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Giá trị : 213 tỷ đồng Chú đầu tư: Ban quản lý các công trình điện Miền Bắc Thời gian khới
+                            công: 12/2023 Thời gian hoàn thành: 04/2024
+                        </p>
+                        <div class="py-4 ">
+                            <a href="#"
+                               class="py-2 px-4 font-medium text-primary-500 inline-block hover:bg-gray-200 transition-all duration-200 border border-primary-500 rounded">
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="aspect-[4/3] rounded-tr-2xl rounded-bl-2xl overflow-hidden">
+                            <img class="aspect-[4/3]"
+                                 src="https://songda11.com.vn/wp-content/uploads/Goi-thau-17-18-22-23-cung-cap-va-van-chuyen-cot-thep-Du-an-DZ-500kV-NMND-Nam-Dinh-I-Thanh-Hoa.jpg"
+                                 alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="order-2 md:order-1 flex flex-col justify-center max-w-2xl">
+                        <div>
+                            <h3 class="text-3xl font-medium pb-4">
+                                <a href="#" class="text-primary-500 hover:text-black">
+                                    Dự án: ĐZ 500kV NMNĐ Nam Định I – Thanh Hóa: Gói thầu (17; 18; 22; 23) cung cấp và
+                                    vận chuyển cột thép
+                                </a>
+                            </h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Giá trị : 213 tỷ đồng Chú đầu tư: Ban quản lý các công trình điện Miền Bắc Thời gian khới
+                            công: 12/2023 Thời gian hoàn thành: 04/2024
+                        </p>
+                        <div class="py-4 ">
+                            <a href="#"
+                               class="py-2 px-4 font-medium text-primary-500 inline-block hover:bg-gray-200 transition-all duration-200 border border-primary-500 rounded">
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="aspect-[4/3] rounded-tr-2xl rounded-bl-2xl overflow-hidden">
+                            <img class="aspect-[4/3]"
+                                 src="https://songda11.com.vn/wp-content/uploads/Goi-thau-17-18-22-23-cung-cap-va-van-chuyen-cot-thep-Du-an-DZ-500kV-NMND-Nam-Dinh-I-Thanh-Hoa.jpg"
+                                 alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Quan hệ cổ đông-->
+<div class="mt-24">
+    <div class="max-w-screen-2xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex flex-col justify-center" data-aos-duration="1000" data-aos="fade-right">
+                <img class="rounded-tr-2xl rounded-bl-2xl"
+                     src="https://songda11.com.vn/wp-content/uploads/5443-1752.jpg" alt="image">
+            </div>
+            <div>
+                <h3 class="text-4xl font-medium mb-4" data-aos="fade-up" data-aos-duration="1000">Quan hệ cổ đông</h3>
+                <div class="text-gray-700" data-aos="fade-up" data-aos-duration="1000">
+                    Tại Sông Đà 11, chúng tôi luôn hướng đến sự tăng trưởng bền vững, mang đến những giá trị cao nhất
+                    cho cổ đông và nhà đầu tư thông qua việc thiết lập các mối quan hệ lâu dài, xây dựng lòng tin, đối
+                    xử công bằng, minh bạch, chủ động và cung cấp thông tin tới các bên liên quan. Với cam kết tăng
+                    trưởng bền vững, các kết quả kinh doanh Sông Đà 11 đạt được đều vượt xa mong đợi từ cổ đông và nhà
+                    đầu tư.
+                </div>
+                <div>
+                    <ul>
+                        <template x-for="i in 4">
+                            <li class="border-b last:border-b-0 py-2" data-aos="fade-up" data-aos-duration="1000">
+                                <a href="#" class="text-primary-500 hover:text-black font-medium py-2">
+                                    Báo cáo Tài chính hợp nhất Quý 3 năm 2024
+                                </a>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <a href="#" class="flex gap-2 py-5 text-primary-300" data-aos="fade-up" data-aos-duration="1000">
+                    <span>Xem tất cả</span>
+                    <div class="relative w-6 h-6 flex justify-center items-center">
+                        <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>
+                        <div class="absolute bg-primary-600 w-6 h-6 rounded-full text-white justify-center items-center flex">
+                            <svg class="svg-inline--fa fa-chevron-right text-xs" aria-hidden="true" focusable="false"
+                                 data-prefix="fas" data-icon="chevron-right" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+                                <path fill="currentColor"
+                                      d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path>
+                            </svg>
+                            <!-- <i class="fa-solid fa-chevron-right text-xs"></i> Font Awesome fontawesome.com -->
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Partners-->
+<div class="my-12 partners">
+    <div class="max-w-screen-2xl mx-auto px-4">
+        <div class="grid grid-cols-12 gap-8">
+            <div class="col-span-12 md:col-span-4 lg:col-span-3 flex flex-col justify-center">
+                <h3 class="text-4xl" data-aos="fade-up">Partners</h3>
+            </div>
+            <div class="col-span-12 md:col-span-8 lg:col-span-9" data-aos="fade-up">
+                <div class="partners-carousel" data-aos="fade-up">
+                    <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
+                        <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
+                            <img class="aspect-[5/3] object-contain"
+                                 src="https://songda11.com.vn/wp-content/uploads/vcb.jpg">
+                        </div>
+                    </div>
+                    <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
+                        <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
+                            <img class="aspect-[5/3] object-contain"
+                                 src="https://songda11.com.vn/wp-content/uploads/vietinbank.jpg">
+                        </div>
+                    </div>
+                    <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
+                        <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
+                            <img class="aspect-[5/3] object-contain"
+                                 src="https://songda11.com.vn/wp-content/uploads/agribank.jpg">
+                        </div>
+                    </div>
+                    <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
+                        <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
+                            <img class="aspect-[5/3] object-contain"
+                                 src="https://songda11.com.vn/wp-content/uploads/bidv.jpg">
+                        </div>
+                    </div>
+                    <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
+                        <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
+                            <img class="aspect-[5/3] object-contain"
+                                 src="https://songda11.com.vn/wp-content/uploads/bidv.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="bg-primary-500">
+    <div class="max-w-screen-2xl mx-auto text-white px-4 py-6">
+        <div class="py-2">
+            <img width="150" src="/images/logo-search-grid-1x.png" alt="logo">
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-xl font-medium uppercase">CÔNG TY DooTech</h3>
+                <p>số 9 ngách 2 ngõ 599 P.Văn Quán, Q. Hà Đông</p>
+                <p>Hotline: 0988 888 888</p>
+                <p>Email: vuquangthieu1307@gmail.com</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-medium uppercase">About us</h3>
+                <ul class="text-gray-300">
+                    <li class="py-1 hover:text-white">
+                        <a href="#">Introduction</a>
+                    </li>
+                    <li class="py-1 hover:text-white">
+                        <a href="#">History</a>
+                    </li>
+                    <li class="py-1 hover:text-white">
+                        <a href="#">Organizational</a>
+                    </li>
+                    <li class="py-1 hover:text-white">
+                        <a href="#">Achievements</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-medium uppercase">Shareholder</h3>
+                <ul class="text-gray-300">
+                    <li class="py-1 hover:text-white">
+                        <a href="#">Information Disclosure</a>
+                    </li>
+                    <li class="py-1 hover:text-white">
+                        <a href="#">Financial report</a>
+                    </li>
+                    <li class="py-1 hover:text-white">
+                        <a href="#">Company rules</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!--Copyright-->
+<div class="bg-primary-300 py-4 px-4 text-center">
+    <p class="text-gray-300 text-sm">Copyright 2024 © <strong>Phan Trung Nguyên</strong></p>
+</div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    });
+</script>
+<script src="libs/swiper/js/swiper.min.js"></script>
+<script src="libs/swiper/js/swiper-custom.js"></script>
+<script src="/js/script.js"></script>
+</body>
+
+</html>
