@@ -14,11 +14,11 @@
         });
     }
 
-    swiperSlider(document.querySelector('.slider_header'), {
-        spaceBetween: 16,
-        slidesPerView: 1,
-        autoplay: false,
-    })
+    // swiperSlider(document.querySelector('.slider_header'), {
+    //     spaceBetween: 16,
+    //     slidesPerView: 1,
+    //     autoplay: false,
+    // })
 
     // swiperSlider(document.querySelector('.slider_news'), {
     //     spaceBetween: 16,

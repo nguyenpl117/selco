@@ -5,6 +5,11 @@
     //     cellAlign: 'left',
     //     contain: true
     // });
+    new Flickity( '.home-carousel', {
+        cellAlign: 'left',
+        contain: true,
+        prevNextButtons: false,
+    });
 
     // element argument can be a selector string
     //   for an individual element
@@ -14,11 +19,21 @@
         prevNextButtons: false,
     });
 
+
     new Flickity( '.project-carousel', {
         cellAlign: 'left',
         contain: true,
         prevNextButtons: false,
     });
+
+    const homeElm = document.querySelector('.home-carousel');
+    const resizeHomeObserver = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+            const { width, height } = entry.contentRect;
+            // console.log(width, height)
+        }
+    });
+    resizeHomeObserver.observe(homeElm);
 
     const divElm = document.querySelector('.partners');
     const resizeObserver = new ResizeObserver((entries) => {
