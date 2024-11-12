@@ -72,7 +72,6 @@
     resizeObserver.observe(divElm);
 
     document.addEventListener('scroll', function (e) {
-        console.log(e.currentTarget.scrollingElement.scrollTop);
         if (e.currentTarget.scrollingElement.scrollTop > 50) {
             document.querySelector('.menu_header').classList.remove('bg-gray-100/50');
             document.querySelector('.menu_header').classList.add('bg-white');
