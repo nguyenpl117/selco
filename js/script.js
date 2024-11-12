@@ -74,11 +74,11 @@
     document.addEventListener('scroll', function (e) {
         console.log(e.currentTarget.scrollingElement.scrollTop);
         if (e.currentTarget.scrollingElement.scrollTop > 50) {
-            document.querySelector('.menu_header').classList.remove('bg-transparent');
+            document.querySelector('.menu_header').classList.remove('bg-gray-100/50');
             document.querySelector('.menu_header').classList.add('bg-white');
             document.querySelector('.menu_header').classList.add('shadow');
         } else {
-            document.querySelector('.menu_header').classList.add('bg-transparent');
+            document.querySelector('.menu_header').classList.add('bg-gray-100/50');
             document.querySelector('.menu_header').classList.remove('bg-white');
             document.querySelector('.menu_header').classList.remove('shadow');
         }
