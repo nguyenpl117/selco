@@ -19,6 +19,7 @@
         cellAlign: 'left',
         contain: true,
         prevNextButtons: false,
+        autoPlay: 3000,
     });
 
 
