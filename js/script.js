@@ -9,6 +9,7 @@
         cellAlign: 'left',
         contain: true,
         prevNextButtons: false,
+        autoPlay: 3000,
     });
 
     // element argument can be a selector string
