@@ -5,6 +5,11 @@
     //     cellAlign: 'left',
     //     contain: true
     // });
+    document.querySelector('.btndown').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(e.target.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+    });
+
     new Flickity('.home-carousel', {
         cellAlign: 'left',
         contain: true,
