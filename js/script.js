@@ -5,11 +5,12 @@
     //     cellAlign: 'left',
     //     contain: true
     // });
-    new Flickity( '.home-carousel', {
+    new Flickity('.home-carousel', {
         cellAlign: 'left',
         contain: true,
         prevNextButtons: false,
         autoPlay: 3000,
+        pageDots: true
     });
 
     // element argument can be a selector string

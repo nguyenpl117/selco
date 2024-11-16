@@ -27,4 +27,20 @@
   text-shadow: 2px 2px #dd3333;
 }
 
+.home-carousel .flickity-page-dots {
+  bottom: 15px;
+}
+
+.home-carousel .flickity-page-dots .dot {
+  background: black;
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+}
+
+.home-carousel .flickity-page-dots .dot.is-selected {
+  border-color: #ffffff;
+  background: #ffffff;
+}
+
 /*# sourceMappingURL=style.css.map */
