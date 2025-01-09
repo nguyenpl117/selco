@@ -23,6 +23,10 @@
   text-align: right;
 }
 
+.project-carousel2 .flickity-page-dots {
+  text-align: right;
+}
+
 .home-carousel .content {
   text-shadow: 2px 2px #dd3333;
 }
