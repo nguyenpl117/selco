@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lịch sử hình thành</title>
+    <title>Tin tức</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,7 +116,7 @@
                             lv="2">
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="https://qlhs.test/24523454">trạm biến áp</a>
+                                   href="https://qlhs.test/24523454">Xây lắp điện</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
@@ -271,61 +271,45 @@
     </div>
 </header>
 
-<!--Banner-->
-<div>
-    <img src="./images/sl001.jpg" alt="" class="w-full">
+<div class="max-w-screen-2xl mx-auto p-4 mb-5">
+    <p>
+        <a href="./index.html" class="text-primary-400 hover:text-black">Trang chủ</a> / <a href="./tin-tuc.html">Tin
+        tức</a>
+    </p>
 </div>
 
-<!--Menu-->
-<div data-aos-duration="1000" data-aos="fade-up">
-    <div class="flex justify-center items-center py-6 gap-2">
-        <a href="./introduce.html"
-           class="rounded bg-gray-100 hover:bg-primary-500 hover:text-white uppercase px-6 py-2 font-medium">
-            Giới thiệu
-        </a>
-        <a href="./lichsu.html" class="rounded text-white bg-primary-500 uppercase px-6 py-2 font-medium">
-            Lịch sử hình thành
-        </a>
-        <a href="./cocau.html"
-           class="rounded bg-gray-100 hover:bg-primary-500 hover:text-white uppercase px-6 py-2 font-medium">
-            Cơ cấu tổ chức
-        </a>
-        <a href="./thanhtich.html"
-           class="rounded bg-gray-100 hover:bg-primary-500 hover:text-white uppercase px-6 py-2 font-medium">
-            Thành tích đạt được
-        </a>
+<main>
+    <div class="max-w-screen-2xl mx-auto px-4 mb-10">
+        <div>
+            <h1 class="text-2xl font-semibold uppercase mb-4">Tin tức sự kiện</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" x-data>
+            <template x-for="item in [1,2,3,4,5,6,7,8,9]">
+            <div class="shadow overflow-hidden hover:shadow-xl duration-300">
+                <div class="relative overflow-hidden group aspect-[4/3]">
+                    <a title="Tiếng Hoa Cho Trẻ Em3: Bắt Đầu Từ Khi Nào Là Tốt Nhất?"
+                       href="./tin-tuc-chi-tiet.html">
+                        <img class="w-full lozad m-0 lg:group-hover:scale-110 transition-all duration-500 safelyLoadImage"
+                             alt="Tiếng Hoa Cho Trẻ Em3: Bắt Đầu Từ Khi Nào Là Tốt Nhất?"
+                             src="https://songda11.com.vn/wp-content/uploads/img5805-1719119298915929670737-171912599464240319999.webp"
+                             data-loaded="true">
+                    </a>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-base lg:text-xl line-clamp-2 font-semibold !mt-0">
+                        <a href="./tin-tuc-chi-tiet.html" class="hover:text-primary-500 line-clamp-2">
+                            Thủ tướng: Ra nước ngoài, lục từng container để đưa thiết bị về làm đường dây 500kV
+                        </a>
+                    </h3>
+                    <div class="text-sm lg:text-base line-clamp-3 md:line-clamp-3 my-2 py-0 text-black/60 font-light">
+                        Thủ tướng yêu cầu mở đợt thi đua cao điểm đặc biệt, “nước rút”, “thần tốc” để phấn đấu cơ bản dựng cột kéo dây xong đường dây 500kV trong tháng 6 và hoàn thành công trình vào tháng 7
+                    </div>
+                </div>
+            </div>
+            </template>
+        </div>
     </div>
-    <h3 class="text-center uppercase font-bold text-3xl pb-10">LỊCH SỬ HÌNH THÀNH</h3>
-</div>
-
-<!--About me-->
-<div class="my-10 flex gap-8 mx-4">
-    <div data-aos-duration="1000" data-aos="fade-right" class="py-6">
-        <img class="rounded-lg" src="https://songda11.com.vn/wp-content/uploads/anh-lich-su-hinh-thanh.jpg" alt="">
-    </div>
-    <div class="flex-1" data-aos-duration="1000" data-aos="fade-left">
-        <p class="my-4">
-            Công ty TNHH MTV Sông Đà 11 Thăng Long (SELCO SONG DA) là đơn vị thành viên của Tổng công ty Sông Đà, đã tham
-            gia thi công xây lăp nhiều dự án quan trọng của đất nước về thủy điện, hệ thống đường dây truyền tải điện cao
-            thế, hệ thống cấp thoát nước trong các khu đô thị và công nghiệp…
-        </p>
-        <p class="my-4">
-            Thực hiện chủ trương sắp xếp đổi mới doanh nghiệp, trên cơ sở chức năng nhiệm vụ, lực lượng cán bộ công nhân
-            viên, tài sản tiền vốn và trang thiết bị thi công của Xí nghiệp Sông Đà 11.2 và Xí nghiệp Sông Đà 11.5 thuộc
-            Công ty cổ phần Sông Đà 11. Công ty chính thức thành lập ngày 04 tháng 07 năm 2008 với chuyên ngành xây lắp
-            đường dây truyền tải điện và trạm biến áp có cấp điện áp đến 500kV, thi công lắp đặt hệ hống cơ điện, cấp thoát
-            nước trong các tòa nhà cao tầng, khu đô thị, khu công nghiệp và nước sạch nông thôn, đầu tư các dự
-            án thủy điện, dự án khu công nghiệp, đô thị mới.
-        </p>
-        <p class="my-4">
-            Trong những năm vừa qua (2008 – 2013) cùng với sự nỗ lực của tập thể CBCNV đơn vị đã hoàn thành xuất sắc nhiệm
-            vụ SXKD với tổng giá trị sản lượng đạt 1.600 tỷ đồng, lợi nhuận đạt 61 tỷ đồng. Kế hoạch đến năm 2015 và định
-            hướng đến năm 2020 của Công ty trở thành đơn vị chủ lực của Tổng công ty Sông Đà trong lĩnh vực đầu tư phát
-            triển nguồn điện, đầu tư đô thị và hạ tầng công nghiệp đồng thời không ngừng khẳng định vị thế là nhà thầu EPC
-            mạnh trong kĩnh vực xây lắp các công trình điện nước.
-        </p>
-    </div>
-</div>
+</main>
 
 <!--Footer-->
 <div class="bg-primary-500">
