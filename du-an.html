@@ -23,12 +23,50 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="./libs/fontawesome/js/all.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'SVN Gilroy';
+            src: url(./fonts/SVN-Gilroy-Regular.otf);
+        }
+        @font-face {
+            font-family: 'SVN Gilroy';
+            src: url(./fonts/SVN-Gilroy-Medium.otf);
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'SVN Gilroy';
+            font-weight: 700 1000;
+            src: url(./fonts/SVN-Gilroy-Bold.otf);
+        }
+
+        @font-face {
+            font-family: 'SVN Medium';
+            src: url(./fonts/SVN-Gilroy-Medium.otf);
+        }
+
+        @font-face {
+            font-family: 'SVN Bold';
+            src: url(./fonts/SVN-Gilroy-Bold.otf);
+        }
+    </style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'sans': ["Open Sans", "serif"],
+                        'svn': ["SVN Gilroy", 'sans-serif', "serif"],
+                        'svn-medium': ['SVN Medium', 'sans-serif', 'serif'],
+                        'svn-bold': ['SVN Bold', 'sans-serif', 'serif'],
+                    },
+                    fontSize: {
+                        sm: '90%',
+                        base: '1rem',
+                        lg: '110%',
+                        xl: '1.25rem',
+                        '2xl': '1.7rem',
+                        // '3xl': '1.953rem',
+                        // '4xl': '2.441rem',
+                        // '5xl': '3.052rem',
                     },
                     colors: {
                         primary: {
@@ -50,7 +88,7 @@
         }
     </script>
 </head>
-<body>
+<body class="text-base font-svn">
 <!--Header menu-->
 <header x-data="{openMobile: false}"
         class="bg-gray-100 shadow transition-all duration-300 sticky w-full top-0 z-40 menu_header">
@@ -285,31 +323,41 @@
 <main>
     <div class="max-w-screen-2xl mx-auto px-4 mb-10">
         <div>
-            <h1 class="text-2xl font-semibold uppercase mb-4">Tin tức sự kiện</h1>
+            <h1 class="text-2xl font-svn-medium font-bold uppercase mb-4">Tin tức sự kiện</h1>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8" x-data>
             <template x-for="item in [1,2,3,4,5,6,7,8,9]">
-            <div class="shadow overflow-hidden hover:shadow-xl duration-300">
-                <div class="relative overflow-hidden group aspect-[4/3]">
-                    <a title="Tiếng Hoa Cho Trẻ Em3: Bắt Đầu Từ Khi Nào Là Tốt Nhất?"
-                       href="./tin-tuc-chi-tiet.html">
-                        <img class="w-full lozad m-0 lg:group-hover:scale-110 transition-all duration-500 safelyLoadImage"
-                             alt="Tiếng Hoa Cho Trẻ Em3: Bắt Đầu Từ Khi Nào Là Tốt Nhất?"
+                <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="aspect-[4/3] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
+                        <img class="object-cover absolute top-0 right-0 h-full"
                              src="https://songda11.com.vn/wp-content/uploads/img5805-1719119298915929670737-171912599464240319999.webp"
-                             data-loaded="true">
-                    </a>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-base lg:text-xl line-clamp-2 font-semibold !mt-0">
-                        <a href="./tin-tuc-chi-tiet.html" class="hover:text-primary-500 line-clamp-2">
-                            Thủ tướng: Ra nước ngoài, lục từng container để đưa thiết bị về làm đường dây 500kV
-                        </a>
-                    </h3>
-                    <div class="text-sm lg:text-base line-clamp-3 md:line-clamp-3 my-2 py-0 text-black/60 font-light">
-                        Thủ tướng yêu cầu mở đợt thi đua cao điểm đặc biệt, “nước rút”, “thần tốc” để phấn đấu cơ bản dựng cột kéo dây xong đường dây 500kV trong tháng 6 và hoàn thành công trình vào tháng 7
+                             alt="thi công trạm biến áp">
+                        <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 duration-300 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
+                        </div>
+                        <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
+                            <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                <span class="text-xl lg:text-xl text-white uppercase font-medium">
+                                     Dự án: ĐZ 220/110kV Cầu Bông - Bình Tân
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </a>
+
+<!--                <div class="shadow overflow-hidden hover:shadow-xl duration-300">-->
+<!--                    <div class="relative overflow-hidden group aspect-[4/3]">-->
+<!--                        <a title="Tiếng Hoa Cho Trẻ Em3: Bắt Đầu Từ Khi Nào Là Tốt Nhất?"-->
+<!--                           href="./tin-tuc-chi-tiet.html">-->
+<!--                            <img class="w-full lozad m-0 lg:group-hover:scale-110 transition-all duration-500 safelyLoadImage"-->
+<!--                                 alt="Tiếng Hoa Cho Trẻ Em3: Bắt Đầu Từ Khi Nào Là Tốt Nhất?"-->
+<!--                                 src="https://songda11.com.vn/wp-content/uploads/img5805-1719119298915929670737-171912599464240319999.webp"-->
+<!--                                 data-loaded="true">-->
+<!--                        </a>-->
+<!--                        <h3>-->
+<!--                            Dự án: ĐZ 220/110kV Cầu Bông - Bình Tân-->
+<!--                        </h3>-->
+<!--                    </div>-->
+<!--                </div>-->
             </template>
         </div>
     </div>
@@ -323,14 +371,16 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div class="col-span-1 md:col-span-2">
-                <h3 class="text-xl font-medium uppercase">CÔNG TY DooTech</h3>
-                <p>số 9 ngách 2 ngõ 599 P.Văn Quán, Q. Hà Đông</p>
-                <p>Hotline: 0988 888 888</p>
-                <p>Email: vuquangthieu1307@gmail.com</p>
+                <h3 class="text-lg font-svn-medium font-bold uppercase">CÔNG TY DooTech</h3>
+                <div class="text-sm">
+                    <p>số 9 ngách 2 ngõ 599 P.Văn Quán, Q. Hà Đông</p>
+                    <p>Hotline: 0988 888 888</p>
+                    <p>Email: vuquangthieu1307@gmail.com</p>
+                </div>
             </div>
             <div>
-                <h3 class="text-xl font-medium uppercase">About us</h3>
-                <ul class="text-gray-300">
+                <h3 class="text-lg font-svn-medium font-bold uppercase">About us</h3>
+                <ul class="text-gray-300 text-sm">
                     <li class="py-1 hover:text-white">
                         <a href="#">Introduction</a>
                     </li>
@@ -346,8 +396,8 @@
                 </ul>
             </div>
             <div>
-                <h3 class="text-xl font-medium uppercase">Shareholder</h3>
-                <ul class="text-gray-300">
+                <h3 class="text-lg font-svn-medium font-bold uppercase">Shareholder</h3>
+                <ul class="text-gray-300 text-sm">
                     <li class="py-1 hover:text-white">
                         <a href="#">Information Disclosure</a>
                     </li>
