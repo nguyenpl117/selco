@@ -60,6 +60,33 @@
         resizeHomeObserver.observe(homeElm);
     }
 
+    if (document.querySelector('.product-slider')) {
+        new Flickity( '.product-slider', {
+            cellAlign: 'center',
+            wrapAround: true,
+            autoPlay: false,
+            prevNextButtons: true,
+            adaptiveHeight: true,
+            imagesLoaded: true,
+            lazyLoad: 1,
+            dragThreshold: 15,
+            pageDots: false,
+            rightToLeft: false,
+            fullscreen: true
+        });
+        new Flickity('.product-thumbnail', {
+            cellAlign: 'center',
+            wrapAround: false,
+            autoPlay: false,
+            prevNextButtons: false,
+            asNavFor: '.product-slider',
+            percentPosition: true,
+            imagesLoaded: true,
+            pageDots: false,
+            rightToLeft: false,
+            contain: true,
+        });
+    }
 
     const divElm = document.querySelector('.partners');
     if (divElm) {
