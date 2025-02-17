@@ -9,7 +9,7 @@
     <main>
         <div class="max-w-screen-2xl mx-auto px-4 mb-10">
             <div>
-                <h1 class="text-2xl font-semibold uppercase mb-4">Tin tức sự kiện</h1>
+                <h1 class="post_cat_title uppercase">Tin tức sự kiện</h1>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8" x-data>
                 <template x-for="item in [1,2,3,4,5,6,7,8,9]">
@@ -24,12 +24,12 @@
                             </a>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-base lg:text-xl line-clamp-2 font-semibold !mt-0">
+                            <h3 class="text-base lg:text-lg line-clamp-2 font-semibold !mt-0">
                                 <a href="./tin-tuc-chi-tiet.html" class="hover:text-primary-500 line-clamp-2">
                                     Thủ tướng: Ra nước ngoài, lục từng container để đưa thiết bị về làm đường dây 500kV
                                 </a>
                             </h3>
-                            <div class="text-sm lg:text-base line-clamp-3 md:line-clamp-3 my-2 py-0 text-black/60 font-light">
+                            <div class="text-sm line-clamp-3 md:line-clamp-3 my-2 py-0 text-black/60">
                                 Thủ tướng yêu cầu mở đợt thi đua cao điểm đặc biệt, “nước rút”, “thần tốc” để phấn đấu cơ bản dựng cột kéo dây xong đường dây 500kV trong tháng 6 và hoàn thành công trình vào tháng 7
                             </div>
                         </div>

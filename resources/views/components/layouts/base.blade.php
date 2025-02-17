@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -17,40 +16,14 @@
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
-    <link rel="stylesheet" href="./libs/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="./libs/swiper/css/swiper.css">
-    <link rel="stylesheet" href="./libs/swiper/css/swiper-custom.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./libs/fontawesome/js/all.min.js"></script>
+    <link rel="stylesheet" href="/libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/libs/swiper/css/swiper.css">
+    <link rel="stylesheet" href="/libs/swiper/css/swiper-custom.css">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script src="/libs/fontawesome/js/all.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ["Open Sans", "serif"],
-                    },
-                    colors: {
-                        primary: {
-                            '50': '#cce5ff',
-                            '100': '#9acafe',
-                            '200': '#67b0fe',
-                            '300': '#3496fe',
-                            '400': '#0163cb',
-                            '500': '#0156b2',
-                            '600': '#014a98',
-                            '700': '#01458e',
-                            '800': '#013e7f',
-                            '900': '#013165',
-                            '950': '#00254c'
-                        },
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="font-sans" x-data>
+<body class="font-svn" x-data>
 <x-menu/>
 {{ $slot }}
 <x-footer/>

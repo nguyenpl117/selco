@@ -127,6 +127,9 @@
     }
 
     document.addEventListener('scroll', function (e) {
+        if (!document.querySelector('.menu_header')) {
+            return;
+        }
         if (e.currentTarget.scrollingElement.scrollTop > 50) {
             document.querySelector('.menu_header').classList.remove('bg-gray-100/50');
             document.querySelector('.menu_header').classList.add('bg-white');

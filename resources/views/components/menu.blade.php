@@ -2,14 +2,14 @@
         @if(isset($fixedMenu))
             class="bg-gray-100/50 shadow transition-all duration-300 fixed w-full top-0 z-40 menu_header"
         @else
-            class="bg-gray-100 shadow transition-all duration-300 sticky w-full top-0 z-40 menu_header"
+            class="bg-gray-100 shadow transition-all duration-300 sticky w-full top-0 z-40"
         @endif
 >
     <div class="mx-auto max-w-screen-2xl px-4">
         <div class="flex justify-between space-x-6 items-center py-2 lg:py-0">
             <div class="items-center flex">
                 <h1 title="Laravel">
-                    <a href="./index.html" data-pjax-state="">
+                    <a href="/" data-pjax-state="">
                         <img class="h-16 w-16 logo-header safelyLoadImage" width="48" height="48" alt="Laravel"
                              onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
                              src="./images/logo5.png">
@@ -22,7 +22,7 @@
                 <ul class="lg:flex flex-wrap menu" lv="1">
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="./index.html" data-pjax-state="">Trang Chủ</a>
+                           href="/" data-pjax-state="">Trang Chủ</a>
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
