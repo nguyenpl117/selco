@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tin tức</title>
+    <title>Quan hệ cổ đông</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,13 +23,51 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="./libs/fontawesome/js/all.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'SVN Gilroy';
+            src: url(./fonts/SVN-Gilroy-Regular.otf);
+        }
+        @font-face {
+            font-family: 'SVN Gilroy';
+            src: url(./fonts/SVN-Gilroy-Medium.otf);
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'SVN Gilroy';
+            font-weight: 700 1000;
+            src: url(./fonts/SVN-Gilroy-Bold.otf);
+        }
+
+        @font-face {
+            font-family: 'SVN Medium';
+            src: url(./fonts/SVN-Gilroy-Medium.otf);
+        }
+
+        @font-face {
+            font-family: 'SVN Bold';
+            src: url(./fonts/SVN-Gilroy-Bold.otf);
+        }
+    </style>
     <script>
         tailwind.config = {
             darkMode: ['selector', '[data-theme="dark"]'],
             theme: {
                 extend: {
                     fontFamily: {
-                        'sans': ["Open Sans", "serif"],
+                        'svn': ["SVN Gilroy", 'sans-serif', "serif"],
+                        'svn-medium': ['SVN Medium', 'sans-serif', 'serif'],
+                        'svn-bold': ['SVN Bold', 'sans-serif', 'serif'],
+                    },
+                    fontSize: {
+                        sm: '90%',
+                        base: '1rem',
+                        lg: '110%',
+                        xl: '1.25rem',
+                        '2xl': '1.7rem',
+                        // '3xl': '1.953rem',
+                        // '4xl': '2.441rem',
+                        // '5xl': '3.052rem',
                     },
                     colors: {
                         primary: {
@@ -50,8 +88,144 @@
             }
         }
     </script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+
+    <script type="module">
+        // If absolute URL from the remote server is provided, configure the CORS
+        // header on that server.
+        // var url = './100NQHDQT.pdf';
+        var url = 'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf';
+
+        // Loaded via <script> tag, create shortcut to access PDF.js exports.
+        var {pdfjsLib} = globalThis;
+
+        // The workerSrc property shall be specified.
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.mjs';
+
+        document.querySelectorAll('.pdf-viewer')
+            .forEach(function (e) {
+                renderPreviewPDF(e);
+            });
+
+        function renderPreviewPDF(element) {
+            var pdfDoc         = null,
+                pageNum        = 1,
+                pageRendering  = false,
+                pageNumPending = null,
+                canvas         = element.querySelector('.pdf-the-canvas'),
+                ctx            = canvas.getContext('2d'),
+                url            = element.getAttribute('data-url');
+            let desiredWidth = element.parentElement.getBoundingClientRect().width - 40;
+            let t = null;
+
+            const observer = new ResizeObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.contentRect.width !== desiredWidth) {
+                        if (t) {
+                            clearTimeout(t);
+                        }
+                        t = setTimeout(() => {
+                            desiredWidth = entry.contentRect.width;
+                            renderPage(pageNum);
+                        }, 50);
+                        // desiredWidth = entry.contentRect.width;
+                        // renderPage(pageNum);
+                    }
+                });
+            });
+            observer.observe(element.parentElement);
+
+            /**
+             * Get page info from document, resize canvas accordingly, and render page.
+             * @param num Page number.
+             */
+            function renderPage(num) {
+                pageRendering = true;
+                // Using promise to fetch the page
+                pdfDoc.getPage(num).then(function (page) {
+                    const scaledViewport = page.getViewport({scale: 1,});
+                    const scale = desiredWidth / scaledViewport.width;
+                    const viewport = page.getViewport({scale: scale});
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    // Render PDF page into canvas context
+                    var renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport
+                    };
+                    var renderTask = page.render(renderContext);
+
+                    // Wait for rendering to finish
+                    renderTask.promise.then(function () {
+                        pageRendering = false;
+                        if (pageNumPending !== null) {
+                            // New page rendering is pending
+                            renderPage(pageNumPending);
+                            pageNumPending = null;
+                        }
+                    });
+                });
+
+                // Update page counters
+                element.querySelector('.pdf-page_num').textContent = num;
+
+                element.querySelector('.pdf-prev').disabled = pageNum === 1;
+                element.querySelector('.pdf-next').disabled = pageNum === pdfDoc.numPages;
+            }
+
+            /**
+             * If another page rendering in progress, waits until the rendering is
+             * finised. Otherwise, executes rendering immediately.
+             */
+            function queueRenderPage(num) {
+                if (pageRendering) {
+                    pageNumPending = num;
+                } else {
+                    renderPage(num);
+                }
+            }
+
+            /**
+             * Displays previous page.
+             */
+            function onPrevPage() {
+                if (pageNum <= 1) {
+                    return;
+                }
+                pageNum--;
+                queueRenderPage(pageNum);
+            }
+
+            element.querySelector('.pdf-prev').addEventListener('click', onPrevPage);
+
+            /**
+             * Displays next page.
+             */
+            function onNextPage() {
+                if (pageNum >= pdfDoc.numPages) {
+                    return;
+                }
+                pageNum++;
+                queueRenderPage(pageNum);
+            }
+
+            element.querySelector('.pdf-next').addEventListener('click', onNextPage);
+
+            /**
+             * Asynchronously downloads PDF.
+             */
+            pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+                pdfDoc = pdfDoc_;
+                element.querySelector('.pdf-page_count').textContent = pdfDoc.numPages;
+
+                // Initial/first page rendering
+                renderPage(pageNum);
+            });
+        }
+    </script>
 </head>
-<body>
+<body class="text-base font-svn">
 <!--Header menu-->
 <header x-data="{openMobile: false}"
         class="bg-gray-100 shadow transition-all duration-300 sticky w-full top-0 z-40 menu_header">
@@ -128,6 +302,10 @@
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
                            href="./du-an.html">Các dự án</a>
+                    </li>
+                    <li class="relative group group/lv1">
+                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                           href="./quan-he-co-dong.html">Quan hệ cổ đông</a>
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
@@ -282,93 +460,92 @@
         tức</a>
     </p>
 </div>
-
 <main>
     <div class="max-w-screen-2xl mx-auto px-4 mb-10">
-        <div>
-            <h1 class="text-2xl font-semibold uppercase mb-4">Tin tức sự kiện</h1>
+        <div class="relative">
+            <div class="image-cover" style="padding-top: 45%">
+                <img class="w-full lozad m-0 lg:group-hover:scale-110 transition-all duration-500 safelyLoadImage"
+                     alt="Ra nước ngoài, lục từng container để đưa thiết bị về làm đường dây 500kV"
+                     width="1920"
+                     height="1080"
+                     src="https://songda11.com.vn/wp-content/uploads/dji-0921-2910.jpg">
+            </div>
+            <div class="h-[120px]"></div>
+            <div class="bg-gray-300 h-[200px] w-2/3 absolute z-10 bottom-0">
+            </div>
+            <div class="bg-white w-10/12 lg:w-5/12 max-w-full absolute z-10 md:left-[100px] rounded p-7 bottom-[40px] right-3">
+                <a href="#" class="text-primary-500 hover:text-black">Quan hệ cổ đông</a>,
+                <a href="#" class="text-primary-500 hover:text-black">Công bố thông tin</a>
+                <h1 class="text-3xl">Báo cáo kết quả GDCP có bảo đảm của người nội bộ và người liên quan của người nội bộ – Ông Nguyễn Văn Sơn</h1>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" x-data>
-            <template x-for="item in [1,2,3,4,5,6,7,8,9]">
-            <div class="shadow overflow-hidden hover:shadow-xl duration-300">
-                <div class="relative overflow-hidden group image-cover" style="padding-top: 56.25%">
-                    <a title="Tiếng Hoa Cho Trẻ Em3: Bắt Đầu Từ Khi Nào Là Tốt Nhất?"
-                       href="./tin-tuc-chi-tiet.html">
-                        <img class="w-full lozad m-0 lg:group-hover:scale-110 transition-all duration-500 safelyLoadImage"
-                             alt="Tiếng Hoa Cho Trẻ Em3: Bắt Đầu Từ Khi Nào Là Tốt Nhất?"
-                             src="https://songda11.com.vn/wp-content/uploads/img5805-1719119298915929670737-171912599464240319999.webp"
-                             data-loaded="true">
-                    </a>
-                </div>
-                <div class="p-4">
-                    <h3 class="text-base lg:text-xl line-clamp-2 font-semibold !mt-0">
-                        <a href="./tin-tuc-chi-tiet.html" class="hover:text-primary-500 line-clamp-2">
-                            Thủ tướng: Ra nước ngoài, lục từng container để đưa thiết bị về làm đường dây 500kV
-                        </a>
-                    </h3>
-                    <div class="text-sm lg:text-base line-clamp-3 md:line-clamp-3 my-2 py-0 text-black/60 font-light">
-                        Thủ tướng yêu cầu mở đợt thi đua cao điểm đặc biệt, “nước rút”, “thần tốc” để phấn đấu cơ bản dựng cột kéo dây xong đường dây 500kV trong tháng 6 và hoàn thành công trình vào tháng 7
+
+        <div class="grid grid-cols-12 gap-4 mt-8">
+            <div class="col-span-12 lg:col-span-9">
+                <div class="shadow p-5 *:my-6">
+                    <div class="pdf-viewer" data-url="./example.pdf">
+                        <canvas class="pdf-the-canvas"></canvas>
+                        <div class="p-2 bg-[gray]">
+                            <button type="button"
+                                    class="pdf-prev border border-gray-700 bg-black bg-opacity-20 text-white
+                                     disabled:opacity-50
+                                     rounded px-2 py-1">
+                                Previous
+                            </button>
+                            <button type="button"
+                                    class="pdf-next border border-gray-700 bg-black bg-opacity-20 text-white
+                                     disabled:opacity-50
+                                     rounded px-2 py-1">
+                                Next
+                            </button>
+                            &nbsp; &nbsp;
+                            <span class="text-gray-200">Page: <span class="pdf-page_num"></span> / <span class="pdf-page_count"></span></span>
+                        </div>
                     </div>
                 </div>
             </div>
-            </template>
-        </div>
-        <div class="flex flex-col items-center justify-center my-4">
-            <nav aria-label="Page navigation example">
-                <ul class="flex items-center -space-x-px h-8 text-sm">
-                    <li>
-                        <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                            <span class="sr-only">Previous</span>
-                            <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-3 h-8 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                            <span class="sr-only">Next</span>
-                            <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="col-span-12 lg:col-span-3">
+                <div>
+                    <h4 class="text-2xl mb-3 uppercase">Danh mục bài viết</h4>
+                    <ul class="bg-gray-200/50 ml-5 *:px-3 *:border-b last:*:border-0 hover:*:text-primary-500">
+                        <li>
+                            <a href="#" class="py-1.5 inline-block ">Báo cáo tài chính</a>
+                        </li>
+                        <li>
+                            <a href="#" class="py-1.5 inline-block ">Tin tức</a>
+                        </li>
+                        <li>
+                            <a href="#" class="py-1.5 inline-block ">Tin tức sự kiện</a>
+                        </li>
+                        <li>
+                            <a href="#" class="py-1.5 inline-block ">Tin tuyển dụng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </main>
 
+
 <!--Footer-->
 <div class="bg-primary-500">
     <div class="max-w-screen-2xl mx-auto text-white px-4 py-6">
-        <div class="py-2">
+        <div class="mb-4">
             <img class="bg-white rounded" width="150" src="./images/logo5.png" alt="logo">
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div class="col-span-1 md:col-span-2">
-                <h3 class="text-xl font-medium uppercase">CÔNG TY DooTech</h3>
-                <p>số 9 ngách 2 ngõ 599 P.Văn Quán, Q. Hà Đông</p>
-                <p>Hotline: 0988 888 888</p>
-                <p>Email: vuquangthieu1307@gmail.com</p>
+                <h3 class="text-lg font-svn-medium font-bold uppercase mb-1.5">Công Ty TNHH MTV Sông Đà 11 Thăng Long</h3>
+                <div class="text-sm *:mb-1.5">
+                    <p>BT03 - VT24 - KĐT mới Xa La - Phường Phúc La - Quận Hà Đông - TP. Hà Nội</p>
+                    <p>Hotline: (024) 8588 7666, (024) 33554511</p>
+                    <p>Email: songda11thanglong@gmail.com</p>
+                </div>
             </div>
             <div>
-                <h3 class="text-xl font-medium uppercase">About us</h3>
-                <ul class="text-gray-300">
+                <h3 class="text-lg font-svn-medium font-bold uppercase">About us</h3>
+                <ul class="text-gray-300 text-sm">
                     <li class="py-1 hover:text-white">
                         <a href="#">Introduction</a>
                     </li>
@@ -384,8 +561,8 @@
                 </ul>
             </div>
             <div>
-                <h3 class="text-xl font-medium uppercase">Shareholder</h3>
-                <ul class="text-gray-300">
+                <h3 class="text-lg font-svn-medium font-bold uppercase">Shareholder</h3>
+                <ul class="text-gray-300 text-sm">
                     <li class="py-1 hover:text-white">
                         <a href="#">Information Disclosure</a>
                     </li>
@@ -397,10 +574,8 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </div>
-
 </div>
 
 <!--Copyright-->
