@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quan hệ cổ đông</title>
+    <title>Tin tuyển dụng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,142 +86,6 @@
                     }
                 }
             }
-        }
-    </script>
-    <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
-
-    <script type="module">
-        // If absolute URL from the remote server is provided, configure the CORS
-        // header on that server.
-        // var url = './100NQHDQT.pdf';
-        var url = 'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf';
-
-        // Loaded via <script> tag, create shortcut to access PDF.js exports.
-        var {pdfjsLib} = globalThis;
-
-        // The workerSrc property shall be specified.
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.mjs';
-
-        document.querySelectorAll('.pdf-viewer')
-            .forEach(function (e) {
-                renderPreviewPDF(e);
-            });
-
-        function renderPreviewPDF(element) {
-            var pdfDoc         = null,
-                pageNum        = 1,
-                pageRendering  = false,
-                pageNumPending = null,
-                canvas         = element.querySelector('.pdf-the-canvas'),
-                ctx            = canvas.getContext('2d'),
-                url            = element.getAttribute('data-url');
-            let desiredWidth = element.parentElement.getBoundingClientRect().width - 40;
-            let t = null;
-
-            const observer = new ResizeObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.contentRect.width !== desiredWidth) {
-                        if (t) {
-                            clearTimeout(t);
-                        }
-                        t = setTimeout(() => {
-                            desiredWidth = entry.contentRect.width;
-                            renderPage(pageNum);
-                        }, 50);
-                        // desiredWidth = entry.contentRect.width;
-                        // renderPage(pageNum);
-                    }
-                });
-            });
-            observer.observe(element.parentElement);
-
-            /**
-             * Get page info from document, resize canvas accordingly, and render page.
-             * @param num Page number.
-             */
-            function renderPage(num) {
-                pageRendering = true;
-                // Using promise to fetch the page
-                pdfDoc.getPage(num).then(function (page) {
-                    const scaledViewport = page.getViewport({scale: 1,});
-                    const scale = desiredWidth / scaledViewport.width;
-                    const viewport = page.getViewport({scale: scale});
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-
-                    // Render PDF page into canvas context
-                    var renderContext = {
-                        canvasContext: ctx,
-                        viewport: viewport
-                    };
-                    var renderTask = page.render(renderContext);
-
-                    // Wait for rendering to finish
-                    renderTask.promise.then(function () {
-                        pageRendering = false;
-                        if (pageNumPending !== null) {
-                            // New page rendering is pending
-                            renderPage(pageNumPending);
-                            pageNumPending = null;
-                        }
-                    });
-                });
-
-                // Update page counters
-                element.querySelector('.pdf-page_num').textContent = num;
-
-                element.querySelector('.pdf-prev').disabled = pageNum === 1;
-                element.querySelector('.pdf-next').disabled = pageNum === pdfDoc.numPages;
-            }
-
-            /**
-             * If another page rendering in progress, waits until the rendering is
-             * finised. Otherwise, executes rendering immediately.
-             */
-            function queueRenderPage(num) {
-                if (pageRendering) {
-                    pageNumPending = num;
-                } else {
-                    renderPage(num);
-                }
-            }
-
-            /**
-             * Displays previous page.
-             */
-            function onPrevPage() {
-                if (pageNum <= 1) {
-                    return;
-                }
-                pageNum--;
-                queueRenderPage(pageNum);
-            }
-
-            element.querySelector('.pdf-prev').addEventListener('click', onPrevPage);
-
-            /**
-             * Displays next page.
-             */
-            function onNextPage() {
-                if (pageNum >= pdfDoc.numPages) {
-                    return;
-                }
-                pageNum++;
-                queueRenderPage(pageNum);
-            }
-
-            element.querySelector('.pdf-next').addEventListener('click', onNextPage);
-
-            /**
-             * Asynchronously downloads PDF.
-             */
-            pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
-                pdfDoc = pdfDoc_;
-                element.querySelector('.pdf-page_count').textContent = pdfDoc.numPages;
-
-                // Initial/first page rendering
-                renderPage(pageNum);
-            });
         }
     </script>
 </head>
@@ -460,110 +324,90 @@
         tức</a>
     </p>
 </div>
+
 <main>
     <div class="max-w-screen-2xl mx-auto px-4 mb-10">
-        <div class="relative">
-            <div class="image-cover" style="padding-top: 45%">
-                <img class="w-full lozad m-0 lg:group-hover:scale-110 transition-all duration-500 safelyLoadImage"
-                     alt="Ra nước ngoài, lục từng container để đưa thiết bị về làm đường dây 500kV"
-                     width="1920"
-                     height="1080"
-                     src="https://songda11.com.vn/wp-content/uploads/dji-0921-2910.jpg">
-            </div>
-            <div class="h-[120px]"></div>
-            <div class="bg-gray-300 h-[200px] w-2/3 absolute z-10 bottom-0">
-            </div>
-            <div class="bg-white w-10/12 lg:w-5/12 max-w-full absolute z-10 md:left-[100px] rounded p-7 bottom-[40px] right-3">
-                <a href="#" class="text-primary-500 hover:text-black">Quan hệ cổ đông</a>,
-                <a href="#" class="text-primary-500 hover:text-black">Công bố thông tin</a>
-                <h1 class="text-3xl">Báo cáo kết quả GDCP có bảo đảm của người nội bộ và người liên quan của người nội bộ – Ông Nguyễn Văn Sơn</h1>
-            </div>
+        <div>
+            <h1 class="text-2xl font-svn-medium font-bold uppercase mb-4">Quan hệ cổ đông</h1>
         </div>
-
-        <div class="grid grid-cols-12 gap-4 mt-8">
-            <div class="col-span-12 lg:col-span-9">
-                <div class="shadow p-5 *:my-6">
-                    <div class="pdf-viewer" data-url="./example.pdf">
-                        <canvas class="pdf-the-canvas"></canvas>
-                        <div class="p-2 bg-[gray]">
-                            <button type="button"
-                                    class="pdf-prev border border-gray-700 bg-black bg-opacity-20 text-white
-                                     disabled:opacity-50
-                                     rounded px-2 py-1">
-                                Previous
-                            </button>
-                            <button type="button"
-                                    class="pdf-next border border-gray-700 bg-black bg-opacity-20 text-white
-                                     disabled:opacity-50
-                                     rounded px-2 py-1">
-                                Next
-                            </button>
-                            &nbsp; &nbsp;
-                            <span class="text-gray-200">Page: <span class="pdf-page_num"></span> / <span class="pdf-page_count"></span></span>
+        <div class="grid grid-cols-1 gap-6" x-data>
+            <template x-for="item of [1,2,3]">
+                <div class="shadow hover:shadow-2xl rounded-lg duration-300 border border-gray-100 p-3">
+                    <h2 class="font-svn-medium font-bold text-[20px] mb-2.5">
+                        <a href="./tin-tuyen-dung-chi-tiet.html" class="text-primary-500 hover:text-[#222]">
+                            Tin tuyển dụng IT – T5/2024
+                        </a>
+                    </h2>
+                    <div class="h-[75px] line-clamp-3 *:mb-4">
+                        <p>Nội dung mô tả công việc</p>
+                    </div>
+                    <div class="grid grid-cols-12 gap-4">
+                        <div class="col-span-12 md:col-span-4 lg:col-span-2">
+                            <i class="fa fa-user text-red-500"></i>
+                            <strong>Vị trí: </strong>
+                            Chuyên viên IT
+                        </div>
+                        <div class="col-span-12 md:col-span-4 lg:col-span-4">
+                            <i class="fa fa-money-bill-alt text-red-500"></i>
+                            <strong>Mức lương: </strong>
+                            10.000.000vnđ/tháng
+                        </div>
+                        <div class="col-span-12 md:col-span-4 lg:col-span-4">
+                            <i class="fa fa-calendar text-red-500"></i>
+                            <strong>Thời hạn ứng tuyển: </strong>
+                            30/05/2024
+                        </div>
+                        <div class="col-span-12 md:col-span-12 lg:col-span-2">
+                            <a href="./tin-tuyen-dung-chi-tiet.html"
+                               class="bg-primary-500 hover:bg-primary-600 px-4 py-2 inline-block text-white rounded">
+                                Xem chi tiết
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-span-12 lg:col-span-3">
-                <div>
-                    <h4 class="text-2xl mb-3 uppercase">Danh mục bài viết</h4>
-                    <ul class="bg-gray-200/50 ml-5 *:px-3 *:border-b last:*:border-0 hover:*:text-primary-500">
-                        <li>
-                            <a href="#" class="py-1.5 inline-block ">Báo cáo tài chính</a>
-                        </li>
-                        <li>
-                            <a href="#" class="py-1.5 inline-block ">Tin tức</a>
-                        </li>
-                        <li>
-                            <a href="#" class="py-1.5 inline-block ">Tin tức sự kiện</a>
-                        </li>
-                        <li>
-                            <a href="#" class="py-1.5 inline-block ">Tin tuyển dụng</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            </template>
+        </div>
+
+
+        <div class="flex flex-col items-center justify-center my-4">
+            <nav aria-label="Page navigation example">
+                <ul class="flex items-center -space-x-px h-8 text-sm">
+                    <li>
+                        <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                            <span class="sr-only">Previous</span>
+                            <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-3 h-8 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                            <span class="sr-only">Next</span>
+                            <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </main>
-
-<div class="max-w-screen-2xl mx-auto px-4 mb-10">
-    <div>
-        <h4 class="font-svn-medium font-bold text-[30px] mb-4">Văn bản khác</h4>
-    </div>
-    <div x-data>
-        <table class="w-full">
-            <thead>
-            <tr class="bg-primary-600 text-white *:p-2 *:font-normal *:text-xl">
-                <th class="text-left">Tiêu đề</th>
-                <th>Ngày</th>
-                <th>Xem</th>
-            </tr>
-            </thead>
-            <tbody>
-            <template x-for="item in [1,2,3,4,5,6,7,8,9]">
-                <tr class="*:p-2 *:border">
-                    <td>
-                        <h2 class="mb-2">Báo cáo kết quả GDCP có bảo đảm của người nội bộ và người liên quan của người nội bộ – Ông Nguyễn Văn Sơn</h2>
-                    </td>
-                    <td class="text-[#666] text-sm text-center">
-                        <i class="fa-regular fa-calendar-days"></i>
-                        12/02/2025
-                    </td>
-                    <td class="text-center">
-                        <a href="./quan-he-co-dong-chi-tiet.html" class="text-primary-500 px-2" title="">
-                            <i class="fa fa-eye w-4"></i>
-                        </a>
-                        <a href="#" class="text-primary-500 px-2" target="_blank">
-                            <i class="fa fa-download w-4"></i>
-                        </a>
-                    </td>
-                </tr>
-            </template>
-            </tbody>
-        </table>
-    </div>
-</div>
 
 <!--Footer-->
 <div class="bg-primary-500">
