@@ -228,12 +228,12 @@
 <body class="text-base font-svn">
 <!--Header menu-->
 <header x-data="{openMobile: false}"
-        class="bg-gray-100/50 shadow transition-all duration-300 fixed w-full top-0 z-40 menu_header">
+        class="bg-gray-100 shadow transition-all duration-300 sticky w-full top-0 z-40 menu_header">
     <div class="mx-auto max-w-screen-2xl px-4">
         <div class="flex justify-between space-x-6 items-center py-2 lg:py-0">
             <div class="items-center flex">
                 <h1 title="Laravel">
-                    <a href="/">
+                    <a href="./index.html" data-pjax-state="">
                         <img class="h-16 w-16 logo-header safelyLoadImage" width="48" height="48" alt="Laravel"
                              onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
                              src="./images/logo5.png">
@@ -246,11 +246,11 @@
                 <ul class="lg:flex flex-wrap menu" lv="1">
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="/">Trang Chủ</a>
+                           href="./index.html" data-pjax-state="">Trang Chủ</a>
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="/">Giới thiệu</a>
+                           href="./introduce.html" data-pjax-state="">Giới thiệu</a>
                         <div class="inline-block w-1"></div>
                         <svg class="w-2.5 h-2.5 absolute top-[20px] right-1" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -280,7 +280,7 @@
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="https://qlhs.test/khoa-hoc">Lĩnh vực hoạt động</a>
+                           href="./index.html" data-pjax-state="">Lĩnh vực hoạt động</a>
                         <div class="inline-block w-1"></div>
                         <svg class="w-2.5 h-2.5 absolute top-[20px] right-1" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -291,11 +291,11 @@
                             lv="2">
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="https://qlhs.test/24523454">Xây lắp điện</a>
+                                   href="./index.html">Xây lắp điện</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="https://qlhs.test/24523454">Năng lượng</a>
+                                   href="./index.html">Năng lượng</a>
                             </li>
                         </ul>
                     </li>
@@ -307,13 +307,9 @@
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
                            href="./quan-he-co-dong.html">Quan hệ cổ đông</a>
                     </li>
-                    <!--                    <li class="relative group group/lv1">-->
-                    <!--                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"-->
-                    <!--                           href="./tin-tuc.html">Tin tức</a>-->
-                    <!--                    </li>-->
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="https://qlhs.test/khoa-hoc">Tin tức</a>
+                           href="./index.html">Tin tức</a>
                         <div class="inline-block w-1"></div>
                         <svg class="w-2.5 h-2.5 absolute top-[20px] right-1" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -334,7 +330,7 @@
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="./contact.html">Liên hệ</a>
+                           href="./contact.html" data-pjax-state="">Liên hệ</a>
                     </li>
                 </ul>
                 <!-- End Menu Main -->
@@ -389,7 +385,7 @@
                     <nav>
                         <div>
                             <a x-on:click="openMobile = !openMobile" href="/"
-                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
                                         <span class="text-sm font-medium text-gray-900 h-8 leading-8">
                                             Trang Chủ
                                         </span>
@@ -398,7 +394,7 @@
                         </div>
                         <div>
                             <a x-on:click="openMobile = !openMobile" href="/"
-                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
                                         <span class="text-sm font-medium text-gray-900 h-8 leading-8">
                                             Giới thiệu
                                         </span>
@@ -408,7 +404,7 @@
                         <div>
                             <div class="-m-3 px-3 py-2 rounded-md hover:bg-gray-50" x-data="{openNav: false}">
                                 <div class="flex items-center justify-between">
-                                    <a href="https://qlhs.test/khoa-hoc">
+                                    <a href="./index.html" data-pjax-state="">
                                                     <span class="text-sm font-medium text-gray-900">
                                                         Khóa học
                                                     </span>
@@ -427,9 +423,9 @@
                                 </div>
                                 <nav x-show="openNav" class="ml-0 my-1">
                                     <div x-data="{openSubNav: false}">
-                                        <a href="https://qlhs.test/24523454"
+                                        <a href="./index.html"
                                            class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50"
-                                        >
+                                           data-pjax-state="">
                                                             <span class="text-sm font-medium text-gray-900 h-8 leading-8">
                                                                 - 24523454
                                                             </span>
@@ -442,7 +438,7 @@
                         </div>
                         <div>
                             <a x-on:click="openMobile = !openMobile" href="/"
-                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
                                         <span class="text-sm font-medium text-gray-900 h-8 leading-8">
                                             Du học
                                         </span>
@@ -451,7 +447,7 @@
                         </div>
                         <div>
                             <a x-on:click="openMobile = !openMobile" href="./tin-tuc.html"
-                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
                                         <span class="text-sm font-medium text-gray-900 h-8 leading-8">
                                             Tin tức
                                         </span>
@@ -460,7 +456,7 @@
                         </div>
                         <div>
                             <a x-on:click="openMobile = !openMobile" href="https://qlhs.test/lien-he"
-                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
                                         <span class="text-sm font-medium text-gray-900 h-8 leading-8">
                                             Liên hệ
                                         </span>
