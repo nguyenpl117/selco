@@ -4,35 +4,15 @@
         <img src="./images/sl001.jpg" alt="" class="w-full">
     </div>
 
-    <!--Menu-->
-    <div data-aos-duration="1000" data-aos="fade-up">
-        <div class="flex justify-center items-center py-6 gap-2">
-            <a href="./introduce.html" class="rounded text-white bg-primary-500 uppercase px-6 py-2 font-medium">
-                Giới thiệu
-            </a>
-            <a href="./lichsu.html"
-               class="rounded bg-gray-100 hover:bg-primary-500 hover:text-white uppercase px-6 py-2 font-medium">
-                Lịch sử hình thành
-            </a>
-            <a href="./cocau.html"
-               class="rounded bg-gray-100 hover:bg-primary-500 hover:text-white uppercase px-6 py-2 font-medium">
-                Cơ cấu tổ chức
-            </a>
-            <a href="./thanhtich.html"
-               class="rounded bg-gray-100 hover:bg-primary-500 hover:text-white uppercase px-6 py-2 font-medium">
-                Thành tích đạt được
-            </a>
-        </div>
-        <h3 class="text-center uppercase font-bold text-3xl pb-10">Giới thiệu công ty</h3>
-    </div>
+    <x-intro-menu/>
 
     <!--About me-->
-    <div class="my-10 flex gap-4 mx-4">
+    <div class="my-10 flex flex-col lg:flex-row gap-4 mx-4">
         <div class="flex-1" data-aos-duration="1000" data-aos="fade-right">
             <!--        <img src="https://songda11.com.vn/wp-content/uploads/gioi-thieu-1.jpg" alt="">-->
             <img class="rounded-lg" src="./images/image4.jpg" alt="">
         </div>
-        <div class="flex-1" data-aos-duration="1000" data-aos="fade-left">
+        <div class="flex-1 lg:max-h-[480px] overflow-auto" data-aos-duration="1000" data-aos="fade-left">
             <h3 class="text-2xl uppercase font-medium">Công Ty TNHH MTV Sông Đà 11 Thăng Long</h3>
             <p class="my-4">Địa chỉ: BT03 - VT24 - KĐT mới Xa La - Phường Phúc La - Quận Hà Đông - TP. Hà Nội</p>
 
@@ -52,7 +32,7 @@
         </div>
     </div>
 
-    <div class="my-10 flex gap-6 mx-4">
+    <div class="my-10 flex flex-col lg:flex-row gap-6 mx-4">
         <div data-aos-duration="1000" data-aos="fade-left" class="flex-1">
             <h3 class="text-2xl uppercase font-medium">CHIẾN LƯỢC PHÁT TRIỂN VÀ ĐẦU TƯ</h3>
             <p class="my-4">
@@ -72,36 +52,17 @@
                 tư phát triển nguồn điện, đầu tư đô thị và hạ tầng công nghiệp đồng thời không ngừng khẳng định vị thế là
                 nhà thầu EPC mạnh trong kĩnh vực xây lắp các công trình điện nước.
             </p>
-            <!--        <p class="my-4">-->
-            <!--            Xây dựng và phát triển Công ty trở thành một đơn vị mạnh, lấy hiệu quả kinh tế- xã hội làm thước đo chủ yếu-->
-            <!--            cho-->
-            <!--            sự phát triển bền vững.-->
-            <!--        </p>-->
-
-            <!--        <p class="my-4">-->
-            <!--            Phát huy truyền thống của Công ty, tăng cường đoàn kết, liên tục đổi mới, thực hiện đa dạng hoá ngành nghề,-->
-            <!--            đa-->
-            <!--            dạng hoá sản phẩm.-->
-            <!--        </p>-->
-
-            <!--        <p class="my-4">-->
-            <!--            Tăng trưởng nhanh giá trị sản xuất công nghiệp, đầu tư các khu đô thị, khu công nghiệp, lấy sản phẩm sản-->
-            <!--            xuất-->
-            <!--            công nghiệp làm sản phẩm chính để đầu tư và phát triển, lĩnh vực xây lắp điện, nước cũng sẽ phát triển song-->
-            <!--            song-->
-            <!--            cùng các lĩnh vực khác.-->
-            <!--        </p>-->
         </div>
         <div data-aos-duration="1000" data-aos="fade-right" class="flex-1">
             <img class="aspect-[4/3] rounded-lg" src="./images/img-aV7Tun36iN6nOHwWQGhiuJx0.png" alt="">
         </div>
     </div>
 
-    <div class="my-10 flex gap-6 mx-4">
+    <div class="my-10 flex flex-col lg:flex-row gap-6 mx-4">
         <div data-aos-duration="1000" data-aos="fade-right" class="flex-1">
             <img class="w-full" src="https://songda11.com.vn/wp-content/uploads/gioi-thieu-3.jpg" alt="">
         </div>
-        <div data-aos-duration="1000" data-aos="fade-left" class="flex-1 max-h-[480px] overflow-auto p-4">
+        <div data-aos-duration="1000" data-aos="fade-left" class="flex-1 lg:max-h-[480px] overflow-auto p-4">
             <h3 class="text-2xl uppercase font-medium">CÁC DỰ ÁN LỚN</h3>
             <p class="my-4">
                 Với bề dày lịch sử và truyền thống lao động cần cù, sáng tạo làm nên sự phát triển mạnh mẽ qua nhiều năm Công ty
@@ -159,7 +120,6 @@
                 <li>Thời gian hoàn thành: Q.IV / 2022</li>
             </ul>
         </div>
-
     </div>
 
     <div data-aos-duration="1000" data-aos="fade-up" class="my-10 flex flex-col gap-6 mx-4 items-center">

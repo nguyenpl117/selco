@@ -39,6 +39,21 @@ Route::get('/gioi-thieu', function () {
     return view('gioi-thieu');
 });
 
+Route::get('/lich-su', function () {
+    page_title('Lịch sử');
+    return view('lich-su');
+});
+
+Route::get('/co-cau', function () {
+    page_title('Cơ cấu tổ chức');
+    return view('co-cau');
+});
+
+Route::get('/thanh-tich', function () {
+    page_title('Thành tích đạt được');
+    return view('thanh-tich');
+});
+
 Route::get('/tin-tuc', function () {
     page_title('Tin tức');
     return view('tin-tuc.list');
@@ -64,6 +79,14 @@ Route::get('/quan-he-co-dong', function () {
 Route::get('/quan-he-co-dong-chi-tiet', function () {
     page_title('Quan hệ cổ đông chi tiết');
     return view('docs.detail');
+});
+Route::get('/tin-tuyen-dung', function () {
+    page_title('Tin tuyển dụng');
+    return view('tuyen-dung.list');
+});
+Route::get('/tin-tuyen-dung-chi-tiet', function () {
+    page_title('Tin tuyển dụng chi tiết');
+    return view('tuyen-dung.detail');
 });
 
 

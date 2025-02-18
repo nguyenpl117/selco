@@ -24,7 +24,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
 </head>
-<body class="font-svn" x-data>
+<body class="font-svn overflow-x-hidden" x-data>
 <x-menu/>
 {{ $slot }}
 <x-footer/>

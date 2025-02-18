@@ -41,15 +41,15 @@
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="./lichsu.html">Lịch sử hoàn thành</a>
+                                   href="/lich-su">Lịch sử hoàn thành</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="./cocau.html">Cơ cấu tổ chức</a>
+                                   href="/co-cau">Cơ cấu tổ chức</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="./thanhtich.html">Thành tích đạt được</a>
+                                   href="/thanh-tich">Thành tích đạt được</a>
                             </li>
 
                         </ul>

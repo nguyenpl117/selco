@@ -8,7 +8,7 @@
             </h3>
         </div>
     </div>
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @foreach($items as $item)
             <div data-aos-duration="1000" data-aos="fade-up" class="border border-primary-700 p-6 rounded-lg shadow">
                 <div>
