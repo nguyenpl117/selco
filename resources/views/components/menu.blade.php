@@ -26,7 +26,7 @@
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="./introduce.html" data-pjax-state="">Giới thiệu</a>
+                           href="/gioi-thieu" data-pjax-state="">Giới thiệu</a>
                         <div class="inline-block w-1"></div>
                         <svg class="w-2.5 h-2.5 absolute top-[20px] right-1" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -37,7 +37,7 @@
                             lv="2">
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="./introduce.html">Giới thiệu chung</a>
+                                   href="/gioi-thieu">Giới thiệu chung</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
@@ -77,11 +77,11 @@
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="./du-an.html">Các dự án</a>
+                           href="/du-an">Các dự án</a>
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="./quan-he-co-dong.html">Quan hệ cổ đông</a>
+                           href="/quan-he-co-dong">Quan hệ cổ đông</a>
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
@@ -100,13 +100,13 @@
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="./tin-tuyen-dung.html">Tin tuyển dụng</a>
+                                   href="/tin-tuyen-dung">Tin tuyển dụng</a>
                             </li>
                         </ul>
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="./contact.html" data-pjax-state="">Liên hệ</a>
+                           href="/lien-he" data-pjax-state="">Liên hệ</a>
                     </li>
                 </ul>
                 <!-- End Menu Main -->

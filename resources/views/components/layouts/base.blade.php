@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="/libs/fontawesome/js/all.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
 </head>
 <body class="font-svn" x-data>
 <x-menu/>

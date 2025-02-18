@@ -2,7 +2,12 @@
 
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
+use TailwindMerge\TailwindMerge;
 
+function cnn(...$args)
+{
+    return TailwindMerge::instance()->merge(...$args);
+}
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,14 +29,45 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/lien-he', function () {
+    page_title('Liên hệ');
+    return view('lien-he');
+});
+
+Route::get('/gioi-thieu', function () {
+    page_title('Giới thiệu');
+    return view('gioi-thieu');
+});
+
 Route::get('/tin-tuc', function () {
     page_title('Tin tức');
-    return view('tin-tuc');
+    return view('tin-tuc.list');
 });
 Route::get('/tin-tuc-chi-tiet', function () {
     page_title('Tin tức chi tiết');
-    return view('tin-tuc-chi-tiet');
+    return view('tin-tuc.detail');
 });
+
+Route::get('/du-an', function () {
+    page_title('Dự án');
+    return view('du-an.list');
+});
+Route::get('/du-an-chi-tiet', function () {
+    page_title('Dự án chi tiết');
+    return view('du-an.detail');
+});
+
+Route::get('/quan-he-co-dong', function () {
+    page_title('Quan hệ cổ đông');
+    return view('docs.list');
+});
+Route::get('/quan-he-co-dong-chi-tiet', function () {
+    page_title('Quan hệ cổ đông chi tiết');
+    return view('docs.detail');
+});
+
+
+
 
 //Route::get('/{slug}', [BlogController::class, 'slug']);
 //
