@@ -7,7 +7,7 @@
 @endphp
 <!--Menu-->
 <div data-aos-duration="1000" data-aos="fade-up">
-    <div class="pb-1 px-2 my-6 gap-2 overflow-auto whitespace-nowrap">
+    <div class="pb-1 px-2 my-6 gap-2 overflow-auto whitespace-nowrap text-center">
         <a href="/gioi-thieu"
            class="{{ btn_class($active == 1) }}">
             Giới thiệu
@@ -25,5 +25,5 @@
             Thành tích đạt được
         </a>
     </div>
-    <h3 class="text-center uppercase font-bold text-3xl pb-10">LỊCH SỬ HÌNH THÀNH</h3>
+    <h3 class="text-center uppercase font-svn-medium font-bold text-[40px] leading-[52px] pb-10">LỊCH SỬ HÌNH THÀNH</h3>
 </div>

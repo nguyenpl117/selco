@@ -1389,6 +1389,9 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-\[40px\] {
+  font-size: 40px;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -1412,6 +1415,9 @@ video {
 }
 .leading-tight {
   line-height: 1.25;
+}
+.leading-\[52px\] {
+  line-height: 52px;
 }
 .text-\[\#666\] {
   --tw-text-opacity: 1;
