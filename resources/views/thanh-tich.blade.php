@@ -7,11 +7,11 @@
     <x-intro-menu active="4"/>
 
     <!--About me-->
-    <div class="my-10 flex gap-8 mx-4">
+    <div class="my-10 flex flex-col lg:flex-row gap-8 mx-4">
         <div data-aos-duration="1000" data-aos="fade-right" class="py-6">
             <img class="rounded-lg" src="https://songda11.com.vn/wp-content/uploads/thanh-tich-dat-duoc.jpg" alt="">
         </div>
-        <div class="flex-1" data-aos-duration="1000" data-aos="fade-left">
+        <div class="flex-1 pl-5" data-aos-duration="1000" data-aos="fade-left">
             <ul class="list-disc *:my-4">
                 <li>Huân chương Lao động hạng Ba (Số 215) ngày 20/01/1986.</li>
                 <li>Huân chương Lao động hạng Nhì (Số 248) năm 1989.</li>
