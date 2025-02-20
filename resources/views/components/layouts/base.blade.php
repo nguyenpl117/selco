@@ -40,6 +40,7 @@
 </script>
 <script src="./libs/swiper/js/swiper.min.js"></script>
 <script src="./libs/swiper/js/swiper-custom.js"></script>
+<script src="./js/countUp.min.js"></script>
 <script src="./js/script.js"></script>
 
 </body>

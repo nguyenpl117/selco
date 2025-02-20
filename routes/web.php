@@ -90,6 +90,30 @@ Route::get('/tin-tuyen-dung-chi-tiet', function () {
 });
 
 
+// linh vuc hoat dong
+Route::get('/thi-cong-tram-bien-ap', function () {
+    page_title('Thi công trạm biến áp');
+    return view('linh-vuc.bien-ap');
+});
+Route::get('/lap-dung-cot', function () {
+    page_title('Lắp dựng cột');
+    return view('linh-vuc.bien-ap');
+});
+Route::get('/cang-day-dan', function () {
+    page_title('Căng dây dẫn');
+    return view('linh-vuc.bien-ap');
+});
+Route::get('/keo-day', function () {
+    page_title('kéo dây');
+    return view('linh-vuc.bien-ap');
+});
+Route::get('/kinh-doanh', function () {
+    page_title('Kinh doanh Vật tư thiết bị ngành điện');
+    return view('linh-vuc.bien-ap');
+});
+
+
+
 
 
 //Route::get('/{slug}', [BlogController::class, 'slug']);

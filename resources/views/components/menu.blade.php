@@ -56,7 +56,7 @@
                     </li>
                     <li class="relative group group/lv1">
                         <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="./index.html" data-pjax-state="">Lĩnh vực hoạt động</a>
+                           href="#" data-pjax-state="">Lĩnh vực hoạt động</a>
                         <div class="inline-block w-1"></div>
                         <svg class="w-2.5 h-2.5 absolute top-[20px] right-1" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -67,11 +67,23 @@
                             lv="2">
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="./index.html">Xây lắp điện</a>
+                                   href="/thi-cong-tram-bien-ap">Thi công trạm biến áp</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="./index.html">Năng lượng</a>
+                                   href="/lap-dung-cot">Lắp dựng cột</a>
+                            </li>
+                            <li class=" relative group border-b last:border-b-0 group/lv2">
+                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                   href="/cang-day-dan">Căng dây dẫn</a>
+                            </li>
+                            <li class=" relative group border-b last:border-b-0 group/lv2">
+                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                   href="/keo-day">Kéo dây</a>
+                            </li>
+                            <li class=" relative group border-b last:border-b-0 group/lv2">
+                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                   href="/kinh-doanh">Kinh doanh</a>
                             </li>
                         </ul>
                     </li>

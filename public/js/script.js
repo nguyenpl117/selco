@@ -88,6 +88,29 @@
         });
     }
 
+    if (document.querySelector('.lv-carousel')) {
+        new Flickity('.lv-carousel', {
+            cellAlign: 'left',
+            contain: true,
+            prevNextButtons: false,
+            groupCells: 3,
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        const options = {
+            duration: 2, // Duration of the animation in seconds
+        };
+
+        document.querySelectorAll(".count-up").forEach(function (e) {
+            const countUp = new CountUp(e, e.textContent, options);
+            if (!countUp.error) {
+                countUp.start();
+            } else {
+                console.error(countUp.error);
+            }
+        });
+    });
+
     const divElm = document.querySelector('.partners');
     if (divElm) {
         const resizeObserver = new ResizeObserver((entries) => {
