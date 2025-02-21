@@ -181,20 +181,11 @@
 
                         </div>
                         <div>
-                            <a x-on:click="openMobile = !openMobile" href="/"
-                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
-                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
-                                            Giới thiệu
-                                        </span>
-                            </a>
-
-                        </div>
-                        <div>
                             <div class="-m-3 px-3 py-2 rounded-md hover:bg-gray-50" x-data="{openNav: false}">
                                 <div class="flex items-center justify-between">
-                                    <a href="./index.html" data-pjax-state="">
+                                    <a href="/gioi-thieu" data-pjax-state="">
                                                     <span class="text-sm font-medium text-gray-900">
-                                                        Khóa học
+                                                       Giới thiệu
                                                     </span>
                                     </a>
 
@@ -211,43 +202,149 @@
                                 </div>
                                 <nav x-show="openNav" class="ml-0 my-1">
                                     <div x-data="{openSubNav: false}">
-                                        <a href="./index.html"
-                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50"
-                                           data-pjax-state="">
-                                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
-                                                                - 24523454
-                                                            </span>
+                                        <a href="/gioi-thieu"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Giới thiệu chung
+                                            </span>
+                                        </a>
+                                        <a href="/lich-su"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Lịch sử hoàn thành
+                                            </span>
+                                        </a>
+                                        <a href="/co-cau"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Cơ cấu tổ chức
+                                            </span>
+                                        </a>
+                                        <a href="/thanh-tich"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Thành tích đạt được
+                                            </span>
                                         </a>
                                     </div>
-
                                 </nav>
                             </div>
-
                         </div>
                         <div>
-                            <a x-on:click="openMobile = !openMobile" href="/"
-                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
-                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
-                                            Du học
+                            <div class="-m-3 px-3 py-2 rounded-md hover:bg-gray-50" x-data="{openNav: false}">
+                                <div class="flex items-center justify-between">
+                                    <a href="#">
+                                        <span class="text-sm font-medium text-gray-900">
+                                            Lĩnh vực hoạt động
                                         </span>
+                                    </a>
+
+                                    <div x-on:click="openNav = ! openNav"
+                                         class="cursor-pointer w-16 md:w-20 h-8 text-lg flex-shrink-0 flex items-center justify-center -mr-4">
+                                        <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
+                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                             stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                  d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <nav x-show="openNav" class="ml-0 my-1">
+                                    <div x-data="{openSubNav: false}">
+                                        <a href="/thi-cong-tram-bien-ap"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Thi công trạm biến áp
+                                            </span>
+                                        </a>
+                                        <a href="/lap-dung-cot"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Lắp dựng cột
+                                            </span>
+                                        </a>
+                                        <a href="/cang-day-dan"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Căng dải dây dẫn
+                                            </span>
+                                        </a>
+                                        <a href="/keo-day"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Kéo dây
+                                            </span>
+                                        </a>
+                                        <a href="/kinh-doanh"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Kinh doanh
+                                            </span>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                        <div>
+                            <a x-on:click="openMobile = !openMobile" href="/du-an"
+                               class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
+                                <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                   Các dự án
+                                </span>
                             </a>
 
                         </div>
                         <div>
-                            <a x-on:click="openMobile = !openMobile" href="./tin-tuc.html"
+                            <a x-on:click="openMobile = !openMobile" href="./quan-he-co-dong"
                                class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
-                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                    Quan hệ cổ đông
+                                </span>
+                            </a>
+                        </div>
+                        <div>
+                            <div class="-m-3 px-3 py-2 rounded-md hover:bg-gray-50" x-data="{openNav: false}">
+                                <div class="flex items-center justify-between">
+                                    <a href="/tin-tuc">
+                                        <span class="text-sm font-medium text-gray-900">
                                             Tin tức
                                         </span>
-                            </a>
+                                    </a>
 
+                                    <div x-on:click="openNav = ! openNav"
+                                         class="cursor-pointer w-16 md:w-20 h-8 text-lg flex-shrink-0 flex items-center justify-center -mr-4">
+                                        <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
+                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                             stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                  d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <nav x-show="openNav" class="ml-0 my-1">
+                                    <div x-data="{openSubNav: false}">
+                                        <a href="/tin-tuc"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Tin tức sự kiện
+                                            </span>
+                                        </a>
+                                        <a href="/tin-tuyen-dung"
+                                           class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50">
+                                            <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                                - Tin tuyển dụng
+                                            </span>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
                         </div>
                         <div>
-                            <a x-on:click="openMobile = !openMobile" href="https://qlhs.test/lien-he"
+                            <a x-on:click="openMobile = !openMobile" href="/lien-he"
                                class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
-                                        <span class="text-sm font-medium text-gray-900 h-8 leading-8">
-                                            Liên hệ
-                                        </span>
+                                <span class="text-sm font-medium text-gray-900 h-8 leading-8">
+                                    Liên hệ
+                                </span>
                             </a>
 
                         </div>
