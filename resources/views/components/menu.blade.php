@@ -19,106 +19,112 @@
 
             <div class="hidden items-center grow lg:flex justify-end">
                 <!-- Menu Main -->
-                <ul class="lg:flex flex-wrap menu" lv="1">
+                <ul class="lg:flex flex-wrap menu uppercase text-sm" lv="1">
+{{--                    <li class="relative group group/lv1">--}}
+{{--                        <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"--}}
+{{--                           href="/" data-pjax-state="">Trang Chủ</a>--}}
+{{--                    </li>--}}
                     <li class="relative group group/lv1">
-                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
-                           href="/" data-pjax-state="">Trang Chủ</a>
-                    </li>
-                    <li class="relative group group/lv1">
-                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                        <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
                            href="/gioi-thieu" data-pjax-state="">Giới thiệu</a>
                         <div class="inline-block w-1"></div>
-                        <svg class="w-2.5 h-2.5 absolute top-[20px] right-1" aria-hidden="true"
+                        <svg class="w-2.5 h-2.5 absolute top-[17px] right-1 group-hover:text-primary-600" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
                                   d="m1 1 4 4 4-4"></path>
                         </svg>
-                        <ul class="sub-menu absolute hidden max-w-[260px] min-w-[200px] w-max py-2 rounded bg-white border z-10 group group-hover/lv1:block"
+                        <ul class="sub-menu normal-case absolute hidden max-w-[260px] min-w-[200px] w-max rounded bg-white border z-10 group group-hover/lv1:block"
                             lv="2">
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
                                    href="/gioi-thieu">Giới thiệu chung</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
                                    href="/lich-su">Lịch sử hoàn thành</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
                                    href="/co-cau">Cơ cấu tổ chức</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
                                    href="/thanh-tich">Thành tích đạt được</a>
                             </li>
 
                         </ul>
                     </li>
                     <li class="relative group group/lv1">
-                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                        <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
                            href="#" data-pjax-state="">Lĩnh vực hoạt động</a>
                         <div class="inline-block w-1"></div>
-                        <svg class="w-2.5 h-2.5 absolute top-[20px] right-1" aria-hidden="true"
+                        <svg class="w-2.5 h-2.5 absolute top-[17px] right-1 group-hover:text-primary-600" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
                                   d="m1 1 4 4 4-4"></path>
                         </svg>
-                        <ul class="sub-menu absolute hidden max-w-[260px] min-w-[200px] w-max py-2 rounded bg-white border z-10 group group-hover/lv1:block"
+                        <ul class="sub-menu normal-case absolute hidden max-w-[260px] min-w-[200px] w-max rounded bg-white border z-10 group group-hover/lv1:block"
                             lv="2">
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="/thi-cong-tram-bien-ap">Thi công trạm biến áp</a>
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
+                                   href="/xay-lap-dien">Xây lắp điện</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="/lap-dung-cot">Lắp dựng cột</a>
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
+                                   href="/nang-luong">Năng lượng</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="/cang-day-dan">Căng dây dẫn</a>
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
+                                   href="/san-xuat-cong-nghiep">Sản xuất công nghiệp</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
-                                   href="/keo-day">Kéo dây</a>
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
+                                   href="/bat-dong-san">Bất động sản</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
                                    href="/kinh-doanh">Kinh doanh</a>
                             </li>
                         </ul>
                     </li>
                     <li class="relative group group/lv1">
-                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                        <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
                            href="/du-an">Các dự án</a>
                     </li>
                     <li class="relative group group/lv1">
-                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                        <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
                            href="/quan-he-co-dong">Quan hệ cổ đông</a>
                     </li>
                     <li class="relative group group/lv1">
-                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                        <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
                            href="/tin-tuc">Tin tức</a>
                         <div class="inline-block w-1"></div>
-                        <svg class="w-2.5 h-2.5 absolute top-[20px] right-1" aria-hidden="true"
+                        <svg class="w-2.5 h-2.5 absolute top-[17px] right-1 group-hover:text-primary-600" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
                                   d="m1 1 4 4 4-4"></path>
                         </svg>
-                        <ul class="sub-menu absolute hidden max-w-[260px] min-w-[200px] w-max py-2 rounded bg-white border z-10 group group-hover/lv1:block"
+                        <ul class="sub-menu normal-case absolute hidden max-w-[260px] min-w-[200px] w-max rounded bg-white border z-10 group group-hover/lv1:block"
                             lv="2">
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
                                    href="/tin-tuc">Tin tức sự kiện</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
-                                <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-green-500 text-green-500 hover:text-green-700 p-3"
+                                <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
                                    href="/tin-tuyen-dung">Tin tuyển dụng</a>
                             </li>
                         </ul>
                     </li>
                     <li class="relative group group/lv1">
-                        <a class="text-base font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-green-700 p-3"
+                        <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
                            href="/lien-he" data-pjax-state="">Liên hệ</a>
+                    </li>
+                    <li class="relative group group/lv1 flex items-center">
+                        <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600"
+                           href="/">
+                            <div class="border border-black pt-0.5 rounded h-8 w-8 items-center justify-center flex">EN</div>
+                        </a>
                     </li>
                 </ul>
                 <!-- End Menu Main -->

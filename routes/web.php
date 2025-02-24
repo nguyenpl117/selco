@@ -24,6 +24,8 @@ function page_title($title)
     view()->share('page_title', $title);
 }
 page_title('Selco - Trang chủ');
+
+
 Route::get('/', function () {
     view()->share('fixedMenu', true);
     return view('home');
@@ -91,6 +93,23 @@ Route::get('/tin-tuyen-dung-chi-tiet', function () {
 
 
 // linh vuc hoat dong
+Route::get('/xay-lap-dien', function () {
+    page_title('Xây lắp điện');
+    return view('linh-vuc.bien-ap');
+});
+Route::get('/nang-luong', function () {
+    page_title('Năng lượng');
+    return view('linh-vuc.bien-ap');
+});
+Route::get('/san-xuat-cong-nghiep', function () {
+    page_title('Sản xuất công nghiệp');
+    return view('linh-vuc.bien-ap');
+});
+Route::get('/bat-dong-san', function () {
+    page_title('Bất động sản');
+    return view('linh-vuc.bien-ap');
+});
+
 Route::get('/thi-cong-tram-bien-ap', function () {
     page_title('Thi công trạm biến áp');
     return view('linh-vuc.bien-ap');
