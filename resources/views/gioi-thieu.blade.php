@@ -132,6 +132,6 @@
     </div>
     <div class="h-10"></div>
 
-    <x-branch title="Các đơn vị trực thuộc" :items="[1,2,3]"/>
+    <x-branch title="Các đơn vị trực thuộc" :items="[1,2,3,4,5]"/>
     <x-branch title="Các công ty góp vốn" :items="[1,2,3,4,5]"/>
 </x-layouts.base>

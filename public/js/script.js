@@ -96,6 +96,58 @@
             groupCells: 3,
         });
     }
+
+    if (document.querySelector('.branch-carousel')) {
+        // document.querySelectorAll('.branch-carousel')
+        //     .forEach(function (el) {
+        //         new Flickity(el, {
+        //             cellAlign: 'left',
+        //             contain: true,
+        //             prevNextButtons: false,
+        //             groupCells: 3,
+        //         });
+        //     })
+        const divElm = document.querySelector('.branch-all');
+        const resizeObserver = new ResizeObserver((entries) => {
+            requestAnimationFrame(() => {
+                for (const entry of entries) {
+                    const {width} = entry.contentRect;
+                    document.querySelectorAll('.branch-carousel')
+                        .forEach(function (el) {
+                            console.log({width})
+                            switch (true) {
+                                case width < 550:
+                                    new Flickity(el, {
+                                        cellAlign: 'left',
+                                        contain: true,
+                                        prevNextButtons: false,
+                                        groupCells: 1,
+                                    });
+                                    break;
+                                case width < 1024:
+                                    new Flickity(el, {
+                                        cellAlign: 'left',
+                                        contain: true,
+                                        prevNextButtons: false,
+                                        groupCells: 2,
+                                    });
+                                    break;
+                                default:
+                                    new Flickity(el, {
+                                        cellAlign: 'left',
+                                        contain: true,
+                                        prevNextButtons: false,
+                                        groupCells: 3,
+                                    });
+                                    break;
+                            }
+                        });
+                }
+            })
+        });
+        resizeObserver.observe(divElm);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         const options = {
             duration: 2, // Duration of the animation in seconds

@@ -56,7 +56,8 @@
         </div>
         <x-docs title="" :posts="[1,2,3]"/>
     </div>
-    
+
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
     <script type="module">
         // If absolute URL from the remote server is provided, configure the CORS
         // header on that server.
