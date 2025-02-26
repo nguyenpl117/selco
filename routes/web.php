@@ -67,11 +67,16 @@ Route::get('/tin-tuc-chi-tiet', function () {
 
 Route::get('/du-an', function () {
     page_title('Dự án');
-    return view('du-an.list');
+    $posts = require_once(base_path('routes/du-an.php'));
+    return view('du-an.list', compact('posts'));
 });
-Route::get('/du-an-chi-tiet', function () {
+Route::get('/du-an-chi-tiet/{slug}', function ($slug) {
     page_title('Dự án chi tiết');
-    return view('du-an.detail');
+    /** @var \Illuminate\Support\Collection $posts */
+    $posts = require_once(base_path('routes/du-an.php'));
+    $posts = $posts->splice(0, 3);
+    $post = $posts[$slug];
+    return view('du-an.detail', compact('posts', 'post'));
 });
 
 Route::get('/quan-he-co-dong', function () {

@@ -31,6 +31,12 @@
     }
 }
 @layer components {
+    .thongtinchung {
+        @apply *:py-2.5 *:border-b;
+        svg {
+            @apply w-6 text-primary-700;
+        }
+    }
     .post_cat_title {
         @apply text-2xl font-svn-medium font-bold mb-4;
     }

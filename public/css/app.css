@@ -559,6 +559,20 @@ video {
     max-width: 1536px;
   }
 }
+.thongtinchung > * {
+  border-bottom-width: 1px;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+.thongtinchung {
+        svg {
+    width: 1.5rem;
+  }
+        svg {
+    --tw-text-opacity: 1;
+    color: rgb(1 69 142 / var(--tw-text-opacity));
+  }
+    }
 .post_cat_title {
   margin-bottom: 1rem;
   font-family: SVN Medium, sans-serif, serif;

@@ -12,7 +12,7 @@
                     <a href="/" data-pjax-state="">
                         <img class="h-16 w-16 logo-header safelyLoadImage" width="48" height="48" alt="Laravel"
                              onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
-                             src="./images/logo5.png">
+                             src="/images/logo5.png">
                     </a>
                 </h1>
             </div>

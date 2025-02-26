@@ -16,11 +16,11 @@
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
-    <link rel="stylesheet" href="/libs/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="/libs/swiper/css/swiper.css">
-    <link rel="stylesheet" href="/libs/swiper/css/swiper-custom.css">
+    <link rel="stylesheet" href="{{ asset('/libs/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/libs/swiper/css/swiper.css') }}">
+    <link rel="stylesheet" href="{{ asset('/libs/swiper/css/swiper-custom.css') }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <script src="/libs/fontawesome/js/all.min.js"></script>
+    <script src="{{ asset('/libs/fontawesome/js/all.min.js') }}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
 </head>
@@ -38,10 +38,10 @@
         duration: 1000,
     });
 </script>
-<script src="./libs/swiper/js/swiper.min.js"></script>
-<script src="./libs/swiper/js/swiper-custom.js"></script>
-<script src="./js/countUp.min.js"></script>
-<script src="./js/script.js"></script>
+<script src="/libs/swiper/js/swiper.min.js"></script>
+<script src="/libs/swiper/js/swiper-custom.js"></script>
+<script src="/js/countUp.min.js"></script>
+<script src="/js/script.js"></script>
 
 </body>
 
