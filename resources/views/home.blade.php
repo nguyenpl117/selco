@@ -80,6 +80,7 @@
                         @endforeach
                     </div>
                 </div>
+{{--                commend--}}
                 <div class="px-4" data-aos="fade-up" data-aos-duration="1000">
                     <div class="main-carousel">
                         <div class="carousel-cell">
