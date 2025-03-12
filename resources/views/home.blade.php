@@ -10,10 +10,12 @@
                                  src="./images/image5.jpg"
                                  alt="image">
                             <div class="content text-white px-4 max-w-[750px] text-xl lg:text-3xl absolute top-[30%] lg:top-[50%] items-center justify-center">
-                                Công ty chính thức thành lập ngày 04 tháng 07 năm 2008 với chuyên ngành xây lắp đường dây
+                                Công ty chính thức thành lập ngày 04 tháng 07 năm 2008 với chuyên ngành xây lắp đường
+                                dây
                                 truyền tải điện và trạm biến áp có cấp điện áp đến 500kV,
                                 thi công lắp đặt hệ hống cơ điện, cấp thoát nước trong các tòa nhà cao tầng, khu đô thị,
-                                khu công nghiệp và nước sạch nông thôn, đầu tư các dự án thủy điện, dự án khu công nghiệp,
+                                khu công nghiệp và nước sạch nông thôn, đầu tư các dự án thủy điện, dự án khu công
+                                nghiệp,
                                 đô thị mới...
                             </div>
                         </div>
@@ -83,7 +85,7 @@
                         <div class="carousel-cell">
                             <a href="#" class="group block relative overflow-hidden rounded-tr-2xl rounded-bl-2xl">
                                 <img class="group-hover:scale-110 transition-all duration-500 aspect-[10/8]"
-                                     src="./images/img-aV7Tun36iN6nOHwWQGhiuJx0.png"
+                                     src="./images/thu-mua-tram-dien-gia-tot.jpg"
                                      alt="image">
                                 <div class="absolute bottom-0 text-white p-4">
                                     <h3>Toàn cảnh Trạm biến áp Sao Hỏa ngày về đích</h3>
@@ -97,7 +99,7 @@
                         <div class="carousel-cell">
                             <a href="#" class="group block relative overflow-hidden rounded-tr-2xl rounded-bl-2xl">
                                 <img class="group-hover:scale-110 transition-all duration-500 aspect-[10/8]"
-                                     src="./images/img-aV7Tun36iN6nOHwWQGhiuJx0.png" alt="image">
+                                     src="./images/tram-bien-ap-la-giphan-loai-tinh-toan-lua-chon-tram-bien-ap-01-1.jpg" alt="image">
                                 <div class="absolute bottom-0 text-white p-4">
                                     <h3>Toàn cảnh Trạm biến áp Sao Hỏa ngày về đích</h3>
                                     <div>
@@ -117,13 +119,14 @@
     <div id="scrolldown" class="mt-12">
         <div class="max-w-screen-2xl mx-auto px-4">
             <div class="flex flex-col gap-4">
-                <h2 class="text-3xl mb-6 font-medium" data-aos-duration="1000" data-aos="fade-up">Lĩnh vực hoạt động</h2>
+                <h2 class="text-3xl mb-6 font-medium" data-aos-duration="1000" data-aos="fade-up">Lĩnh vực hoạt
+                    động</h2>
 
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000">
                         <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
                             <img class="object-cover absolute top-0 right-0 h-full"
-                                 src="./images/img-nCAxjxvMofvjMUIaS0i7mVwC.png"
+                                 src="./images/tram-bien-ap-la-giphan-loai-tinh-toan-lua-chon-tram-bien-ap-01-1.jpg"
                                  alt="thi công trạm biến áp">
                             <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
                             </div>
@@ -137,7 +140,7 @@
                     <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
                         <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
                             <img class="object-cover absolute top-0 right-0 h-full"
-                                 src="./images/img-4pyso9WqUfaRJAkE2NeeiamP.png"
+                                 src="./images/Anh3Hoanthanhdongdien252024.jpg"
                                  alt="lắp dựng cột">
                             <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
                             </div>
@@ -151,7 +154,7 @@
                     <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
                             <img class="object-cover absolute top-0 right-0 h-full"
-                                 src="./images/img-RBgje3nZXKCZQzordLIf3vvd.png"
+                                 src="./images/dd500kv-1722252541611119095424.jpg"
                                  alt="Căng dải dây dẫn">
                             <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
                             </div>
@@ -165,7 +168,7 @@
                     <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
                         <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
                             <img class="object-cover absolute top-0 right-0 h-full"
-                                 src="./images/img-hEdULJ16irWgwkrsGGqYdJol.png"
+                                 src="./images/1.jpeg"
                                  alt="Kéo dây">
                             <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
                             </div>
@@ -188,8 +191,8 @@
                 <div class="px-4 flex flex-col justify-center" data-aos="zoom-in" data-aos-duration="1000">
                     <div class='wy overflow-hidden rounded-lg'>
                         <div class='youtube'>
-                            <iframe width="1269" height="714" src="https://www.youtube.com/embed/ceKUa4rexbA"
-                                    title="Sự Thật Man | Cách đơn giản nhất để không bao giờ sợ “ngã” nữa" frameborder="0"
+                            <iframe width="1067" height="600" src="https://www.youtube.com/embed/MOdtX4_bLB8"
+                                    title="Công ty Cổ Phần Sông Đà 11 - Tiếp nối những thành công" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
@@ -199,20 +202,27 @@
                     <h3 class="text-4xl font-medium mb-4" data-aos="fade-up">Công ty TNHH MTV Sông Đà 11 Thăng Long</h3>
                     <div class="text-gray-700" data-aos="fade-up">
                         Công ty TNHH MTV Sông Đà 11 Thăng Long là đơn vị thành viên của Tổng công ty Sông
-                        Đà, đã tham gia thi công xây lăp nhiều dự án quan trọng của đất nước về thủy điện, hệ thống đường
+                        Đà, đã tham gia thi công xây lăp nhiều dự án quan trọng của đất nước về thủy điện, hệ thống
+                        đường
                         dây truyền tải điện cao thế, hệ thống cấp thoát nước trong các khu đô thị và công nghiệp…
-                        Thực hiện chủ trương sắp xếp đổi mới doanh nghiệp, trên cơ sở chức năng nhiệm vụ, lực lượng cán bộ
-                        công nhân viên, tài sản tiền vốn và trang thiết bị thi công của Xí nghiệp Sông Đà 11.2 và Xí nghiệp
+                        Thực hiện chủ trương sắp xếp đổi mới doanh nghiệp, trên cơ sở chức năng nhiệm vụ, lực lượng cán
+                        bộ
+                        công nhân viên, tài sản tiền vốn và trang thiết bị thi công của Xí nghiệp Sông Đà 11.2 và Xí
+                        nghiệp
                         Sông Đà 11.5 thuộc Công ty cổ phần Sông Đà 11.
-                        Công ty chính thức thành lập ngày 04 tháng 07 năm 2008 với chuyên ngành xây lắp đường dây truyền tải
+                        Công ty chính thức thành lập ngày 04 tháng 07 năm 2008 với chuyên ngành xây lắp đường dây truyền
+                        tải
                         điện và trạm biến áp có cấp điện áp đến 500kV, thi công lắp đặt hệ hống cơ điện, cấp thoát nước
                         trong các tòa nhà cao tầng, khu đô thị, khu công nghiệp và nước sạch nông thôn,
                         đầu tư các dự án thủy điện, dự án khu công nghiệp,đô thị mới.
-                        Trong những năm vừa qua (2008 – 2013) cùng với sự nỗ lực của tập thể CBCNV đơn vị đã hoàn thành xuất
+                        Trong những năm vừa qua (2008 – 2013) cùng với sự nỗ lực của tập thể CBCNV đơn vị đã hoàn thành
+                        xuất
                         sắc nhiệm vụ SXKD với tổng giá trị sản lượng đạt 1.600 tỷ đồng, lợi nhuận đạt 61 tỷ đồng.
-                        Kế hoạch đến năm 2015 và định hướng đến năm 2020 của Công ty trở thành đơn vị chủ lực của Tổng công
+                        Kế hoạch đến năm 2015 và định hướng đến năm 2020 của Công ty trở thành đơn vị chủ lực của Tổng
+                        công
                         ty Sông Đà trong lĩnh vực đầu tư phát triển nguồn điện,
-                        đầu tư đô thị và hạ tầng công nghiệp đồng thời không ngừng khẳng định vị thế là nhà thầu EPC mạnh
+                        đầu tư đô thị và hạ tầng công nghiệp đồng thời không ngừng khẳng định vị thế là nhà thầu EPC
+                        mạnh
                         trong kĩnh vực xây lắp các công trình điện nước.
 
                     </div>
@@ -243,7 +253,8 @@
                                 </h3>
                             </div>
                             <p class="text-gray-700">
-                                Giá trị : 380 tỷ đồng Chú đầu tư: Ban quản lý các công trình điện Miền Bắc. Thời gian khới
+                                Giá trị : 380 tỷ đồng Chú đầu tư: Ban quản lý các công trình điện Miền Bắc. Thời gian
+                                khới
                                 công: 01/2024 Thời gian hoàn thành: 09/2024
                             </p>
                             <div class="py-4 ">
@@ -305,10 +316,12 @@
                          src="https://songda11.com.vn/wp-content/uploads/5443-1752.jpg" alt="image">
                 </div>
                 <div>
-                    <h3 class="text-4xl font-medium mb-4" data-aos="fade-up" data-aos-duration="1000">Quan hệ cổ đông</h3>
+                    <h3 class="text-4xl font-medium mb-4" data-aos="fade-up" data-aos-duration="1000">Quan hệ cổ
+                        đông</h3>
                     <div class="text-gray-700" data-aos="fade-up" data-aos-duration="1000">
                         Tại Selco, chúng tôi luôn hướng đến sự tăng trưởng bền vững, mang đến những giá trị cao nhất
-                        cho cổ đông và nhà đầu tư thông qua việc thiết lập các mối quan hệ lâu dài, xây dựng lòng tin, đối
+                        cho cổ đông và nhà đầu tư thông qua việc thiết lập các mối quan hệ lâu dài, xây dựng lòng tin,
+                        đối
                         xử công bằng, minh bạch, chủ động và cung cấp thông tin tới các bên liên quan. Với cam kết tăng
                         trưởng bền vững, các kết quả kinh doanh Selco đạt được đều vượt xa mong đợi từ cổ đông và nhà
                         đầu tư.
@@ -329,7 +342,8 @@
                         <div class="relative w-6 h-6 flex justify-center items-center">
                             <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>
                             <div class="absolute bg-primary-600 w-6 h-6 rounded-full text-white justify-center items-center flex">
-                                <svg class="svg-inline--fa fa-chevron-right text-xs" aria-hidden="true" focusable="false"
+                                <svg class="svg-inline--fa fa-chevron-right text-xs" aria-hidden="true"
+                                     focusable="false"
                                      data-prefix="fas" data-icon="chevron-right" role="img"
                                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
                                     <path fill="currentColor"
@@ -369,12 +383,6 @@
                             <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
                                 <img class="aspect-[5/3] object-contain"
                                      src="https://songda11.com.vn/wp-content/uploads/agribank.jpg">
-                            </div>
-                        </div>
-                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
-                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
-                                <img class="aspect-[5/3] object-contain"
-                                     src="https://songda11.com.vn/wp-content/uploads/bidv.jpg">
                             </div>
                         </div>
                         <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
