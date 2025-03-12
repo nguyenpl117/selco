@@ -11,7 +11,7 @@ class ServerAPI
 
     public function __construct()
     {
-        $this->client = new Client(['base_uri' => 'http://103.98.152.37:5010/api/']);
+        $this->client = new Client(['base_uri' => env('API_URL', 'http://103.98.152.37:5010/api/')]);
     }
 
     public function get($uri, $options = [])
