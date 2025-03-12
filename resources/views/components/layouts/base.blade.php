@@ -30,7 +30,7 @@
 <x-footer/>
 <!--Copyright-->
 <div class="py-4 px-4 text-center">
-    <p class="text-sm">Copyright 2024 © <strong>DooTech</strong></p>
+    <p class="text-sm">Copyright 2025 © <strong>DooTech</strong></p>
 </div>
 <script src="{{ asset('/libs/aos/aos.min.js') }}"></script>
 <script>
