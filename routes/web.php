@@ -19,10 +19,6 @@ function cnn(...$args)
 |
 */
 
-function page_title($title)
-{
-    view()->share('page_title', $title);
-}
 page_title('Selco - Trang chủ');
 
 
@@ -67,17 +63,24 @@ Route::get('/tin-tuc-chi-tiet', function () {
 
 Route::get('/du-an', function () {
     page_title('Dự án');
-    $posts = require_once(base_path('routes/du-an.php'));
+    $posts = serverAPI()->listProjects();
     return view('du-an.list', compact('posts'));
 });
-Route::get('/du-an-chi-tiet/{slug}', function ($slug) {
+Route::get('/du-an/{slug}-{id}', function ($slug, $id) {
     page_title('Dự án chi tiết');
-    /** @var \Illuminate\Support\Collection $posts */
-    $posts = require_once(base_path('routes/du-an.php'));
-    $posts = $posts->splice(0, 3);
-    $post = $posts[$slug];
+//    /** @var \Illuminate\Support\Collection $posts */
+//    $posts = require_once(base_path('routes/du-an.php'));
+//    $posts = $posts->splice(0, 3);
+//    $post = $posts[$slug];
+    $posts = serverAPI()->listProjects();
+    $post = serverAPI()->detailProduct($id);
     return view('du-an.detail', compact('posts', 'post'));
-});
+})
+    ->where([
+        'slug' => '[a-z0-9-]+',
+        'id' => '\d+'
+    ])
+    ->name('du-an');
 
 Route::get('/quan-he-co-dong', function () {
     page_title('Quan hệ cổ đông');
