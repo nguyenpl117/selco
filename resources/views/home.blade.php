@@ -58,7 +58,7 @@
                             </a>
                         </div>
 
-                        <template x-for="i in 4">
+                        @foreach([1,2,3,4] as $item)
                             <div data-aos="fade-up"
                                  class="rounded overflow-hidden flex justify-between items-center bg-gray-100">
                                 <div class="bg-primary-500 py-4 px-3 text-white flex flex-col items-center">
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </template>
+                        @endforeach
                     </div>
                 </div>
                 <div class="px-4" data-aos="fade-up" data-aos-duration="1000">
