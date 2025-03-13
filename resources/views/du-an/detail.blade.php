@@ -73,6 +73,6 @@
         <div>
             <h1 class="post_cat_title uppercase border-b border-dotted border-gray-900">Dự án khác</h1>
         </div>
-        <x-projects title="" :posts="$posts"/>
+        <x-projects title="" :posts="$posts" :hidden-page="true"/>
     </div>
 </x-layouts.base>

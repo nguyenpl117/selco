@@ -5,7 +5,7 @@
             <div>
                 <h1 class="post_cat_title uppercase">Quan hệ cổ đông</h1>
             </div>
-            <x-docs :posts="[1,2,3,4,5,6,7,8,9,10]"/>
+            <x-docs :posts="$posts"/>
         </div>
     </main>
 </x-layouts.base>

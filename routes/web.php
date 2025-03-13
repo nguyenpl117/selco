@@ -80,11 +80,11 @@ Route::get('/du-an', function () {
 });
 Route::get('/du-an/{slug}-{id}', function ($slug, $id) {
     page_title('Dự án chi tiết');
-//    /** @var \Illuminate\Support\Collection $posts */
-//    $posts = require_once(base_path('routes/du-an.php'));
-//    $posts = $posts->splice(0, 3);
-//    $post = $posts[$slug];
-    $posts = serverAPI()->listProjects();
+    $posts = serverAPI()->listProjects(7);
+    $posts = $posts->filter(function ($item) use($id) {
+        return $item->id != $id;
+    });
+    $posts = $posts->splice(0, 6);
     $post = serverAPI()->detailProduct($id);
     return view('du-an.detail', compact('posts', 'post'));
 })
@@ -96,12 +96,21 @@ Route::get('/du-an/{slug}-{id}', function ($slug, $id) {
 
 Route::get('/quan-he-co-dong', function () {
     page_title('Quan hệ cổ đông');
-    return view('docs.list');
-});
-Route::get('/quan-he-co-dong-chi-tiet', function () {
+    $posts = serverAPI()->listStakeHolders();
+    return view('docs.list', compact('posts'));
+})->name('docs');
+
+Route::get('/quan-he-co-dong/{slug}-{id}', function ($slug, $id) {
     page_title('Quan hệ cổ đông chi tiết');
-    return view('docs.detail');
-});
+    $posts = serverAPI()->listStakeHolders();
+    $post = serverAPI()->detailStakeHolder($id);
+    return view('docs.detail', compact('posts', 'post'));
+})->where([
+    'slug' => '[a-z0-9-]+',
+    'id' => '\d+'
+])
+    ->name('docs.show');
+
 Route::get('/tin-tuyen-dung', function () {
     page_title('Tin tuyển dụng');
     $posts = serverAPI()->listRecruitments();

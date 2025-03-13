@@ -1,4 +1,4 @@
-@props(['title' => '', 'posts' => []])
+@props(['title' => '', 'posts' => [], 'hiddenPage' => false])
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     @foreach($posts as $slug => $post)
         <a href="{{ $post->url }}" class="block group" data-aos="fade-up" data-aos-duration="1000">
@@ -19,9 +19,8 @@
         </a>
     @endforeach
 </div>
+@if(!$hiddenPage)
 <div class="py-2">
     {{ $posts->withQueryString()->links() }}
 </div>
-{{--@if(count($posts) > 6)--}}
-{{--    <x-paginate/>--}}
-{{--@endif--}}
+@endif

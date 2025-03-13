@@ -54,7 +54,7 @@
         <div>
             <h1 class="post_cat_title uppercase border-b border-dotted border-gray-900">Văn bản khác</h1>
         </div>
-        <x-docs title="" :posts="[1,2,3]"/>
+        <x-docs title="" :posts="$posts"/>
     </div>
 
     <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
