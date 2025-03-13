@@ -19,6 +19,9 @@
         </a>
     @endforeach
 </div>
-@if(count($posts) > 6)
-    <x-paginate/>
-@endif
+<div class="py-2">
+    {{ $posts->withQueryString()->links() }}
+</div>
+{{--@if(count($posts) > 6)--}}
+{{--    <x-paginate/>--}}
+{{--@endif--}}

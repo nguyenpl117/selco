@@ -15,8 +15,7 @@
                 </div>
                 <div class="bg-white w-10/12 lg:w-5/12 max-w-full absolute z-10 md:left-[100px] rounded p-7 bottom-[40px] right-3">
                     <a href="#" class="text-primary-500 hover:text-black">Tin Tuyển dụng</a>
-                    <h1 class="text-3xl">Treo mình giữa không gian thi công cột điện cao 145m kéo đường dây 500kV mạch 3
-                        vượt sông Hồng</h1>
+                    <h1 class="text-3xl">{{ $post->title }}</h1>
                 </div>
             </div>
 
@@ -27,17 +26,17 @@
                             <div class="">
                                 <i class="fa fa-user text-red-500"></i>
                                 <strong>Vị trí: </strong>
-                                Chuyên viên IT
+                                {{ $post->position }}
                             </div>
                             <div class="">
                                 <i class="fa fa-money-bill-alt text-red-500"></i>
                                 <strong>Mức lương: </strong>
-                                10.000.000vnđ/tháng
+                                {{ $post->salary }}vnđ/tháng
                             </div>
                             <div class="">
                                 <i class="fa fa-calendar text-red-500"></i>
                                 <strong>Thời hạn ứng tuyển: </strong>
-                                30/05/2024
+                                {{ $post->deadline?->format('d/m/Y') }}
                             </div>
                         </div>
                         <hr>
@@ -46,7 +45,7 @@
                                 Mô tả công việc
                             </div>
                             <div class="*:mb-4">
-                                <p>Nội dung mô tả công việc</p>
+                                {!! $post->description !!}
                             </div>
                         </div>
                     </div>
@@ -58,6 +57,6 @@
         </div>
     </main>
     <div class="max-w-screen-2xl mx-auto px-4 mb-10">
-        <x-tuyendung title="Tuyển dụng khác" :posts="[1,2,3]"/>
+        <x-tuyendung title="Tuyển dụng khác" :posts="$posts"/>
     </div>
 </x-layouts.base>

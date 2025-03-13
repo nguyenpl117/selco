@@ -6,31 +6,31 @@
     @foreach($posts as $post)
         <div class="shadow hover:shadow-2xl rounded-lg duration-300 border border-gray-100 p-3">
             <h2 class="font-svn-medium font-bold text-[20px] mb-2.5">
-                <a href="/tin-tuyen-dung-chi-tiet" class="text-primary-500 hover:text-[#222]">
-                    Tin tuyển dụng IT – T5/2024
+                <a href="{{ $post->url }}" class="text-primary-500 hover:text-[#222]">
+                    {{ $post->title }}
                 </a>
             </h2>
             <div class="h-[75px] line-clamp-3 *:mb-4">
-                <p>Nội dung mô tả công việc</p>
+                {!! $post->description !!}
             </div>
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-12 md:col-span-4 lg:col-span-2">
                     <i class="fa fa-user text-red-500"></i>
                     <strong>Vị trí: </strong>
-                    Chuyên viên IT
+                    {{ $post->position }}
                 </div>
                 <div class="col-span-12 md:col-span-4 lg:col-span-4">
                     <i class="fa fa-money-bill-alt text-red-500"></i>
                     <strong>Mức lương: </strong>
-                    10.000.000vnđ/tháng
+                    {{ $post->salary }}vnđ/tháng
                 </div>
                 <div class="col-span-12 md:col-span-4 lg:col-span-4">
                     <i class="fa fa-calendar text-red-500"></i>
                     <strong>Thời hạn ứng tuyển: </strong>
-                    30/05/2024
+                    {{ $post->deadline?->format('d/m/Y') }}
                 </div>
                 <div class="col-span-12 md:col-span-12 lg:col-span-2">
-                    <a href="/tin-tuyen-dung-chi-tiet"
+                    <a href="{{ $post->url }}"
                        class="bg-primary-500 hover:bg-primary-600 px-4 py-2 inline-block text-white rounded">
                         Xem chi tiết
                     </a>
@@ -39,6 +39,6 @@
         </div>
     @endforeach
 </div>
-@if(count($posts) > 6)
-    <x-paginate/>
-@endif
+<div class="py-2">
+    {{ $posts->withQueryString()->links() }}
+</div>

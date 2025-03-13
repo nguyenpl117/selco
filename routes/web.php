@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Route;
 use TailwindMerge\TailwindMerge;
 
@@ -8,6 +9,7 @@ function cnn(...$args)
 {
     return TailwindMerge::instance()->merge(...$args);
 }
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,7 @@ function cnn(...$args)
 */
 
 page_title('Selco - Trang chủ');
+LengthAwarePaginator::defaultView('paginate');
 
 
 Route::get('/', function () {
@@ -54,12 +57,21 @@ Route::get('/thanh-tich', function () {
 
 Route::get('/tin-tuc', function () {
     page_title('Tin tức');
-    return view('tin-tuc.list');
-});
-Route::get('/tin-tuc-chi-tiet', function () {
+    $posts = serverAPI()->listNews();
+    return view('tin-tuc.list', compact('posts'));
+})->name('news');
+
+Route::get('/tin-tuc/{slug}-{id}', function ($slug, $id) {
     page_title('Tin tức chi tiết');
-    return view('tin-tuc.detail');
-});
+    $posts = serverAPI()->listNews();
+    $post = serverAPI()->detailNew($id);
+
+    return view('tin-tuc.detail', compact('posts', 'post'));
+})->where([
+    'slug' => '[a-z0-9-]+',
+    'id' => '\d+'
+])
+    ->name('news.show');
 
 Route::get('/du-an', function () {
     page_title('Dự án');
@@ -92,12 +104,22 @@ Route::get('/quan-he-co-dong-chi-tiet', function () {
 });
 Route::get('/tin-tuyen-dung', function () {
     page_title('Tin tuyển dụng');
-    return view('tuyen-dung.list');
-});
-Route::get('/tin-tuyen-dung-chi-tiet', function () {
+    $posts = serverAPI()->listRecruitments();
+
+    return view('tuyen-dung.list', compact('posts'));
+})->name('recruitments');
+
+Route::get('/tin-tuyen-dung/{slug}-{id}', function ($slug, $id) {
     page_title('Tin tuyển dụng chi tiết');
-    return view('tuyen-dung.detail');
-});
+    $posts = serverAPI()->listRecruitments();
+    $post = serverAPI()->detailRecruitment($id);
+
+    return view('tuyen-dung.detail', compact('posts', 'post'));
+})->where([
+    'slug' => '[a-z0-9-]+',
+    'id' => '\d+'
+])
+    ->name('recruitments.show');
 
 
 // linh vuc hoat dong
