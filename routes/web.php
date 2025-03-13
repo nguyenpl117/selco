@@ -27,7 +27,11 @@ LengthAwarePaginator::defaultView('paginate');
 
 Route::get('/', function () {
     view()->share('fixedMenu', true);
-    return view('home');
+    $news = serverAPI()->listNews(4);
+    $projects = serverAPI()->listProjects(4);
+    $docs = serverAPI()->listStakeHolders(4);
+
+    return view('home', compact('news', 'projects', 'docs'));
 })->name('home');
 
 Route::get('/lien-he', function () {

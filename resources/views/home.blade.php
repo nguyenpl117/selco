@@ -49,7 +49,7 @@
                     <div class="flex flex-col gap-4">
                         <div class="flex justify-between" data-aos="fade-up">
                             <h2 class="text-3xl font-medium">Tin mới cập nhật</h2>
-                            <a href="#" class="flex gap-2 py-5 text-primary-300">
+                            <a href="{{ route('news') }}" class="flex gap-2 py-5 text-primary-300">
                                 <span>Xem tất cả</span>
                                 <div class="relative w-6 h-6 flex justify-center items-center">
                                     <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>
@@ -60,15 +60,15 @@
                             </a>
                         </div>
 
-                        @foreach([1,2,3,4] as $item)
+                        @foreach($news as $post)
                             <div data-aos="fade-up"
                                  class="rounded overflow-hidden flex justify-between items-center bg-gray-100">
                                 <div class="bg-primary-500 py-4 px-3 text-white flex flex-col items-center">
-                                    <span class="text-3xl font-medium">14</span>
-                                    <span class="text-xs">Tháng năm</span>
+                                    <span class="text-3xl font-medium">{{ $post->createdDate?->format('d') }}</span>
+                                    <span class="text-xs">Tháng {{ $post->createdDate?->format('m') }}</span>
                                 </div>
                                 <div class="flex-1 px-2">
-                                    Toàn cảnh Trạm biến áp Sao Hỏa ngày về đích
+                                    {{ $post->title }}
                                 </div>
                                 <div class="px-4">
                                     <div role="button"
@@ -80,36 +80,25 @@
                         @endforeach
                     </div>
                 </div>
-{{--                commend--}}
+                {{--                commend--}}
                 <div class="px-4" data-aos="fade-up" data-aos-duration="1000">
                     <div class="main-carousel">
-                        <div class="carousel-cell">
-                            <a href="#" class="group block relative overflow-hidden rounded-tr-2xl rounded-bl-2xl">
-                                <img class="group-hover:scale-110 transition-all duration-500 aspect-[10/8]"
-                                     src="./images/thu-mua-tram-dien-gia-tot.jpg"
-                                     alt="image">
-                                <div class="absolute bottom-0 text-white p-4">
-                                    <h3>Toàn cảnh Trạm biến áp Sao Hỏa ngày về đích</h3>
-                                    <div>
-                                        <i class="fa-solid fa-calendar"></i>
-                                        <span>14/05/2024</span>
+                        @foreach($news as $post)
+                            <div class="carousel-cell">
+                                <a href="#" class="group block relative overflow-hidden rounded-tr-2xl rounded-bl-2xl">
+                                    <img class="group-hover:scale-110 transition-all duration-500 aspect-[10/8]"
+                                         src="{{ $post->imageLink }}"
+                                         alt="{{ $post->title }}">
+                                    <div class="absolute bottom-0 text-white p-4">
+                                        <h3>{{ $post->title }}</h3>
+                                        <div>
+                                            <i class="fa-solid fa-calendar"></i>
+                                            <span>{{ $post->createdDate?->format('d/m/Y')  }}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-cell">
-                            <a href="#" class="group block relative overflow-hidden rounded-tr-2xl rounded-bl-2xl">
-                                <img class="group-hover:scale-110 transition-all duration-500 aspect-[10/8]"
-                                     src="./images/tram-bien-ap-la-giphan-loai-tinh-toan-lua-chon-tram-bien-ap-01-1.jpg" alt="image">
-                                <div class="absolute bottom-0 text-white p-4">
-                                    <h3>Toàn cảnh Trạm biến áp Sao Hỏa ngày về đích</h3>
-                                    <div>
-                                        <i class="fa-solid fa-calendar"></i>
-                                        <span>14/05/2024</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -228,7 +217,7 @@
 
                     </div>
                     <div class="py-2" data-aos="fade-up">
-                        <a href="#"
+                        <a href="/gioi-thieu"
                            class="py-2 px-4 inline-block text-primary-500 hover:bg-primary-500 hover:text-white font-medium transition-all border border-primary-500 rounded">
                             Xem thêm
                         </a>
@@ -243,67 +232,40 @@
         <div class="max-w-screen-2xl mx-auto px-4">
             <h2 class="text-4xl font-medium py-4" data-aos="fade-up">Dự án nổi bật</h2>
             <div class="project-carousel" data-aos="fade-up">
-                <div class="carousel-cell">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="order-2 md:order-1 flex flex-col justify-center max-w-2xl">
-                            <div>
-                                <h3 class="text-xl md:text-3xl font-medium pb-4">
-                                    <a href="#" class="text-primary-500 hover:text-black">
-                                        Dự án: ĐZ 500kV Nam Định I - Phố Nối: Gói thầu (42; 49; 58; 61)
+                @foreach($projects as $post)
+                    <div class="carousel-cell">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="order-2 md:order-1 flex flex-col justify-center max-w-2xl">
+                                <div>
+                                    <h3 class="text-xl md:text-3xl font-medium pb-4">
+                                        <a href="{{ $post->url }}" class="text-primary-500 hover:text-black">
+                                            {{ $post->title }}
+                                        </a>
+                                    </h3>
+                                </div>
+                                <p class="text-gray-700">
+                                    Giá trị : {{ $post->value }} tỷ đồng
+                                    Chú đầu tư: {{ $post->investor }}
+                                    Thời gian khới công: {{ $post->startTime?->format('m-Y') }}
+                                    Thời gian hoàn thành: {{ $post->endTime?->format('m-Y') }}
+                                </p>
+                                <div class="py-4 ">
+                                    <a href="{{ $post->url }}"
+                                       class="py-2 px-4 font-medium text-primary-500 inline-block hover:bg-gray-200 transition-all duration-200 border border-primary-500 rounded">
+                                        Xem chi tiết
                                     </a>
-                                </h3>
+                                </div>
                             </div>
-                            <p class="text-gray-700">
-                                Giá trị : 380 tỷ đồng Chú đầu tư: Ban quản lý các công trình điện Miền Bắc. Thời gian
-                                khới
-                                công: 01/2024 Thời gian hoàn thành: 09/2024
-                            </p>
-                            <div class="py-4 ">
-                                <a href="#"
-                                   class="py-2 px-4 font-medium text-primary-500 inline-block hover:bg-gray-200 transition-all duration-200 border border-primary-500 rounded">
-                                    Xem chi tiết
-                                </a>
-                            </div>
-                        </div>
-                        <div class="order-1 md:order-2">
-                            <div class="aspect-[4/3] rounded-tr-2xl rounded-bl-2xl overflow-hidden">
-                                <img class="aspect-[4/3]"
-                                     src="./images/image12.jpg"
-                                     alt="image">
+                            <div class="order-1 md:order-2">
+                                <div class="aspect-[4/3] rounded-tr-2xl rounded-bl-2xl overflow-hidden">
+                                    <img class="aspect-[4/3]"
+                                         src="{{ $post->image }}"
+                                         alt="{{ $post->title }}">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-cell">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="order-2 md:order-1 flex flex-col justify-center max-w-2xl">
-                            <div>
-                                <h3 class="text-3xl font-medium pb-4">
-                                    <a href="#" class="text-primary-500 hover:text-black">
-                                        Dự án: TBA 220kV Bắc Quang
-                                    </a>
-                                </h3>
-                            </div>
-                            <p class="text-gray-700">
-                                Giá trị : 42 tỷ đồng Chú đầu tư: Ban quản lý các công trình điện Miền Bắc Thời gian khới
-                                công: 10/2020 Thời gian hoàn thành: 2023
-                            </p>
-                            <div class="py-4 ">
-                                <a href="#"
-                                   class="py-2 px-4 font-medium text-primary-500 inline-block hover:bg-gray-200 transition-all duration-200 border border-primary-500 rounded">
-                                    Xem chi tiết
-                                </a>
-                            </div>
-                        </div>
-                        <div class="order-1 md:order-2">
-                            <div class="aspect-[4/3] rounded-tr-2xl rounded-bl-2xl overflow-hidden">
-                                <img class="aspect-[4/3]"
-                                     src="./images/image5.jpg"
-                                     alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -329,16 +291,16 @@
                     </div>
                     <div>
                         <ul>
-                            <template x-for="i in 4">
+                            @foreach($docs as $post)
                                 <li class="border-b last:border-b-0 py-2" data-aos="fade-up" data-aos-duration="1000">
-                                    <a href="#" class="text-primary-500 hover:text-black font-medium py-2">
-                                        Báo cáo Tài chính hợp nhất Quý 3 năm 2024
+                                    <a href="{{ $post->url }}" class="text-primary-500 hover:text-black font-medium py-2">
+                                        {{ $post->title }}
                                     </a>
                                 </li>
-                            </template>
+                            @endforeach
                         </ul>
                     </div>
-                    <a href="#" class="flex gap-2 py-5 text-primary-300" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="{{ route('docs') }}" class="flex gap-2 py-5 text-primary-300" data-aos="fade-up" data-aos-duration="1000">
                         <span>Xem tất cả</span>
                         <div class="relative w-6 h-6 flex justify-center items-center">
                             <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>
