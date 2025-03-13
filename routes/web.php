@@ -81,7 +81,7 @@ Route::get('/du-an', function () {
     page_title('Dự án');
     $posts = serverAPI()->listProjects();
     return view('du-an.list', compact('posts'));
-});
+})->name('projects');
 Route::get('/du-an/{slug}-{id}', function ($slug, $id) {
     page_title('Dự án chi tiết');
     $posts = serverAPI()->listProjects(7);
