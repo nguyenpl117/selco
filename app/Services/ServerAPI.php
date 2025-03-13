@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\NewModel;
+use App\Models\Partner;
 use App\Models\ProjectModel;
 use App\Models\Recruitment;
 use App\Models\StakeHolder;
@@ -143,5 +144,17 @@ class ServerAPI
     {
         $data = $this->get("data/stakeholders/detail?id=$id&lang_id=1");
         return new StakeHolder($data);
+    }
+
+    public function listPartners($pageSize = 12, $page = null, $pageName = 'page')
+    {
+//
+        $page = $page ?: Paginator::resolveCurrentPage($pageName);
+
+        $data = $this->get("data/partners?lang=1&page=$page&pageSize=$pageSize");
+
+        return collect($data)->map(function ($item) {
+            return new Partner($item);
+        });
     }
 }

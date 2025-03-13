@@ -330,30 +330,33 @@
                 </div>
                 <div class="col-span-12 md:col-span-8 lg:col-span-9" data-aos="fade-up">
                     <div class="partners-carousel" data-aos="fade-up">
-                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
-                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
-                                <img class="aspect-[5/3] object-contain"
-                                     src="https://songda11.com.vn/wp-content/uploads/vcb.jpg">
+                        @foreach($partners as $partner)
+                            <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
+                                <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
+                                    <img class="aspect-[5/3] object-contain"
+                                         src="{{ $partner->imageLink }}" alt="{{ $partner->title }}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
-                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
-                                <img class="aspect-[5/3] object-contain"
-                                     src="https://songda11.com.vn/wp-content/uploads/vietinbank.jpg">
-                            </div>
-                        </div>
-                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
-                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
-                                <img class="aspect-[5/3] object-contain"
-                                     src="https://songda11.com.vn/wp-content/uploads/agribank.jpg">
-                            </div>
-                        </div>
-                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
-                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
-                                <img class="aspect-[5/3] object-contain"
-                                     src="https://songda11.com.vn/wp-content/uploads/bidv.jpg">
-                            </div>
-                        </div>
+                        @endforeach
+
+{{--                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">--}}
+{{--                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">--}}
+{{--                                <img class="aspect-[5/3] object-contain"--}}
+{{--                                     src="https://songda11.com.vn/wp-content/uploads/vietinbank.jpg">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">--}}
+{{--                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">--}}
+{{--                                <img class="aspect-[5/3] object-contain"--}}
+{{--                                     src="https://songda11.com.vn/wp-content/uploads/agribank.jpg">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">--}}
+{{--                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">--}}
+{{--                                <img class="aspect-[5/3] object-contain"--}}
+{{--                                     src="https://songda11.com.vn/wp-content/uploads/bidv.jpg">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
