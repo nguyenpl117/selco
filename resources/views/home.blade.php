@@ -71,10 +71,10 @@
                                     {{ $post->title }}
                                 </div>
                                 <div class="px-4">
-                                    <div role="button"
+                                    <a href="{{ $post->url }}"
                                          class="border border-primary-500 rounded text-primary-500 px-4 py-2 hover:border-black hover:text-black">
                                         Xem thêm
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         @endforeach
@@ -85,7 +85,7 @@
                     <div class="main-carousel">
                         @foreach($news as $post)
                             <div class="carousel-cell">
-                                <a href="#" class="group block relative overflow-hidden rounded-tr-2xl rounded-bl-2xl">
+                                <a href="{{ $post->url }}" class="group block relative overflow-hidden rounded-tr-2xl rounded-bl-2xl">
                                     <img class="group-hover:scale-110 transition-all duration-500 aspect-[10/8]"
                                          src="{{ $post->imageLink }}"
                                          alt="{{ $post->title }}">
