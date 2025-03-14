@@ -287,55 +287,55 @@
     </div>
 
     <!--Quan hệ cổ đông-->
-    <div class="mt-24">
-        <div class="max-w-screen-2xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex flex-col justify-center" data-aos-duration="1000" data-aos="fade-right">
-                    <img class="rounded-tr-2xl rounded-bl-2xl"
-                         src="https://songda11.com.vn/wp-content/uploads/5443-1752.jpg" alt="image">
-                </div>
-                <div>
-                    <h3 class="text-4xl font-medium mb-4" data-aos="fade-up" data-aos-duration="1000">Quan hệ cổ
-                        đông</h3>
-                    <div class="text-gray-700" data-aos="fade-up" data-aos-duration="1000">
-                        Tại Selco, chúng tôi luôn hướng đến sự tăng trưởng bền vững, mang đến những giá trị cao nhất
-                        cho cổ đông và nhà đầu tư thông qua việc thiết lập các mối quan hệ lâu dài, xây dựng lòng tin,
-                        đối
-                        xử công bằng, minh bạch, chủ động và cung cấp thông tin tới các bên liên quan. Với cam kết tăng
-                        trưởng bền vững, các kết quả kinh doanh Selco đạt được đều vượt xa mong đợi từ cổ đông và nhà
-                        đầu tư.
-                    </div>
-                    <div>
-                        <ul>
-                            @foreach($docs as $post)
-                                <li class="border-b last:border-b-0 py-2" data-aos="fade-up" data-aos-duration="1000">
-                                    <a href="{{ $post->url }}" class="text-primary-500 hover:text-black font-medium py-2">
-                                        {{ $post->title }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    <a href="{{ autoRoute('docs') }}" class="flex gap-2 py-5 text-primary-300" data-aos="fade-up" data-aos-duration="1000">
-                        <span>Xem tất cả</span>
-                        <div class="relative w-6 h-6 flex justify-center items-center">
-                            <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>
-                            <div class="absolute bg-primary-600 w-6 h-6 rounded-full text-white justify-center items-center flex">
-                                <svg class="svg-inline--fa fa-chevron-right text-xs" aria-hidden="true"
-                                     focusable="false"
-                                     data-prefix="fas" data-icon="chevron-right" role="img"
-                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
-                                    <path fill="currentColor"
-                                          d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path>
-                                </svg>
-                                <!-- <i class="fa-solid fa-chevron-right text-xs"></i> Font Awesome fontawesome.com -->
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="mt-24">--}}
+{{--        <div class="max-w-screen-2xl mx-auto px-4">--}}
+{{--            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">--}}
+{{--                <div class="flex flex-col justify-center" data-aos-duration="1000" data-aos="fade-right">--}}
+{{--                    <img class="rounded-tr-2xl rounded-bl-2xl"--}}
+{{--                         src="https://songda11.com.vn/wp-content/uploads/5443-1752.jpg" alt="image">--}}
+{{--                </div>--}}
+{{--                <div>--}}
+{{--                    <h3 class="text-4xl font-medium mb-4" data-aos="fade-up" data-aos-duration="1000">Quan hệ cổ--}}
+{{--                        đông</h3>--}}
+{{--                    <div class="text-gray-700" data-aos="fade-up" data-aos-duration="1000">--}}
+{{--                        Tại Selco, chúng tôi luôn hướng đến sự tăng trưởng bền vững, mang đến những giá trị cao nhất--}}
+{{--                        cho cổ đông và nhà đầu tư thông qua việc thiết lập các mối quan hệ lâu dài, xây dựng lòng tin,--}}
+{{--                        đối--}}
+{{--                        xử công bằng, minh bạch, chủ động và cung cấp thông tin tới các bên liên quan. Với cam kết tăng--}}
+{{--                        trưởng bền vững, các kết quả kinh doanh Selco đạt được đều vượt xa mong đợi từ cổ đông và nhà--}}
+{{--                        đầu tư.--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <ul>--}}
+{{--                            @foreach($docs as $post)--}}
+{{--                                <li class="border-b last:border-b-0 py-2" data-aos="fade-up" data-aos-duration="1000">--}}
+{{--                                    <a href="{{ $post->url }}" class="text-primary-500 hover:text-black font-medium py-2">--}}
+{{--                                        {{ $post->title }}--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                    <a href="{{ autoRoute('docs') }}" class="flex gap-2 py-5 text-primary-300" data-aos="fade-up" data-aos-duration="1000">--}}
+{{--                        <span>Xem tất cả</span>--}}
+{{--                        <div class="relative w-6 h-6 flex justify-center items-center">--}}
+{{--                            <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>--}}
+{{--                            <div class="absolute bg-primary-600 w-6 h-6 rounded-full text-white justify-center items-center flex">--}}
+{{--                                <svg class="svg-inline--fa fa-chevron-right text-xs" aria-hidden="true"--}}
+{{--                                     focusable="false"--}}
+{{--                                     data-prefix="fas" data-icon="chevron-right" role="img"--}}
+{{--                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">--}}
+{{--                                    <path fill="currentColor"--}}
+{{--                                          d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path>--}}
+{{--                                </svg>--}}
+{{--                                <!-- <i class="fa-solid fa-chevron-right text-xs"></i> Font Awesome fontawesome.com -->--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <!--Partners-->
     <div class="my-12 partners">

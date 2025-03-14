@@ -6,10 +6,10 @@ Route::get('/', function () {
     view()->share('fixedMenu', true);
     $news = serverAPI()->listNews(4);
     $projects = serverAPI()->listProjects(4);
-    $docs = serverAPI()->listStakeHolders(4);
+//    $docs = serverAPI()->listStakeHolders(4);
     $partners = serverAPI()->listPartners(4);
     $listOperations = serverAPI()->listOperations();
-    return view('home', compact('news', 'projects', 'docs', 'partners', 'listOperations'));
+    return view('home', compact('news', 'projects', 'partners', 'listOperations'));
 })->name('home');
 
 Route::get('/lien-he', function () {
