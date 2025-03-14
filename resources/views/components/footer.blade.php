@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div>
-                <h3 class="text-lg font-svn-medium font-bold uppercase">Thông tin</h3>
+                <h3 class="text-lg font-svn-medium font-bold uppercase">@lang('content.footer.about_us')</h3>
                 <ul class="text-gray-300 text-sm">
                     <li class="py-1 hover:text-white">
                         <a href="{{ autoRoute('about_us') }}">@lang('menu.about_us')</a>

@@ -149,40 +149,40 @@ Route::get('/{slug}-op{id}', function ($slug, $id) {
     ])
     ->name('operations');
 
-Route::get('/xay-lap-dien', function () {
-    page_title('Xây lắp điện');
-    return view('linh-vuc.bien-ap');
-});
-Route::get('/nang-luong', function () {
-    page_title('Năng lượng');
-    return view('linh-vuc.bien-ap');
-});
-Route::get('/san-xuat-cong-nghiep', function () {
-    page_title('Sản xuất công nghiệp');
-    return view('linh-vuc.bien-ap');
-});
-Route::get('/bat-dong-san', function () {
-    page_title('Bất động sản');
-    return view('linh-vuc.bien-ap');
-});
-
-Route::get('/thi-cong-tram-bien-ap', function () {
-    page_title('Thi công trạm biến áp');
-    return view('linh-vuc.bien-ap');
-});
-Route::get('/lap-dung-cot', function () {
-    page_title('Lắp dựng cột');
-    return view('linh-vuc.bien-ap');
-});
-Route::get('/cang-day-dan', function () {
-    page_title('Căng dây dẫn');
-    return view('linh-vuc.bien-ap');
-});
-Route::get('/keo-day', function () {
-    page_title('kéo dây');
-    return view('linh-vuc.bien-ap');
-});
-Route::get('/kinh-doanh', function () {
-    page_title('Kinh doanh Vật tư thiết bị ngành điện');
-    return view('linh-vuc.bien-ap');
-});
+//Route::get('/xay-lap-dien', function () {
+//    page_title('Xây lắp điện');
+//    return view('linh-vuc.bien-ap');
+//});
+//Route::get('/nang-luong', function () {
+//    page_title('Năng lượng');
+//    return view('linh-vuc.bien-ap');
+//});
+//Route::get('/san-xuat-cong-nghiep', function () {
+//    page_title('Sản xuất công nghiệp');
+//    return view('linh-vuc.bien-ap');
+//});
+//Route::get('/bat-dong-san', function () {
+//    page_title('Bất động sản');
+//    return view('linh-vuc.bien-ap');
+//});
+//
+//Route::get('/thi-cong-tram-bien-ap', function () {
+//    page_title('Thi công trạm biến áp');
+//    return view('linh-vuc.bien-ap');
+//});
+//Route::get('/lap-dung-cot', function () {
+//    page_title('Lắp dựng cột');
+//    return view('linh-vuc.bien-ap');
+//});
+//Route::get('/cang-day-dan', function () {
+//    page_title('Căng dây dẫn');
+//    return view('linh-vuc.bien-ap');
+//});
+//Route::get('/keo-day', function () {
+//    page_title('kéo dây');
+//    return view('linh-vuc.bien-ap');
+//});
+//Route::get('/kinh-doanh', function () {
+//    page_title('Kinh doanh Vật tư thiết bị ngành điện');
+//    return view('linh-vuc.bien-ap');
+//});

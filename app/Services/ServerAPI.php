@@ -223,13 +223,11 @@ class ServerAPI
     public function postContact()
     {
         $this->client->request('POST', 'data/contactInfo', [
-            'data' => [
-                "title" => "Header2",
-                "email" => "john.doe@example.com",
-                "name" => "John Doe",
-                "phone" => "123",
-                "content" => "AAA"
-            ]
+            "title" => "Header2",
+            "email" => "john.doe@example.com",
+            "name" => "John Doe",
+            "phone" => "123",
+            "content" => "AAA"
         ]);
     }
 }
