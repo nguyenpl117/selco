@@ -46,6 +46,7 @@ class ProjectModel extends Model
         "location",
         "languageId",
         "installedCapacity",
+        "numberOfUnits",
     ];
 
     protected $casts = [

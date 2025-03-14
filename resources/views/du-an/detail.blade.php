@@ -50,6 +50,9 @@
                         @if($post->startTime && !$post->endTime )
                             <li><i class="fa fa-calendar w-6 text-primary-700"></i><strong>Thời gian thực hiện</strong>: Từ {{ $post->startTime?->format('m-Y') }} }}</li>
                         @endif
+                        @if($post->numberOfUnits)
+                            <li><i class="fa fa-industry w-6 text-primary-700"></i><strong>Số tổ máy</strong>: {{ $post->numberOfUnits }} tổ</li>
+                        @endif
                         @if($post->installedCapacity)
                             <li><i class="fa fa-power-off w-6 text-primary-700"></i><strong>Công suất lắp đặt</strong>: {{ $post->installedCapacity }}MW</li>
                         @endif
