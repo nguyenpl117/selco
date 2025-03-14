@@ -8,21 +8,21 @@
 <!--Menu-->
 <div data-aos-duration="1000" data-aos="fade-up">
     <div class="pb-1 px-2 my-6 gap-2 overflow-auto whitespace-nowrap text-center">
-        <a href="/gioi-thieu"
+        <a href="{{ autoRoute('about_us') }}"
            class="{{ btn_class($active == 1) }}">
-            Giới thiệu
+            @lang('menu.introduction')
         </a>
-        <a href="/lich-su"
+        <a href="{{ autoRoute('history') }}"
            class="{{ btn_class($active == 2) }}">
-            Lịch sử hình thành
+            @lang('menu.history')
         </a>
-        <a href="/co-cau"
+        <a href="{{ autoRoute('organizational') }}"
            class="{{ btn_class($active == 3) }}">
-            Cơ cấu tổ chức
+            @lang('menu.organizational')
         </a>
-        <a href="/thanh-tich"
+        <a href="{{ autoRoute('achievements') }}"
            class="{{ btn_class($active == 4) }}">
-            Thành tích đạt được
+            @lang('menu.achievements')
         </a>
     </div>
     <h3 class="text-center uppercase font-svn-medium font-bold text-[40px] leading-[52px] pb-10">LỊCH SỬ HÌNH THÀNH</h3>

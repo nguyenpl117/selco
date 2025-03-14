@@ -154,7 +154,7 @@ class ServerAPI
     public function detailStakeHolder($id)
     {
         $langId = langId();
-        $data = $this->get("data/stakeholders/detail?id=$id&lang=$langId");
+        $data = $this->get("data/stakeholder/detail?id=$id&lang=$langId");
         return new StakeHolder($data);
     }
 

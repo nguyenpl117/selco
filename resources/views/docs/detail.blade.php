@@ -23,7 +23,13 @@
             <div class="grid grid-cols-12 gap-4 mt-8">
                 <div class="col-span-12 lg:col-span-9">
                     <div class="shadow p-5 *:my-6">
-                        <div class="pdf-viewer" data-url="./example.pdf">
+                        @if(in_array(\Illuminate\Support\Facades\File::extension($post->file), ['png', 'jpg', 'jpeg']))
+                            <div>
+                                <img src="{{ $post->file }}" alt="file" class="w-full">
+                            </div>
+                        @endif
+                        @if(\Illuminate\Support\Facades\File::extension($post->file) == 'pdf')
+                        <div class="pdf-viewer" data-url="{{ $post->file }}">
                             <canvas class="pdf-the-canvas"></canvas>
                             <div class="p-2 bg-[gray]">
                                 <button type="button"
@@ -42,6 +48,7 @@
                                 <span class="text-gray-200">Page: <span class="pdf-page_num"></span> / <span class="pdf-page_count"></span></span>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-span-12 lg:col-span-3">
@@ -57,139 +64,141 @@
         <x-docs title="" :posts="$posts"/>
     </div>
 
-    <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
-    <script type="module">
-        // If absolute URL from the remote server is provided, configure the CORS
-        // header on that server.
-        // var url = './100NQHDQT.pdf';
-        var url = 'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf';
+    @if(\Illuminate\Support\Facades\File::extension($post->file) == 'pdf')
+        <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+        <script type="module">
+            // If absolute URL from the remote server is provided, configure the CORS
+            // header on that server.
+            // var url = './100NQHDQT.pdf';
+            var url = '{{ $post->file }}';
 
-        // Loaded via <script> tag, create shortcut to access PDF.js exports.
-        var {pdfjsLib} = globalThis;
+            // Loaded via <script> tag, create shortcut to access PDF.js exports.
+            var {pdfjsLib} = globalThis;
 
-        // The workerSrc property shall be specified.
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.mjs';
+            // The workerSrc property shall be specified.
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.mjs';
 
-        document.querySelectorAll('.pdf-viewer')
-            .forEach(function (e) {
-                renderPreviewPDF(e);
-            });
-
-        function renderPreviewPDF(element) {
-            var pdfDoc         = null,
-                pageNum        = 1,
-                pageRendering  = false,
-                pageNumPending = null,
-                canvas         = element.querySelector('.pdf-the-canvas'),
-                ctx            = canvas.getContext('2d'),
-                url            = element.getAttribute('data-url');
-            let desiredWidth = element.parentElement.getBoundingClientRect().width - 40;
-            let t = null;
-
-            const observer = new ResizeObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.contentRect.width !== desiredWidth) {
-                        if (t) {
-                            clearTimeout(t);
-                        }
-                        t = setTimeout(() => {
-                            desiredWidth = entry.contentRect.width;
-                            renderPage(pageNum);
-                        }, 50);
-                        // desiredWidth = entry.contentRect.width;
-                        // renderPage(pageNum);
-                    }
+            document.querySelectorAll('.pdf-viewer')
+                .forEach(function (e) {
+                    renderPreviewPDF(e);
                 });
-            });
-            observer.observe(element.parentElement);
 
-            /**
-             * Get page info from document, resize canvas accordingly, and render page.
-             * @param num Page number.
-             */
-            function renderPage(num) {
-                pageRendering = true;
-                // Using promise to fetch the page
-                pdfDoc.getPage(num).then(function (page) {
-                    const scaledViewport = page.getViewport({scale: 1,});
-                    const scale = desiredWidth / scaledViewport.width;
-                    const viewport = page.getViewport({scale: scale});
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
+            function renderPreviewPDF(element) {
+                var pdfDoc         = null,
+                    pageNum        = 1,
+                    pageRendering  = false,
+                    pageNumPending = null,
+                    canvas         = element.querySelector('.pdf-the-canvas'),
+                    ctx            = canvas.getContext('2d'),
+                    url            = element.getAttribute('data-url');
+                let desiredWidth = element.parentElement.getBoundingClientRect().width - 40;
+                let t = null;
 
-                    // Render PDF page into canvas context
-                    var renderContext = {
-                        canvasContext: ctx,
-                        viewport: viewport
-                    };
-                    var renderTask = page.render(renderContext);
-
-                    // Wait for rendering to finish
-                    renderTask.promise.then(function () {
-                        pageRendering = false;
-                        if (pageNumPending !== null) {
-                            // New page rendering is pending
-                            renderPage(pageNumPending);
-                            pageNumPending = null;
+                const observer = new ResizeObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.contentRect.width !== desiredWidth) {
+                            if (t) {
+                                clearTimeout(t);
+                            }
+                            t = setTimeout(() => {
+                                desiredWidth = entry.contentRect.width;
+                                renderPage(pageNum);
+                            }, 50);
+                            // desiredWidth = entry.contentRect.width;
+                            // renderPage(pageNum);
                         }
                     });
                 });
+                observer.observe(element.parentElement);
 
-                // Update page counters
-                element.querySelector('.pdf-page_num').textContent = num;
+                /**
+                 * Get page info from document, resize canvas accordingly, and render page.
+                 * @param num Page number.
+                 */
+                function renderPage(num) {
+                    pageRendering = true;
+                    // Using promise to fetch the page
+                    pdfDoc.getPage(num).then(function (page) {
+                        const scaledViewport = page.getViewport({scale: 1,});
+                        const scale = desiredWidth / scaledViewport.width;
+                        const viewport = page.getViewport({scale: scale});
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
 
-                element.querySelector('.pdf-prev').disabled = pageNum === 1;
-                element.querySelector('.pdf-next').disabled = pageNum === pdfDoc.numPages;
-            }
+                        // Render PDF page into canvas context
+                        var renderContext = {
+                            canvasContext: ctx,
+                            viewport: viewport
+                        };
+                        var renderTask = page.render(renderContext);
 
-            /**
-             * If another page rendering in progress, waits until the rendering is
-             * finised. Otherwise, executes rendering immediately.
-             */
-            function queueRenderPage(num) {
-                if (pageRendering) {
-                    pageNumPending = num;
-                } else {
-                    renderPage(num);
+                        // Wait for rendering to finish
+                        renderTask.promise.then(function () {
+                            pageRendering = false;
+                            if (pageNumPending !== null) {
+                                // New page rendering is pending
+                                renderPage(pageNumPending);
+                                pageNumPending = null;
+                            }
+                        });
+                    });
+
+                    // Update page counters
+                    element.querySelector('.pdf-page_num').textContent = num;
+
+                    element.querySelector('.pdf-prev').disabled = pageNum === 1;
+                    element.querySelector('.pdf-next').disabled = pageNum === pdfDoc.numPages;
                 }
-            }
 
-            /**
-             * Displays previous page.
-             */
-            function onPrevPage() {
-                if (pageNum <= 1) {
-                    return;
+                /**
+                 * If another page rendering in progress, waits until the rendering is
+                 * finised. Otherwise, executes rendering immediately.
+                 */
+                function queueRenderPage(num) {
+                    if (pageRendering) {
+                        pageNumPending = num;
+                    } else {
+                        renderPage(num);
+                    }
                 }
-                pageNum--;
-                queueRenderPage(pageNum);
-            }
 
-            element.querySelector('.pdf-prev').addEventListener('click', onPrevPage);
-
-            /**
-             * Displays next page.
-             */
-            function onNextPage() {
-                if (pageNum >= pdfDoc.numPages) {
-                    return;
+                /**
+                 * Displays previous page.
+                 */
+                function onPrevPage() {
+                    if (pageNum <= 1) {
+                        return;
+                    }
+                    pageNum--;
+                    queueRenderPage(pageNum);
                 }
-                pageNum++;
-                queueRenderPage(pageNum);
+
+                element.querySelector('.pdf-prev').addEventListener('click', onPrevPage);
+
+                /**
+                 * Displays next page.
+                 */
+                function onNextPage() {
+                    if (pageNum >= pdfDoc.numPages) {
+                        return;
+                    }
+                    pageNum++;
+                    queueRenderPage(pageNum);
+                }
+
+                element.querySelector('.pdf-next').addEventListener('click', onNextPage);
+
+                /**
+                 * Asynchronously downloads PDF.
+                 */
+                pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+                    pdfDoc = pdfDoc_;
+                    element.querySelector('.pdf-page_count').textContent = pdfDoc.numPages;
+
+                    // Initial/first page rendering
+                    renderPage(pageNum);
+                });
             }
-
-            element.querySelector('.pdf-next').addEventListener('click', onNextPage);
-
-            /**
-             * Asynchronously downloads PDF.
-             */
-            pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
-                pdfDoc = pdfDoc_;
-                element.querySelector('.pdf-page_count').textContent = pdfDoc.numPages;
-
-                // Initial/first page rendering
-                renderPage(pageNum);
-            });
-        }
-    </script>
+        </script>
+    @endif
 </x-layouts.base>

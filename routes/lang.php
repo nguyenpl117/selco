@@ -98,14 +98,6 @@ Route::get('/quan-he-co-dong', function () {
     return view('docs.list', compact('posts'));
 })->name('docs');
 
-Route::get('/quan-he-co-dong/{slug}', function ($slug) {
-    page_title('Quan hệ cổ đông');
-    $posts = serverAPI()->listStakeHolders($slug);
-    return view('docs.list', compact('posts'));
-})->where([
-    'slug' => '[a-z0-9-]+',
-])->name('docs.cat');
-
 Route::get('/quan-he-co-dong/{slug}-{id}', function ($slug, $id) {
     page_title('Quan hệ cổ đông chi tiết');
     $posts = serverAPI()->listStakeHolders();
@@ -116,6 +108,16 @@ Route::get('/quan-he-co-dong/{slug}-{id}', function ($slug, $id) {
     'id' => '\d+'
 ])
     ->name('docs.show');
+
+Route::get('/quan-he-co-dong/{slug}', function ($slug) {
+    page_title('Quan hệ cổ đông');
+    $posts = serverAPI()->listStakeHolders($slug);
+    return view('docs.list', compact('posts'));
+})->where([
+    'slug' => '[a-z0-9-]+',
+])->name('docs.cat');
+
+
 
 Route::get('/tin-tuyen-dung', function () {
     page_title('Tin tuyển dụng');
