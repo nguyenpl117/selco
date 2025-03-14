@@ -68,7 +68,7 @@ class ServerAPI
         );
     }
 
-    public function detailProduct($id)
+    public function detailProject($id)
     {
         $langId = langId();
         $data = $this->get("data/project/detail?id=$id&lang_id=$langId");

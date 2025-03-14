@@ -41,9 +41,11 @@ class ProjectModel extends Model
         "value6",
         "title",
         "content",
+        "description",
         "investor",
         "location",
         "languageId",
+        "installedCapacity",
     ];
 
     protected $casts = [

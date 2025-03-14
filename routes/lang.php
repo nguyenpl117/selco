@@ -67,7 +67,7 @@ Route::get('/du-an/{slug}-{id}', function ($slug, $id) {
         return $item->id != $id;
     });
     $posts = $posts->splice(0, 6);
-    $post = serverAPI()->detailProduct($id);
+    $post = serverAPI()->detailProject($id);
 
     if (count($post->images) < 2) {
         return view('du-an.detail2', compact('posts', 'post'));
