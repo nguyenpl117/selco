@@ -249,7 +249,7 @@
             <h2 class="text-4xl font-medium py-4" data-aos="fade-up">Dự án nổi bật</h2>
             <div class="project-carousel" data-aos="fade-up">
                 @foreach($projects as $post)
-                    <div class="carousel-cell">
+                    <div class="carousel-cell w-full">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="order-2 md:order-1 flex flex-col justify-center max-w-2xl">
                                 <div>
@@ -274,7 +274,7 @@
                             </div>
                             <div class="order-1 md:order-2">
                                 <div class="aspect-[4/3] rounded-tr-2xl rounded-bl-2xl overflow-hidden">
-                                    <img class="aspect-[4/3]"
+                                    <img class="aspect-[4/3] w-full"
                                          src="{{ $post->image }}"
                                          alt="{{ $post->title }}">
                                 </div>
