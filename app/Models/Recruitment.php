@@ -44,7 +44,7 @@ class Recruitment extends Model
     public function url(): Attribute
     {
         return Attribute::get(function () {
-            return route('recruitments.show', [Str::slug($this->title), $this->id]);
+            return autoRoute('recruitments.show', [Str::slug($this->title), $this->id]);
         });
     }
 }

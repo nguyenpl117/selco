@@ -49,7 +49,7 @@
                     <div class="flex flex-col gap-4">
                         <div class="flex justify-between" data-aos="fade-up">
                             <h2 class="text-3xl font-medium">Tin mới cập nhật</h2>
-                            <a href="{{ route('news') }}" class="flex gap-2 py-5 text-primary-300">
+                            <a href="{{ autoRoute('news') }}" class="flex gap-2 py-5 text-primary-300">
                                 <span>Xem tất cả</span>
                                 <div class="relative w-6 h-6 flex justify-center items-center">
                                     <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>
@@ -300,7 +300,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <a href="{{ route('docs') }}" class="flex gap-2 py-5 text-primary-300" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="{{ autoRoute('docs') }}" class="flex gap-2 py-5 text-primary-300" data-aos="fade-up" data-aos-duration="1000">
                         <span>Xem tất cả</span>
                         <div class="relative w-6 h-6 flex justify-center items-center">
                             <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>

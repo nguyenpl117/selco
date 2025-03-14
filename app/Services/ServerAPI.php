@@ -47,8 +47,9 @@ class ServerAPI
     public function listProjects($pageSize = 12, $page = null, $pageName = 'page')
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
+        $langId = langId();
 
-        $data = $this->get("data/projects?lang=1&page=$page&pageSize=$pageSize");
+        $data = $this->get("data/projects?lang=$langId&page=$page&pageSize=$pageSize");
 
         return $this->paginator(
             collect($data['projects'])->map(function ($item) {
@@ -66,15 +67,16 @@ class ServerAPI
 
     public function detailProduct($id)
     {
-        $data = $this->get("data/project/detail?id=$id&lang_id=1");
+        $langId = langId();
+        $data = $this->get("data/project/detail?id=$id&lang_id=$langId");
         return new ProjectModel($data);
     }
 
     public function listNews($pageSize = 12, $page = null, $pageName = 'page')
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
-
-        $data = $this->get("data/news/?lang=1&page=$page&pageSize=$pageSize");
+        $langId = langId();
+        $data = $this->get("data/news/?lang=$langId&page=$page&pageSize=$pageSize");
         return $this->paginator(
             collect($data['projects'])->map(function ($item) {
                 return new NewModel($item);
@@ -91,7 +93,8 @@ class ServerAPI
 
     public function detailNew($id)
     {
-        $data = $this->get("data/news/detail?id=$id&lang_id=1");
+        $langId = langId();
+        $data = $this->get("data/news/detail?id=$id&lang_id=$langId");
         return new NewModel($data);
     }
 
@@ -99,8 +102,8 @@ class ServerAPI
     public function listRecruitments($pageSize = 12, $page = null, $pageName = 'page')
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
-
-        $data = $this->get("data/recruitments?lang=1&page=$page&pageSize=$pageSize");
+        $langId = langId();
+        $data = $this->get("data/recruitments?lang=$langId&page=$page&pageSize=$pageSize");
         return $this->paginator(
             collect($data['projects'])->map(function ($item) {
                 return new Recruitment($item);
@@ -117,15 +120,16 @@ class ServerAPI
 
     public function detailRecruitment($id)
     {
-        $data = $this->get("data/recruitments/detail?id=$id&lang_id=1");
+        $langId = langId();
+        $data = $this->get("data/recruitments/detail?id=$id&lang_id=$langId");
         return new Recruitment($data);
     }
 
     public function listStakeHolders($pageSize = 12, $page = null, $pageName = 'page')
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
-
-        $data = $this->get("data/stakeholders?lang=1&page=$page&pageSize=$pageSize");
+        $langId = langId();
+        $data = $this->get("data/stakeholders?lang=$langId&page=$page&pageSize=$pageSize");
         return $this->paginator(
             collect($data['projects'])->map(function ($item) {
                 return new StakeHolder($item);
@@ -142,7 +146,8 @@ class ServerAPI
 
     public function detailStakeHolder($id)
     {
-        $data = $this->get("data/stakeholders/detail?id=$id&lang_id=1");
+        $langId = langId();
+        $data = $this->get("data/stakeholders/detail?id=$id&lang_id=$langId");
         return new StakeHolder($data);
     }
 
@@ -150,8 +155,8 @@ class ServerAPI
     {
 //
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
-
-        $data = $this->get("data/partners?lang=1&page=$page&pageSize=$pageSize");
+        $langId = langId();
+        $data = $this->get("data/partners?lang=$langId&page=$page&pageSize=$pageSize");
 
         return collect($data)->map(function ($item) {
             return new Partner($item);

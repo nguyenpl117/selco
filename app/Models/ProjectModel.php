@@ -54,7 +54,7 @@ class ProjectModel extends Model
     public function url(): Attribute
     {
         return Attribute::get(function () {
-            return route('du-an', [Str::slug($this->title), $this->id]);
+            return autoRoute('du-an', [Str::slug($this->title), $this->id]);
         });
     }
 

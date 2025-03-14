@@ -45,7 +45,7 @@ class StakeHolder extends Model
     public function url(): Attribute
     {
         return Attribute::get(function () {
-            return route('docs.show', [Str::slug($this->title), $this->id]);
+            return autoRoute('docs.show', [Str::slug($this->title), $this->id]);
         });
     }
 

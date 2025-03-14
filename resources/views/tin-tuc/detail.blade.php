@@ -1,5 +1,5 @@
 <x-layouts.base>
-    <x-breadcrumbs title="Tin tức" link="{{ route('news') }}"/>
+    <x-breadcrumbs title="Tin tức" link="{{ autoRoute('news') }}"/>
     <main>
         <div class="max-w-screen-2xl mx-auto px-4 mb-10">
             <div class="relative">
@@ -14,8 +14,8 @@
                 <div class="bg-gray-300 h-[200px] w-2/3 absolute z-10 bottom-0">
                 </div>
                 <div class="bg-white w-10/12 lg:w-5/12 max-w-full absolute z-10 md:left-[100px] rounded p-7 bottom-[40px] right-3">
-                    <a href="{{ route('news') }}" class="text-primary-500 hover:text-black">Tin tức sự kiện</a>,
-                    <a href="{{ route('news') }}" class="text-primary-500 hover:text-black">Tin tức</a>
+                    <a href="{{ autoRoute('news') }}" class="text-primary-500 hover:text-black">Tin tức sự kiện</a>,
+                    <a href="{{ autoRoute('news') }}" class="text-primary-500 hover:text-black">Tin tức</a>
                     <h1 class="text-3xl">{{ $post->title }}</h1>
                 </div>
             </div>

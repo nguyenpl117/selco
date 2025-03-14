@@ -44,7 +44,7 @@ class NewModel extends Model
     public function url(): Attribute
     {
         return Attribute::get(function () {
-            return route('news.show', [Str::slug($this->title), $this->id]);
+            return autoRoute('news.show', [Str::slug($this->title), $this->id]);
         });
     }
 

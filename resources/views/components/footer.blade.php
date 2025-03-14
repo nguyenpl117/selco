@@ -20,13 +20,13 @@
                         <a href="/gioi-thieu">Về chúng tôi</a>
                     </li>
                     <li class="py-1 hover:text-white">
-                        <a href="{{ route('projects') }}">Dự án đầu tư</a>
+                        <a href="{{ autoRoute('projects') }}">Dự án đầu tư</a>
                     </li>
                     <li class="py-1 hover:text-white">
-                        <a href="{{ route('docs') }}">Quan hệ cổ đông</a>
+                        <a href="{{ autoRoute('docs') }}">Quan hệ cổ đông</a>
                     </li>
                     <li class="py-1 hover:text-white">
-                        <a href="{{ route('news') }}">Tin tức - Sự kiện</a>
+                        <a href="{{ autoRoute('news') }}">Tin tức - Sự kiện</a>
                     </li>
                 </ul>
             </div>
@@ -34,13 +34,13 @@
                 <h3 class="text-lg font-svn-medium font-bold uppercase">Quan hệ cổ đông</h3>
                 <ul class="text-gray-300 text-sm">
                     <li class="py-1 hover:text-white">
-                        <a href="{{ route('docs') }}">Công bố thông tin</a>
+                        <a href="{{ autoRoute('docs') }}">Công bố thông tin</a>
                     </li>
                     <li class="py-1 hover:text-white">
-                        <a href="{{ route('docs') }}">Báo cáo tài chính</a>
+                        <a href="{{ autoRoute('docs') }}">Báo cáo tài chính</a>
                     </li>
                     <li class="py-1 hover:text-white">
-                        <a href="{{ route('docs') }}">Điều lệ công ty</a>
+                        <a href="{{ autoRoute('docs') }}">Điều lệ công ty</a>
                     </li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
         <div class="flex justify-between space-x-6 items-center py-2 lg:py-0">
             <div class="items-center flex">
                 <h1 title="Laravel">
-                    <a href="/" data-pjax-state="">
+                    <a href="{{ autoRoute('home') }}" data-pjax-state="">
                         <img class="h-16 w-16 logo-header safelyLoadImage" width="48" height="48" alt="Laravel"
                              onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
                              src="/images/logo5.png">
@@ -89,15 +89,15 @@
                     </li>
                     <li class="relative group group/lv1">
                         <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
-                           href="/du-an">Các dự án</a>
+                           href="{{ autoRoute('projects') }}">Các dự án</a>
                     </li>
                     <li class="relative group group/lv1">
                         <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
-                           href="/quan-he-co-dong">Quan hệ cổ đông</a>
+                           href="{{ autoRoute('docs') }}">Quan hệ cổ đông</a>
                     </li>
                     <li class="relative group group/lv1">
                         <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
-                           href="/tin-tuc">Tin tức</a>
+                           href="{{ autoRoute('news') }}">Tin tức</a>
                         <div class="inline-block w-1"></div>
                         <svg class="w-2.5 h-2.5 absolute top-[17px] right-1 group-hover:text-primary-600" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -108,11 +108,11 @@
                             lv="2">
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
-                                   href="/tin-tuc">Tin tức sự kiện</a>
+                                   href="{{ autoRoute('news') }}">Tin tức sự kiện</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
-                                   href="/tin-tuyen-dung">Tin tuyển dụng</a>
+                                   href="{{ autoRoute('recruitments') }}">Tin tuyển dụng</a>
                             </li>
                         </ul>
                     </li>
@@ -122,8 +122,10 @@
                     </li>
                     <li class="relative group group/lv1 flex items-center">
                         <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600"
-                           href="/">
-                            <div class="border border-black pt-0.5 rounded h-8 w-8 items-center justify-center flex">EN</div>
+                           href="{{ langCurrent() == 'vi' ? '/en' : '/' }}">
+                            <div class="border border-black pt-0.5 rounded h-8 w-8 items-center justify-center flex">
+                                {{ langCurrent() == 'vi' ? 'EN': 'VI' }}
+                            </div>
                         </a>
                     </li>
                 </ul>
