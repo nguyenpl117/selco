@@ -72,7 +72,7 @@ class ServerAPI
     public function detailProject($id)
     {
         $langId = langId();
-        $data = $this->get("data/project/detail?id=$id&lang_id=$langId");
+        $data = $this->get("data/project/detail?id=$id&lang=$langId");
         return new ProjectModel($data);
     }
 
@@ -98,7 +98,7 @@ class ServerAPI
     public function detailNew($id)
     {
         $langId = langId();
-        $data = $this->get("data/news/detail?id=$id&lang_id=$langId");
+        $data = $this->get("data/news/detail?id=$id&lang=$langId");
         return new NewModel($data);
     }
 
@@ -124,7 +124,7 @@ class ServerAPI
     public function detailRecruitment($id)
     {
         $langId = langId();
-        $data = $this->get("data/recruitments/detail?id=$id&lang_id=$langId");
+        $data = $this->get("data/recruitments/detail?id=$id&lang=$langId");
         return new Recruitment($data);
     }
 
@@ -154,7 +154,7 @@ class ServerAPI
     public function detailStakeHolder($id)
     {
         $langId = langId();
-        $data = $this->get("data/stakeholders/detail?id=$id&lang_id=$langId");
+        $data = $this->get("data/stakeholders/detail?id=$id&lang=$langId");
         return new StakeHolder($data);
     }
 
@@ -209,14 +209,14 @@ class ServerAPI
     public function detailOperation($id)
     {
         $langId = langId();
-        $data = $this->get("data/operations/detail?id=$id&lang_id=$langId");
+        $data = $this->get("data/operations/detail?id=$id&lang=$langId");
         return new Operation($data);
     }
 
     public function contacts()
     {
         $langId = langId();
-        $data = $this->get("data/contact?lang_id=$langId");
+        $data = $this->get("data/contact/?lang=$langId");
         return new Contact($data);
     }
 
