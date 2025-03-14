@@ -113,62 +113,78 @@
                     động</h2>
 
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
-                            <img class="object-cover absolute top-0 right-0 h-full"
-                                 src="./images/tram-bien-ap-la-giphan-loai-tinh-toan-lua-chon-tram-bien-ap-01-1.jpg"
-                                 alt="thi công trạm biến áp">
-                            <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
-                            </div>
-                            <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
-                                <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">
-                                    <span class="text-xl lg:text-2xl text-white uppercase font-medium"> thi công trạm biến áp </span>
+                    @foreach($listOperations as $key => $item)
+                        <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="{{ $key * 50 }}">
+                            <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
+                                <img class="object-cover absolute top-0 right-0 h-full"
+                                     src="{{ $item->imageLink }}"
+                                     alt="{{ $item->title }}">
+                                <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
+                                </div>
+                                <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
+                                    <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                        <span class="text-xl lg:text-2xl text-white uppercase font-medium">{{ $item->title }}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
-                        <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
-                            <img class="object-cover absolute top-0 right-0 h-full"
-                                 src="./images/Anh3Hoanthanhdongdien252024.jpg"
-                                 alt="lắp dựng cột">
-                            <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
-                            </div>
-                            <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
-                                <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">
-                                    <span class="text-xl lg:text-2xl text-white uppercase font-medium"> lắp dựng cột </span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                        <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
-                            <img class="object-cover absolute top-0 right-0 h-full"
-                                 src="./images/dd500kv-1722252541611119095424.jpg"
-                                 alt="Căng dải dây dẫn">
-                            <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
-                            </div>
-                            <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
-                                <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">
-                                    <span class="text-xl lg:text-2xl text-white uppercase font-medium"> Căng dải dây dẫn</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
-                        <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">
-                            <img class="object-cover absolute top-0 right-0 h-full"
-                                 src="./images/1.jpeg"
-                                 alt="Kéo dây">
-                            <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">
-                            </div>
-                            <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">
-                                <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">
-                                    <span class="text-xl lg:text-2xl text-white uppercase font-medium"> Kéo dây </span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
+{{--                    <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000">--}}
+{{--                        <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">--}}
+{{--                            <img class="object-cover absolute top-0 right-0 h-full"--}}
+{{--                                 src="./images/tram-bien-ap-la-giphan-loai-tinh-toan-lua-chon-tram-bien-ap-01-1.jpg"--}}
+{{--                                 alt="thi công trạm biến áp">--}}
+{{--                            <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">--}}
+{{--                            </div>--}}
+{{--                            <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">--}}
+{{--                                <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">--}}
+{{--                                    <span class="text-xl lg:text-2xl text-white uppercase font-medium"> thi công trạm biến áp </span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">--}}
+{{--                        <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">--}}
+{{--                            <img class="object-cover absolute top-0 right-0 h-full"--}}
+{{--                                 src="./images/Anh3Hoanthanhdongdien252024.jpg"--}}
+{{--                                 alt="lắp dựng cột">--}}
+{{--                            <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">--}}
+{{--                            </div>--}}
+{{--                            <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">--}}
+{{--                                <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">--}}
+{{--                                    <span class="text-xl lg:text-2xl text-white uppercase font-medium"> lắp dựng cột </span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">--}}
+{{--                        <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">--}}
+{{--                            <img class="object-cover absolute top-0 right-0 h-full"--}}
+{{--                                 src="./images/dd500kv-1722252541611119095424.jpg"--}}
+{{--                                 alt="Căng dải dây dẫn">--}}
+{{--                            <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">--}}
+{{--                            </div>--}}
+{{--                            <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">--}}
+{{--                                <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">--}}
+{{--                                    <span class="text-xl lg:text-2xl text-white uppercase font-medium"> Căng dải dây dẫn</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">--}}
+{{--                        <div class="aspect-[9/10] relative overflow-hidden rounded-tr-xl rounded-bl-xl">--}}
+{{--                            <img class="object-cover absolute top-0 right-0 h-full"--}}
+{{--                                 src="./images/1.jpeg"--}}
+{{--                                 alt="Kéo dây">--}}
+{{--                            <div class="opacity-1 lg:opacity-0 group-hover:opacity-100 flex absolute w-full h-full top-0 left-0 transition-all justify-center items-center bg-gray-950/50">--}}
+{{--                            </div>--}}
+{{--                            <div class="absolute w-full h-full top-0 left-0 flex justify-center items-center">--}}
+{{--                                <div class="opacity-1 px-2 lg:opacity-0 group-hover:opacity-100 transition-all duration-500">--}}
+{{--                                    <span class="text-xl lg:text-2xl text-white uppercase font-medium"> Kéo dây </span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
                 </div>
             </div>
         </div>

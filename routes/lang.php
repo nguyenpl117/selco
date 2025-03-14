@@ -8,7 +8,8 @@ Route::get('/', function () {
     $projects = serverAPI()->listProjects(4);
     $docs = serverAPI()->listStakeHolders(4);
     $partners = serverAPI()->listPartners(4);
-    return view('home', compact('news', 'projects', 'docs', 'partners'));
+    $listOperations = serverAPI()->listOperations();
+    return view('home', compact('news', 'projects', 'docs', 'partners', 'listOperations'));
 })->name('home');
 
 Route::get('/lien-he', function () {
