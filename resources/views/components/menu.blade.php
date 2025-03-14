@@ -1,3 +1,8 @@
+@php
+    $categoryStakeHolders = serverAPI()->categoryStakeHolder()
+
+@endphp
+
 <header x-data="{openMobile: false}"
         @if(isset($fixedMenu))
             class="bg-gray-100/50 shadow transition-all duration-300 fixed w-full top-0 z-40 menu_header"
@@ -94,6 +99,23 @@
                     <li class="relative group group/lv1">
                         <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
                            href="{{ autoRoute('docs') }}">Quan hệ cổ đông</a>
+                        <div class="inline-block w-1"></div>
+                        <svg class="w-2.5 h-2.5 absolute top-[17px] right-1 group-hover:text-primary-600" aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                  d="m1 1 4 4 4-4"></path>
+                        </svg>
+                        <ul class="sub-menu normal-case absolute hidden max-w-[260px] min-w-[200px] w-max rounded bg-white border z-10 group group-hover/lv1:block"
+                            lv="2">
+                            @foreach($categoryStakeHolders as $item)
+                                <li class=" relative group border-b last:border-b-0 group/lv2">
+                                    <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
+                                       href="{{ $item->url }}">
+                                        {{ langCurrent() == 'vi' ? $item->categoryName : $item->categoryNameEN }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
                     </li>
                     <li class="relative group group/lv1">
                         <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
@@ -303,7 +325,7 @@
 
                         </div>
                         <div>
-                            <a x-on:click="openMobile = !openMobile" href="./quan-he-co-dong"
+                            <a x-on:click="openMobile = !openMobile" href="{{ autoRoute('docs') }}"
                                class="-m-3 px-3 py-2 flex items-center rounded-md hover:bg-gray-50" data-pjax-state="">
                                 <span class="text-sm font-medium text-gray-900 h-8 leading-8">
                                     Quan hệ cổ đông
@@ -313,7 +335,7 @@
                         <div>
                             <div class="-m-3 px-3 py-2 rounded-md hover:bg-gray-50" x-data="{openNav: false}">
                                 <div class="flex items-center justify-between">
-                                    <a href="/tin-tuc">
+                                    <a href="{{ autoRoute('news') }}">
                                         <span class="text-sm font-medium text-gray-900">
                                             Tin tức
                                         </span>

@@ -22,7 +22,7 @@
                     <a href="{{ $post->url }}" class="text-primary-500 px-2" title="">
                         <i class="fa fa-eye w-4"></i>
                     </a>
-                    @if($post->canDownload)
+                    @if($post->canDownload && $post->file)
                         <a href="{{ $post->file }}"
                            download=""
                            class="text-primary-500 px-2" target="_blank">

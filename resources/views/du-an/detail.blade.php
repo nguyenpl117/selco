@@ -1,5 +1,5 @@
 <x-layouts.base>
-    <x-breadcrumbs title="Các dự án" link="/du-an"/>
+    <x-breadcrumbs title="Các dự án" link="{{ autoRoute('projects') }}"/>
     <main>
         <div class="max-w-screen-2xl mx-auto px-4 mb-10">
             <div class="grid grid-cols-12 gap-8">

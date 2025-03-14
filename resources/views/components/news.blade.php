@@ -27,6 +27,8 @@
         </div>
     @endforeach
 </div>
+@if(method_exists($posts, 'withQueryString'))
 <div class="py-2">
     {{ $posts->withQueryString()->links() }}
 </div>
+@endif

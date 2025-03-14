@@ -67,6 +67,11 @@ Route::get('/du-an/{slug}-{id}', function ($slug, $id) {
     });
     $posts = $posts->splice(0, 6);
     $post = serverAPI()->detailProduct($id);
+
+    if (count($post->images) < 2) {
+        return view('du-an.detail2', compact('posts', 'post'));
+    }
+
     return view('du-an.detail', compact('posts', 'post'));
 })
     ->where([
@@ -80,6 +85,14 @@ Route::get('/quan-he-co-dong', function () {
     $posts = serverAPI()->listStakeHolders();
     return view('docs.list', compact('posts'));
 })->name('docs');
+
+Route::get('/quan-he-co-dong/{slug}', function ($slug) {
+    page_title('Quan hệ cổ đông');
+    $posts = serverAPI()->listStakeHolders($slug);
+    return view('docs.list', compact('posts'));
+})->where([
+    'slug' => '[a-z0-9-]+',
+])->name('docs.cat');
 
 Route::get('/quan-he-co-dong/{slug}-{id}', function ($slug, $id) {
     page_title('Quan hệ cổ đông chi tiết');

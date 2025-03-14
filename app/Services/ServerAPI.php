@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\CategoryStakeHolder;
 use App\Models\NewModel;
 use App\Models\Partner;
 use App\Models\ProjectModel;
@@ -98,7 +99,6 @@ class ServerAPI
         return new NewModel($data);
     }
 
-
     public function listRecruitments($pageSize = 12, $page = null, $pageName = 'page')
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
@@ -125,11 +125,15 @@ class ServerAPI
         return new Recruitment($data);
     }
 
-    public function listStakeHolders($pageSize = 12, $page = null, $pageName = 'page')
+    public function listStakeHolders($code = null, $pageSize = 12, $page = null, $pageName = 'page')
     {
+        if (!$code) {
+            $lists = serverAPI()->categoryStakeHolder();
+            $code = $lists->first()?->categoryCode;
+        }
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
         $langId = langId();
-        $data = $this->get("data/stakeholders?lang=$langId&page=$page&pageSize=$pageSize");
+        $data = $this->get("data/stakeholders?categoryCode=$code&lang=$langId&page=$page&pageSize=$pageSize");
         return $this->paginator(
             collect($data['projects'])->map(function ($item) {
                 return new StakeHolder($item);
@@ -153,13 +157,21 @@ class ServerAPI
 
     public function listPartners($pageSize = 12, $page = null, $pageName = 'page')
     {
-//
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
         $langId = langId();
         $data = $this->get("data/partners?lang=$langId&page=$page&pageSize=$pageSize");
 
         return collect($data)->map(function ($item) {
             return new Partner($item);
+        });
+    }
+
+    public function categoryStakeHolder()
+    {
+        $data = $this->get("data/StakeholderCategories");
+
+        return collect($data)->map(function ($item) {
+            return new CategoryStakeHolder($item);
         });
     }
 }

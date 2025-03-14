@@ -25,3 +25,8 @@ Chi tiết	http://103.98.152.37:5010/api/data/recruitments/detail/?lang=2&id=4
 Liên hệ	http://103.98.152.37:5010/api/data/contact/?lang=2
 
 Đối tác	http://103.98.152.37:5010/api/data/partners	
+
+Quan hệ cổ đông		categoryCode lấy theo List Category
+List cổ đông theo category	http://localhost:5010/api/data/stakeholders/?categoryCode=bao-cao-tai-chinh&lang=1&page=1&pageSize=10
+Chi tiết	http://localhost:5010/api/data/stakeholder/detail/?id=7&lang=1
+List Category	http://localhost:5010/api/data/StakeholderCategories/
