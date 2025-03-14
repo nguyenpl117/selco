@@ -25,31 +25,31 @@
                     <div>
                         <input type="text"
                                class="w-full border border-primary-500 h-10 rounded px-3 outline-none"
-                               placeholder="Họ tên (*)">
+                               placeholder="@lang('content.form.name') (*)">
                     </div>
                     <div>
                         <input type="text"
                                class="w-full border border-primary-500 h-10 rounded px-3 outline-none"
-                               placeholder="Số điện thoại (*)">
+                               placeholder="@lang('content.form.phone') (*)">
                     </div>
                     <div>
                         <input type="text"
                                class="w-full border border-primary-500 h-10 rounded px-3 outline-none"
-                               placeholder="Email (*)">
+                               placeholder="@lang('content.form.email') (*)">
                     </div>
                     <div>
                         <input type="text"
                                class="w-full border border-primary-500 h-10 rounded px-3 outline-none"
-                               placeholder="Tiêu đề">
+                               placeholder="@lang('content.form.subject')">
                     </div>
                 </div>
                 <div>
                 <textarea name="" id="" rows="3"
                           class="w-full py-3 border border-primary-500 h-32 rounded px-3 outline-none"
-                          placeholder="Nội dung liên hệ"></textarea>
+                          placeholder="@lang('content.form.content')"></textarea>
                 </div>
                 <div>
-                    <button class="uppercase bg-primary-500 hover:bg-primary-600 text-white h-10 rounded px-4 font-medium">Gửi đi</button>
+                    <button class="uppercase bg-primary-500 hover:bg-primary-600 text-white h-10 rounded px-4 font-medium">@lang('content.form.send')</button>
                 </div>
             </form>
         </div>
