@@ -6,20 +6,21 @@
 
     <div class="my-10 grid grid-cols-2 gap-8 mx-auto max-w-screen-2xl px-4">
         <div data-aos-duration="1000" data-aos="fade-right" class="py-6">
-            <h3 class="text-3xl font-bold text-primary-500 mb-6">Công Ty TNHH MTV Sông Đà 11 Thăng Long</h3>
+            <h3 class="text-3xl font-bold text-primary-500 mb-6">{{ $contact->companyName }}</h3>
             <p class="my-4">
-                <i class="w-5 text-primary-500 fa fa-map-marker"></i> BT03 - VT24 - KĐT mới Xa La - Phường Phúc La - Quận Hà Đông - TP. Hà Nội</p>
+                <i class="w-5 text-primary-500 fa fa-map-marker"></i> {{ $contact->address }}</p>
             <p class="my-4">
-                <i class="w-5 text-primary-500 fa fa-phone"></i> (024) 8588 7666</p>
+                <i class="w-5 text-primary-500 fa fa-phone"></i> {{ $contact->phone }}</p>
             <p class="my-4">
-                <i class="w-5 text-primary-500 fa fa-fax"></i> (024) 33554511</p>
+                <i class="w-5 text-primary-500 fa fa-fax"></i> {{ $contact->cellPhone }}</p>
             <p class="my-4">
-                <i class="w-5 text-primary-500 fa fa-envelope"></i> songda11thanglong@gmail.com</p>
+                <i class="w-5 text-primary-500 fa fa-envelope"></i> {{ $contact->email }}</p>
             <p class="my-4">
-                <i class="w-5 text-primary-500 fa fa-globe"></i> selco.com.vn</p>
+                <i class="w-5 text-primary-500 fa fa-globe"></i> {{ $contact->website }}</p>
         </div>
         <div class="flex-1" data-aos-duration="1000" data-aos="fade-left">
-            <div class="grid gap-4">
+            <form action="" method="post" class="grid gap-4">
+                @csrf
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <input type="text"
@@ -50,7 +51,7 @@
                 <div>
                     <button class="uppercase bg-primary-500 hover:bg-primary-600 text-white h-10 rounded px-4 font-medium">Gửi đi</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <div class="mx-auto max-w-screen-2xl px-4 py-6">

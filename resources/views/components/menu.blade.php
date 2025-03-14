@@ -31,7 +31,7 @@
 {{--                    </li>--}}
                     <li class="relative group group/lv1">
                         <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
-                           href="/gioi-thieu">{{ trans('menu.about_us') }}</a>
+                           href="{{ autoRoute('about_us') }}">{{ trans('menu.about_us') }}</a>
                         <div class="inline-block w-1"></div>
                         <svg class="w-2.5 h-2.5 absolute top-[17px] right-1 group-hover:text-primary-600" aria-hidden="true"
                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -42,19 +42,19 @@
                             lv="2">
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
-                                   href="/gioi-thieu">@lang('menu.introduction')</a>
+                                   href="{{ autoRoute('about_us') }}">@lang('menu.introduction')</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
-                                   href="/lich-su">@lang('menu.history')</a>
+                                   href="{{ autoRoute('history') }}">@lang('menu.history')</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
-                                   href="/co-cau">@lang('menu.organizational')</a>
+                                   href="{{ autoRoute('organizational') }}">@lang('menu.organizational')</a>
                             </li>
                             <li class=" relative group border-b last:border-b-0 group/lv2">
                                 <a class="group-[.sub-menu]:text-black group-[.sub-menu]:py-2.5 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-primary-600 text-green-500 hover:text-primary-600 p-3"
-                                   href="/thanh-tich">@lang('menu.achievements')</a>
+                                   href="{{ autoRoute('achievements') }}">@lang('menu.achievements')</a>
                             </li>
 
                         </ul>
@@ -146,7 +146,7 @@
                     </li>
                     <li class="relative group group/lv1">
                         <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600 p-3"
-                           href="/lien-he" data-pjax-state="">@lang('menu.contact')</a>
+                           href="{{ autoRoute('contact') }}" data-pjax-state="">@lang('menu.contact')</a>
                     </li>
                     <li class="relative group group/lv1 flex items-center">
                         <a class="font-bold group-[.sub-menu]:text-gray-600 group-[.sub-menu]:py-1 group-[.sub-menu]:block inline-block group-[.sub-menu]:hover:text-gray-700 text-gray-700 hover:text-primary-600"

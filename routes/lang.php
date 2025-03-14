@@ -14,28 +14,35 @@ Route::get('/', function () {
 
 Route::get('/lien-he', function () {
     page_title('Liên hệ');
-    return view('lien-he');
+    $contact = serverAPI()->contacts();
+
+    return view('lien-he', compact('contact'));
+})->name('contact');
+Route::post('/lien-he', function () {
+    serverAPI()->postContact();
+
+    return back();
 });
 
 Route::get('/gioi-thieu', function () {
     page_title('Giới thiệu');
     return view('gioi-thieu');
-});
+})->name('about_us');
 
 Route::get('/lich-su', function () {
     page_title('Lịch sử');
     return view('lich-su');
-});
+})->name('history');
 
 Route::get('/co-cau', function () {
     page_title('Cơ cấu tổ chức');
     return view('co-cau');
-});
+})->name('organizational');
 
 Route::get('/thanh-tich', function () {
     page_title('Thành tích đạt được');
     return view('thanh-tich');
-});
+})->name('achievements');
 
 Route::get('/tin-tuc', function () {
     page_title('Tin tức');

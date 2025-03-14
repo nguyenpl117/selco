@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\AffilicatedUnit;
 use App\Models\CategoryStakeHolder;
+use App\Models\Contact;
 use App\Models\NewModel;
 use App\Models\Operation;
 use App\Models\Partner;
@@ -210,5 +211,25 @@ class ServerAPI
         $langId = langId();
         $data = $this->get("data/operations/detail?id=$id&lang_id=$langId");
         return new Operation($data);
+    }
+
+    public function contacts()
+    {
+        $langId = langId();
+        $data = $this->get("data/contact?lang_id=$langId");
+        return new Contact($data);
+    }
+
+    public function postContact()
+    {
+        $this->client->request('POST', 'data/contactInfo', [
+            'data' => [
+                "title" => "Header2",
+                "email" => "john.doe@example.com",
+                "name" => "John Doe",
+                "phone" => "123",
+                "content" => "AAA"
+            ]
+        ]);
     }
 }

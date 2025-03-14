@@ -30,3 +30,20 @@ Quan hệ cổ đông		categoryCode lấy theo List Category
 List cổ đông theo category	http://localhost:5010/api/data/stakeholders/?categoryCode=bao-cao-tai-chinh&lang=1&page=1&pageSize=10
 Chi tiết	http://localhost:5010/api/data/stakeholder/detail/?id=7&lang=1
 List Category	http://localhost:5010/api/data/StakeholderCategories/
+
+Trang chủ	http://localhost:5010/api/data/homepage/?lang=1
+
+api lấy thông tin trang chủ nhé a @Phan
+
+còn chỗ nội dung điền liên hệ
+
+http://localhost:5010/api/data/contactInfo
+
+{
+"title": "Header2",
+"email": "john.doe@example.com",
+"name": "John Doe",
+"phone": "123",
+"content": "AAA"
+}
+
