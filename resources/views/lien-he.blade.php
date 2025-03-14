@@ -20,31 +20,42 @@
         </div>
         <div class="flex-1" data-aos-duration="1000" data-aos="fade-left">
             <form action="" method="post" class="grid gap-4">
+                @if($errors)
+                    @foreach($errors->all() as $error)
+                        <div class="text-red-500">{{ $error }}</div>
+                    @endforeach
+                @else
+                    <div class="text-green-500">@lang('content.message')</div>
+                @endif
                 @csrf
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <input type="text"
+                               name="name"
                                class="w-full border border-primary-500 h-10 rounded px-3 outline-none"
                                placeholder="@lang('content.form.name') (*)">
                     </div>
                     <div>
                         <input type="text"
+                               name="phone"
                                class="w-full border border-primary-500 h-10 rounded px-3 outline-none"
                                placeholder="@lang('content.form.phone') (*)">
                     </div>
                     <div>
                         <input type="text"
+                               name="email"
                                class="w-full border border-primary-500 h-10 rounded px-3 outline-none"
                                placeholder="@lang('content.form.email') (*)">
                     </div>
                     <div>
                         <input type="text"
+                               name="title"
                                class="w-full border border-primary-500 h-10 rounded px-3 outline-none"
                                placeholder="@lang('content.form.subject')">
                     </div>
                 </div>
                 <div>
-                <textarea name="" id="" rows="3"
+                <textarea name="content" rows="3"
                           class="w-full py-3 border border-primary-500 h-32 rounded px-3 outline-none"
                           placeholder="@lang('content.form.content')"></textarea>
                 </div>

@@ -10,5 +10,6 @@ return [
         'subject' => 'Subject',
         'content' => 'Content',
         'send' => 'Send'
-    ]
+    ],
+    'message' => 'send successfully'
 ];

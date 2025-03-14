@@ -10,5 +10,6 @@ return [
         'subject' => 'Tiêu đề',
         'content' => 'Nội dung liên hệ',
         'send' => 'Gửi đi'
-    ]
+    ],
+    'message' => 'Gửi thành công'
 ];

@@ -19,8 +19,12 @@ Route::get('/lien-he', function () {
     return view('lien-he', compact('contact'));
 })->name('contact');
 Route::post('/lien-he', function () {
-    serverAPI()->postContact();
-
+    request()->validate([
+        'name' => 'required',
+        'email' => 'required',
+        'phone' => 'required'
+    ]);
+    serverAPI()->postContact(request()->all());
     return back();
 });
 

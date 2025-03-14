@@ -220,14 +220,10 @@ class ServerAPI
         return new Contact($data);
     }
 
-    public function postContact()
+    public function postContact($data)
     {
         $this->client->request('POST', 'data/contactInfo', [
-            "title" => "Header2",
-            "email" => "john.doe@example.com",
-            "name" => "John Doe",
-            "phone" => "123",
-            "content" => "AAA"
+            'json' => $data
         ]);
     }
 }
