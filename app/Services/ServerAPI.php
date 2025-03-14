@@ -2,8 +2,10 @@
 
 namespace App\Services;
 
+use App\Models\AffilicatedUnit;
 use App\Models\CategoryStakeHolder;
 use App\Models\NewModel;
+use App\Models\Operation;
 use App\Models\Partner;
 use App\Models\ProjectModel;
 use App\Models\Recruitment;
@@ -173,5 +175,40 @@ class ServerAPI
         return collect($data)->map(function ($item) {
             return new CategoryStakeHolder($item);
         });
+    }
+
+    public function affiliatedUnits()
+    {
+        $langId = langId();
+        $data = $this->get("data/affiliatedUnits/?lang=$langId");
+        return collect($data)->map(function ($item) {
+            return new AffilicatedUnit($item);
+        });
+    }
+
+    public function listOperations($pageSize = 12, $page = null, $pageName = 'page')
+    {
+        $page = $page ?: Paginator::resolveCurrentPage($pageName);
+        $langId = langId();
+        $data = $this->get("data/operations/?lang=$langId&page=$page&pageSize=$pageSize");
+        return $this->paginator(
+            collect($data['projects'])->map(function ($item) {
+                return new Operation($item);
+            }),
+            $data['totalItems'],
+            $data['pageSize'],
+            $page,
+            [
+                'path' => Paginator::resolveCurrentPath(),
+                'pageName' => $pageName,
+            ]
+        );
+    }
+
+    public function detailOperation($id)
+    {
+        $langId = langId();
+        $data = $this->get("data/operations/detail?id=$id&lang_id=$langId");
+        return new Operation($data);
     }
 }

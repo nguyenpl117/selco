@@ -126,6 +126,21 @@ Route::get('/tin-tuyen-dung/{slug}-{id}', function ($slug, $id) {
 
 
 // linh vuc hoat dong
+Route::get('/{slug}-op{id}', function ($slug, $id) {
+    $post = serverAPI()->detailOperation($id);
+    $posts = serverAPI()->listOperations();
+    $posts = $posts->filter(function ($item) use ($post) {
+        return $post->id != $item->id;
+    });
+    page_title($post->title);
+    return view('linh-vuc.bien-ap', compact('post', 'posts'));
+})
+    ->where([
+        'slug' => '[a-z0-9-]+',
+        'id' => '\d+'
+    ])
+    ->name('operations');
+
 Route::get('/xay-lap-dien', function () {
     page_title('Xây lắp điện');
     return view('linh-vuc.bien-ap');
