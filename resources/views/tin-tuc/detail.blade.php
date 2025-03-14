@@ -5,10 +5,10 @@
             <div class="relative">
                 <div class="image-cover" style="padding-top: 45%">
                     <img class="w-full lozad m-0 lg:group-hover:scale-110 transition-all duration-500 safelyLoadImage"
-                         alt="Ra nước ngoài, lục từng container để đưa thiết bị về làm đường dây 500kV"
+                         alt="{{ $post->title }}"
                          width="1920"
                          height="1080"
-                         src="https://songda11.com.vn/wp-content/uploads/dji-0921-2910.jpg">
+                         src="{{ $post->imageLink }}">
                 </div>
                 <div class="h-[120px]"></div>
                 <div class="bg-gray-300 h-[200px] w-2/3 absolute z-10 bottom-0">
