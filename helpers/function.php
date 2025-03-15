@@ -16,7 +16,7 @@ function page_title($title)
 function assetImage($url)
 {
     if ($url) {
-        return 'https://admin.songda11thanglong.com' . $url;
+        return 'https://cdn.songda11thanglong.com' . $url;
     }
     return $url;
 }

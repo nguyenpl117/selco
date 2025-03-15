@@ -33,6 +33,10 @@ class StakeHolder extends Model
         "canDownload",
         "date",
         "value1",
+        "value2",
+        "value3",
+        "value4",
+        "value5",
         "content",
         "operationId",
         "languageId",
@@ -53,6 +57,18 @@ class StakeHolder extends Model
     {
         return Attribute::get(function () {
             return assetImage($this->value1);
+        });
+    }
+    public function files(): Attribute
+    {
+        return Attribute::get(function () {
+            return [
+                assetImage($this->value1),
+                assetImage($this->value2),
+                assetImage($this->value3),
+                assetImage($this->value4),
+                assetImage($this->value5),
+            ];
         });
     }
 

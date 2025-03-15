@@ -23,32 +23,34 @@
             <div class="grid grid-cols-12 gap-4 mt-8">
                 <div class="col-span-12 lg:col-span-9">
                     <div class="shadow p-5 *:my-6">
-                        @if(in_array(\Illuminate\Support\Facades\File::extension($post->file), ['png', 'jpg', 'jpeg']))
-                            <div>
-                                <img src="{{ $post->file }}" alt="file" class="w-full">
-                            </div>
-                        @endif
-                        @if(\Illuminate\Support\Facades\File::extension($post->file) == 'pdf')
-                        <div class="pdf-viewer" data-url="{{ $post->file }}">
-                            <canvas class="pdf-the-canvas"></canvas>
-                            <div class="p-2 bg-[gray]">
-                                <button type="button"
-                                        class="pdf-prev border border-gray-700 bg-black bg-opacity-20 text-white
+                        @foreach($post->files as $file)
+                            @if(in_array(\Illuminate\Support\Facades\File::extension($file), ['png', 'jpg', 'jpeg']))
+                                <div>
+                                    <img src="{{ $post->file }}" alt="file" class="w-full">
+                                </div>
+                            @endif
+                            @if(\Illuminate\Support\Facades\File::extension($file) == 'pdf')
+                                <div class="pdf-viewer" data-url="{{ $file }}">
+                                    <canvas class="pdf-the-canvas"></canvas>
+                                    <div class="p-2 bg-[gray]">
+                                        <button type="button"
+                                                class="pdf-prev border border-gray-700 bg-black bg-opacity-20 text-white
                                      disabled:opacity-50
                                      rounded px-2 py-1">
-                                    Previous
-                                </button>
-                                <button type="button"
-                                        class="pdf-next border border-gray-700 bg-black bg-opacity-20 text-white
+                                            Previous
+                                        </button>
+                                        <button type="button"
+                                                class="pdf-next border border-gray-700 bg-black bg-opacity-20 text-white
                                      disabled:opacity-50
                                      rounded px-2 py-1">
-                                    Next
-                                </button>
-                                &nbsp; &nbsp;
-                                <span class="text-gray-200">Page: <span class="pdf-page_num"></span> / <span class="pdf-page_count"></span></span>
-                            </div>
-                        </div>
-                        @endif
+                                            Next
+                                        </button>
+                                        &nbsp; &nbsp;
+                                        <span class="text-gray-200">Page: <span class="pdf-page_num"></span> / <span class="pdf-page_count"></span></span>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-span-12 lg:col-span-3">
