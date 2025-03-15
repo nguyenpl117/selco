@@ -31,22 +31,27 @@ Route::post('/lien-he', function () {
 
 Route::get('/gioi-thieu', function () {
     page_title('Giới thiệu');
-    return view('gioi-thieu');
+    $introduces = serverAPI()->introduces();
+
+    return view('gioi-thieu', compact('introduces'));
 })->name('about_us');
 
 Route::get('/lich-su', function () {
     page_title('Lịch sử');
-    return view('lich-su');
+    $introduces = serverAPI()->introduces();
+    return view('lich-su', compact('introduces'));
 })->name('history');
 
 Route::get('/co-cau', function () {
     page_title('Cơ cấu tổ chức');
-    return view('co-cau');
+    $introduces = serverAPI()->introduces();
+    return view('co-cau', compact('introduces'));
 })->name('organizational');
 
 Route::get('/thanh-tich', function () {
     page_title('Thành tích đạt được');
-    return view('thanh-tich');
+    $introduces = serverAPI()->introduces();
+    return view('thanh-tich', compact('introduces'));
 })->name('achievements');
 
 Route::get('/tin-tuc', function () {

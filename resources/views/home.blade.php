@@ -196,7 +196,7 @@
                 <div class="px-4">
                     <h3 class="text-4xl font-medium mb-4" data-aos="fade-up">{{ $homePage->title }}</h3>
                     <div class="text-gray-700" data-aos="fade-up">
-                        {!! $homePage->desc !!}
+                        {!! hauto($homePage->desc) !!}
                     </div>
                     <div class="py-2" data-aos="fade-up">
                         <a href="{{ autoRoute('about_us') }}"

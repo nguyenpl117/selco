@@ -11,7 +11,7 @@
                 </a>
             </h2>
             <div class="h-[75px] line-clamp-3 *:mb-4">
-                {!! $post->description !!}
+                {!! hauto($post->description) !!}
             </div>
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-12 md:col-span-4 lg:col-span-2">

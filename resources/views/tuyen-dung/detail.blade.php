@@ -45,7 +45,7 @@
                                 Mô tả công việc
                             </div>
                             <div class="*:mb-4">
-                                {!! $post->description !!}
+                                {!! hauto($post->description) !!}
                             </div>
                         </div>
                     </div>

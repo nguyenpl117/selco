@@ -62,7 +62,7 @@
                     <p class="font-svn-medium font-bold text-[30px] border-b border-dotted border-gray-900 mb-4">
                         Thông tin dự án
                     </p>
-                    {!! $post->content !!}
+                    {!! hauto($post->content) !!}
 {{--                    {!! str_replace('<ul>', '<ul class="ml-5 *:my-2.5 list-disc">', $post->content) !!}--}}
                     <ul class="ml-5 *:my-2.5 list-disc">
 {{--                        <li>--}}
@@ -84,7 +84,7 @@
                             <li>Công suất lắp đặt: {{ $post->installedCapacity }}MW</li>
                         @endif
                     </ul>
-                    {!! $post->description !!}
+                    {!! hauto($post->description) !!}
                 </div>
             </div>
         </div>

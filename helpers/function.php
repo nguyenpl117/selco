@@ -51,3 +51,18 @@ function autoRoute($name, $parameters = [], $absolute = true)
 {
     return localeRoute(langCurrent(), $name, $parameters, $absolute);
 }
+
+function hauto($content)
+{
+    return preg_replace_callback('@\<img[^\>](.*?)\>@si', function ($matches) {
+        preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $matches[0], $image);
+
+        $content = '';
+
+        if (isset($image['src'])) {
+            $content = str_replace($image['src'], assetImage($image['src']), $matches[0]);
+        }
+
+        return $content;
+    }, $content);
+}

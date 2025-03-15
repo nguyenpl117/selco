@@ -31,6 +31,36 @@
     }
 }
 @layer components {
+    .ck-content {
+        & .text-tiny {
+            font-size: .7em;
+        }
+
+        & .text-small {
+            font-size: .85em;
+        }
+
+        & .text-big {
+            @apply text-xl font-medium
+        }
+
+        & .text-huge {
+            @apply text-2xl font-medium
+        }
+
+        & p {
+            @apply mb-4;
+        }
+
+        & ul {
+            @apply list-disc mx-6;
+
+            li {
+                @apply my-4
+            }
+        }
+    }
+
     .thongtinchung {
         @apply *:py-2.5 *:border-b;
         svg {
@@ -162,3 +192,4 @@
         }
     }
 }
+
