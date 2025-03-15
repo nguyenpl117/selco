@@ -11,5 +11,14 @@ return [
         'content' => 'Content',
         'send' => 'Send'
     ],
-    'message' => 'send successfully'
+    'message' => 'send successfully',
+    'news_update' => 'News',
+    'view_all' => 'View all',
+    'more' => 'More',
+    'month' => 'Month',
+    'pull_down' => 'Pull down',
+    'construction' => 'Construction',
+    'view_detail' => 'More',
+    'partners' => 'Partners',
+    'project_prominent' => 'Project prominent'
 ];

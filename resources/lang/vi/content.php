@@ -11,5 +11,14 @@ return [
         'content' => 'Nội dung liên hệ',
         'send' => 'Gửi đi'
     ],
-    'message' => 'Gửi thành công'
+    'message' => 'Gửi thành công',
+    'news_update' => 'Tin mới cập nhật',
+    'view_all' => 'Xem tất cả',
+    'more' => 'Xem thêm',
+    'month' => 'Tháng',
+    'pull_down' => 'Kéo xuống',
+    'construction' => 'Lĩnh vực hoạt động',
+    'view_detail' => 'Xem chi tiết',
+    'partners' => 'Partners',
+    'project_prominent' => 'Dự án nổi bật'
 ];

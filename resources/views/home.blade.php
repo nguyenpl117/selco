@@ -4,27 +4,18 @@
         <div class="slider_header">
             <div class="swiper w-full h-full">
                 <div class="home-carousel">
-                    <div class="carousel-cell">
-                        <div class="relative">
-                            <img class="object-cover" style="height: 100vh; width: 100vw;"
-                                 src="./images/image5.jpg"
-                                 alt="image">
-                            <div class="content text-white px-4 max-w-[750px] text-xl lg:text-3xl absolute top-[30%] lg:top-[50%] items-center justify-center">
-                                Công ty chính thức thành lập ngày 04 tháng 07 năm 2008 với chuyên ngành xây lắp đường
-                                dây
-                                truyền tải điện và trạm biến áp có cấp điện áp đến 500kV,
-                                thi công lắp đặt hệ hống cơ điện, cấp thoát nước trong các tòa nhà cao tầng, khu đô thị,
-                                khu công nghiệp và nước sạch nông thôn, đầu tư các dự án thủy điện, dự án khu công
-                                nghiệp,
-                                đô thị mới...
+                    @foreach($homePage->sliders as $item)
+                        <div class="carousel-cell">
+                            <div class="relative">
+                                <img class="object-cover" style="height: 100vh; width: 100vw;"
+                                     src="{{ $item['image'] }}"
+                                     alt="image">
+                                <div class="content text-white px-4 max-w-[750px] text-xl lg:text-3xl absolute top-[30%] lg:top-[50%] items-center justify-center">
+                                    {{ $item['desc'] }}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-cell">
-                        <img class="object-cover" style="height: 100vh; width: 100vw;"
-                             src="./images/image4.jpg" alt="image">
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -35,7 +26,7 @@
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
             </span>
-                <span class="pointer-events-none">Kéo xuống</span>
+                <span class="pointer-events-none">@lang('content.pull_down')</span>
             </a>
             <!--        <a class="btndown" href="#scrolldown"><span>Kéo xuống</span></a>-->
         </div>
@@ -48,9 +39,9 @@
                 <div class="px-4 flex flex-col justify-center">
                     <div class="flex flex-col gap-4">
                         <div class="flex justify-between" data-aos="fade-up">
-                            <h2 class="text-3xl font-medium">Tin mới cập nhật</h2>
+                            <h2 class="text-3xl font-medium">@lang('content.news_update')</h2>
                             <a href="{{ autoRoute('news') }}" class="flex gap-2 py-5 text-primary-300">
-                                <span>Xem tất cả</span>
+                                <span>@lang('content.view_all')</span>
                                 <div class="relative w-6 h-6 flex justify-center items-center">
                                     <span class="absolute animate-ping flex h-4/5 w-4/5 rounded-full bg-primary-600 opacity-75"></span>
                                     <div class="absolute bg-primary-600 w-6 h-6 rounded-full text-white justify-center items-center flex">
@@ -65,7 +56,7 @@
                                  class="rounded overflow-hidden flex justify-between items-center bg-gray-100">
                                 <div class="bg-primary-500 py-4 px-3 text-white flex flex-col items-center">
                                     <span class="text-3xl font-medium">{{ $post->createdDate?->format('d') }}</span>
-                                    <span class="text-xs">Tháng {{ $post->createdDate?->format('m') }}</span>
+                                    <span class="text-xs">@lang('content.month') {{ $post->createdDate?->format('m') }}</span>
                                 </div>
                                 <div class="flex-1 px-2">
                                     {{ $post->title }}
@@ -73,7 +64,7 @@
                                 <div class="px-4">
                                     <a href="{{ $post->url }}"
                                          class="border border-primary-500 rounded text-primary-500 px-4 py-2 hover:border-black hover:text-black">
-                                        Xem thêm
+                                        @lang('content.more')
                                     </a>
                                 </div>
                             </div>
@@ -109,9 +100,7 @@
     <div id="scrolldown" class="mt-12">
         <div class="max-w-screen-2xl mx-auto px-4">
             <div class="flex flex-col gap-4">
-                <h2 class="text-3xl mb-6 font-medium" data-aos-duration="1000" data-aos="fade-up">Lĩnh vực hoạt
-                    động</h2>
-
+                <h2 class="text-3xl mb-6 font-medium" data-aos-duration="1000" data-aos="fade-up">@lang('content.construction')</h2>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     @foreach($listOperations as $key => $item)
                         <a href="#" class="block group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="{{ $key * 50 }}">
@@ -197,7 +186,7 @@
                 <div class="px-4 flex flex-col justify-center" data-aos="zoom-in" data-aos-duration="1000">
                     <div class='wy overflow-hidden rounded-lg'>
                         <div class='youtube'>
-                            <iframe width="1067" height="600" src="https://www.youtube.com/embed/MOdtX4_bLB8"
+                            <iframe width="1067" height="600" src="{{ $homePage->youtubeLink }}"
                                     title="Công ty Cổ Phần Sông Đà 11 - Tiếp nối những thành công" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -205,37 +194,14 @@
                     </div>
                 </div>
                 <div class="px-4">
-                    <h3 class="text-4xl font-medium mb-4" data-aos="fade-up">Công ty TNHH MTV Sông Đà 11 Thăng Long</h3>
+                    <h3 class="text-4xl font-medium mb-4" data-aos="fade-up">{{ $homePage->title }}</h3>
                     <div class="text-gray-700" data-aos="fade-up">
-                        Công ty TNHH MTV Sông Đà 11 Thăng Long là đơn vị thành viên của Tổng công ty Sông
-                        Đà, đã tham gia thi công xây lăp nhiều dự án quan trọng của đất nước về thủy điện, hệ thống
-                        đường
-                        dây truyền tải điện cao thế, hệ thống cấp thoát nước trong các khu đô thị và công nghiệp…
-                        Thực hiện chủ trương sắp xếp đổi mới doanh nghiệp, trên cơ sở chức năng nhiệm vụ, lực lượng cán
-                        bộ
-                        công nhân viên, tài sản tiền vốn và trang thiết bị thi công của Xí nghiệp Sông Đà 11.2 và Xí
-                        nghiệp
-                        Sông Đà 11.5 thuộc Công ty cổ phần Sông Đà 11.
-                        Công ty chính thức thành lập ngày 04 tháng 07 năm 2008 với chuyên ngành xây lắp đường dây truyền
-                        tải
-                        điện và trạm biến áp có cấp điện áp đến 500kV, thi công lắp đặt hệ hống cơ điện, cấp thoát nước
-                        trong các tòa nhà cao tầng, khu đô thị, khu công nghiệp và nước sạch nông thôn,
-                        đầu tư các dự án thủy điện, dự án khu công nghiệp,đô thị mới.
-                        Trong những năm vừa qua (2008 – 2013) cùng với sự nỗ lực của tập thể CBCNV đơn vị đã hoàn thành
-                        xuất
-                        sắc nhiệm vụ SXKD với tổng giá trị sản lượng đạt 1.600 tỷ đồng, lợi nhuận đạt 61 tỷ đồng.
-                        Kế hoạch đến năm 2015 và định hướng đến năm 2020 của Công ty trở thành đơn vị chủ lực của Tổng
-                        công
-                        ty Sông Đà trong lĩnh vực đầu tư phát triển nguồn điện,
-                        đầu tư đô thị và hạ tầng công nghiệp đồng thời không ngừng khẳng định vị thế là nhà thầu EPC
-                        mạnh
-                        trong kĩnh vực xây lắp các công trình điện nước.
-
+                        {!! $homePage->desc !!}
                     </div>
                     <div class="py-2" data-aos="fade-up">
-                        <a href="/gioi-thieu"
+                        <a href="{{ autoRoute('about_us') }}"
                            class="py-2 px-4 inline-block text-primary-500 hover:bg-primary-500 hover:text-white font-medium transition-all border border-primary-500 rounded">
-                            Xem thêm
+                            @lang('content.more')
                         </a>
                     </div>
                 </div>
@@ -246,7 +212,7 @@
     <!--Dự án nổi bật-->
     <div class="mt-24">
         <div class="max-w-screen-2xl mx-auto px-4">
-            <h2 class="text-4xl font-medium py-4" data-aos="fade-up">Dự án nổi bật</h2>
+            <h2 class="text-4xl font-medium py-4" data-aos="fade-up">@lang('content.project_prominent')</h2>
             <div class="project-carousel" data-aos="fade-up">
                 @foreach($projects as $post)
                     <div class="carousel-cell w-full">
@@ -268,7 +234,7 @@
                                 <div class="py-4 ">
                                     <a href="{{ $post->url }}"
                                        class="py-2 px-4 font-medium text-primary-500 inline-block hover:bg-gray-200 transition-all duration-200 border border-primary-500 rounded">
-                                        Xem chi tiết
+                                        @lang('content.view_detail')
                                     </a>
                                 </div>
                             </div>
@@ -342,7 +308,7 @@
         <div class="max-w-screen-2xl mx-auto px-4">
             <div class="grid grid-cols-12 gap-8">
                 <div class="col-span-12 md:col-span-4 lg:col-span-3 flex flex-col justify-center">
-                    <h3 class="text-4xl" data-aos="fade-up">Partners</h3>
+                    <h3 class="text-4xl" data-aos="fade-up">@lang('content.partners')</h3>
                 </div>
                 <div class="col-span-12 md:col-span-8 lg:col-span-9" data-aos="fade-up">
                     <div class="partners-carousel" data-aos="fade-up">

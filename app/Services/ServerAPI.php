@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\AffilicatedUnit;
 use App\Models\CategoryStakeHolder;
 use App\Models\Contact;
+use App\Models\HomePage;
 use App\Models\NewModel;
 use App\Models\Operation;
 use App\Models\Partner;
@@ -225,5 +226,12 @@ class ServerAPI
         $this->client->request('POST', 'data/contactInfo', [
             'json' => $data
         ]);
+    }
+
+    public function home()
+    {
+        $langId = langId();
+        $data = $this->get("data/homepage?lang=$langId");
+        return new HomePage($data);
     }
 }
