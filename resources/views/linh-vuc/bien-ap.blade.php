@@ -1,7 +1,7 @@
 <x-layouts.base>
     <!--Banner-->
     <div>
-        <img src="./images/sl001.jpg" alt="" class="w-full">
+        <img src="{{ $post->bannerLink }}" alt="" class="w-full">
     </div>
 
     <div class="my-10">

@@ -66,6 +66,13 @@ class Operation extends Model
         });
     }
 
+    public function bannerLink(): Attribute
+    {
+        return Attribute::get(function () {
+            return assetImage($this->banner);
+        });
+    }
+
     public function imageLink(): Attribute
     {
         return Attribute::get(function () {
