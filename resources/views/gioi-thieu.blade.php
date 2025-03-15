@@ -1,7 +1,8 @@
 <x-layouts.base>
     <!--Banner-->
     <div>
-        <img src="{{ asset('images/sl001.jpg') }}" alt="" class="w-full">
+        {!! hauto($introduces->introduceContent) !!}
+{{--        <img src="{{ asset('images/sl001.jpg') }}" alt="" class="w-full">--}}
     </div>
 
     <x-intro-menu/>
