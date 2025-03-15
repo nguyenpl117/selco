@@ -1,6 +1,13 @@
 <x-layouts.base>
     <!--Banner-->
-    <div>
+    <style>
+        .banner {
+            img {
+                width: 100%;
+            }
+        }
+    </style>
+    <div class="banner">
         {!! hauto($introduces->introduceContent) !!}
 {{--        <img src="{{ asset('images/sl001.jpg') }}" alt="" class="w-full">--}}
     </div>
