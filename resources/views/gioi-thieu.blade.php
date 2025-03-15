@@ -107,16 +107,16 @@
         </div>
     </div>
 
-    <div data-aos-duration="1000" data-aos="fade-up" class="my-10 flex flex-col gap-6 mx-4 items-center">
-        <h3 class="uppercase text-2xl font-medium">CÁC ĐƠN VỊ TRỰC THUỘC VÀ CÁC CÔNG TY CON</h3>
-        <p class="text-center">
-            Thực hiện đề án tái cấu trúc doanh nghiệp đã được Tổng Công ty Sông Đà và Bộ Xây dựng phê duyêt, Công ty TNHH MTV Sông Đà Thăng Long
-            đã tổ chức và sắp xếp lại cơ cấu của các đơn vị thành viên. Quy mô của Công ty sau tái cấu trúc hiện
-            bao gồm 07 đơn vị trực thuộc và 05 Công ty có vốn góp
-        </p>
-    </div>
-    <div class="h-10"></div>
+{{--    <div data-aos-duration="1000" data-aos="fade-up" class="my-10 flex flex-col gap-6 mx-4 items-center">--}}
+{{--        <h3 class="uppercase text-2xl font-medium">CÁC ĐƠN VỊ TRỰC THUỘC VÀ CÁC CÔNG TY CON</h3>--}}
+{{--        <p class="text-center">--}}
+{{--            Thực hiện đề án tái cấu trúc doanh nghiệp đã được Tổng Công ty Sông Đà và Bộ Xây dựng phê duyêt, Công ty TNHH MTV Sông Đà Thăng Long--}}
+{{--            đã tổ chức và sắp xếp lại cơ cấu của các đơn vị thành viên. Quy mô của Công ty sau tái cấu trúc hiện--}}
+{{--            bao gồm 07 đơn vị trực thuộc và 05 Công ty có vốn góp--}}
+{{--        </p>--}}
+{{--    </div>--}}
+{{--    <div class="h-10"></div>--}}
 
-    <x-branch title="Các đơn vị trực thuộc - Công ty góp vốn" :items="[1,2,3,4,5]"/>
+{{--    <x-branch title="Các đơn vị trực thuộc - Công ty góp vốn" :items="[1,2,3,4,5]"/>--}}
 {{--    <x-branch title="Các công ty góp vốn" :items="[1,2,3,4,5]"/>--}}
 </x-layouts.base>
