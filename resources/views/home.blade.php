@@ -55,10 +55,10 @@
                             <div data-aos="fade-up"
                                  class="rounded overflow-hidden flex justify-between items-center bg-gray-100">
                                 <div class="bg-primary-500 py-4 px-3 text-white flex flex-col items-center">
-                                    <span class="text-3xl font-medium">{{ $post->createdDate?->format('d') }}</span>
+                                    <span class="text-3xl font-svn-medium font-bold">{{ $post->createdDate?->format('d') }}</span>
                                     <span class="text-xs">@lang('content.month') {{ $post->createdDate?->format('m') }}</span>
                                 </div>
-                                <div class="flex-1 px-2">
+                                <div class="flex-1 px-2 line-clamp-3">
                                     {{ $post->title }}
                                 </div>
                                 <div class="px-4">
@@ -313,32 +313,13 @@
                 <div class="col-span-12 md:col-span-8 lg:col-span-9" data-aos="fade-up">
                     <div class="partners-carousel" data-aos="fade-up">
                         @foreach($partners as $partner)
-                            <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">
-                                <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">
-                                    <img class="aspect-[5/3] object-contain"
+                            <div class="carousel-cell px-2 mb-8 w-full sm:max-w-[50%] md:max-w-[33%] lg:max-w-[25%]">
+                                <div class="aspect-[5/3] flex items-center justify-center overflow-hidden border rounded shadow hover:shadow-lg">
+                                    <img class="aspect-[5/3] object-contain max-h-[150px]"
                                          src="{{ $partner->imageLink }}" alt="{{ $partner->title }}">
                                 </div>
                             </div>
                         @endforeach
-
-{{--                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">--}}
-{{--                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">--}}
-{{--                                <img class="aspect-[5/3] object-contain"--}}
-{{--                                     src="https://songda11.com.vn/wp-content/uploads/vietinbank.jpg">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">--}}
-{{--                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">--}}
-{{--                                <img class="aspect-[5/3] object-contain"--}}
-{{--                                     src="https://songda11.com.vn/wp-content/uploads/agribank.jpg">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="carousel-cell px-2 mb-8 w-full max-w-[75%] md:max-w-[35%] lg:max-w-[25%]">--}}
-{{--                            <div class="aspect-[5/3] overflow-hidden border rounded shadow hover:shadow-lg">--}}
-{{--                                <img class="aspect-[5/3] object-contain"--}}
-{{--                                     src="https://songda11.com.vn/wp-content/uploads/bidv.jpg">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
                     </div>
                 </div>
             </div>

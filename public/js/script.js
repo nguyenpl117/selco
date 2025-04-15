@@ -178,6 +178,14 @@
                                 groupCells: 1,
                             });
                             break;
+                        case width < 768:
+                            new Flickity('.partners-carousel', {
+                                cellAlign: 'left',
+                                contain: true,
+                                prevNextButtons: false,
+                                groupCells: 2,
+                            });
+                            break;
                         case width < 1024:
                             new Flickity('.partners-carousel', {
                                 cellAlign: 'left',
